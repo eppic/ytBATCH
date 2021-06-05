@@ -1,11 +1,11 @@
 @echo off
 title ytBATCH Installer
-if /I "%mtx%"=="" cls
+cls
 
 echo Welcome to the ytBATCH Installer!!
 echo - - - - -
 pause
-if /I "%mtx%"=="" cls
+cls
 
 echo Please wait for ytBATCH to download...
 echo - - - - -
@@ -15,7 +15,7 @@ pause
 
 :ChoosePath
 set icode=
-if /I "%mtx%"=="" cls
+cls
 echo Please choose a place to install ytBATCH:
 echo - - - - -
 echo [A] AppData... [Recommended]
