@@ -4,7 +4,7 @@ An easy to use Batch Script using [youtube-dl](https://github.com/ytdl-org/youtu
 
 ## INSTALL
 There are two variants for installing ytBATCH:  
-1. Use the provided [installer](https://github.com/eppic/ytBATCH/blob/main/installer)  
+1. Use the provided [installer](https://github.com/eppic/ytBATCH/blob/main/installer).  
    - *The installer puts a Shortcut for ytBATCH on the Desktop and into the Start Menu folder.*  
    - *ytBATCH gets installed into AppData/Roaming.*  
 2. Download ytBATCH manually.  
