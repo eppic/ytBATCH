@@ -1,4 +1,4 @@
-[![icon](https://github.com/eppic/ytBATCH/blob/main/256.ico)](https://github.com/eppic/ytBATCH)
+[![icon](https://github.com/eppic/ytBATCH/blob/main/bin/256.ico)](https://github.com/eppic/ytBATCH)
 # ytBATCH
 An easy to use Batch Script using [youtube-dl](https://github.com/ytdl-org/youtube-dl).
 
