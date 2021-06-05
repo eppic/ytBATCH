@@ -1,6 +1,6 @@
 @echo off
 title Enter URL - ytBATCH %version%
-cls
+if /I "%mtx%"=="" cls
 
 ::Main Menu
     set Url=
@@ -20,7 +20,7 @@ cls
     if /I "%Url%"=="NEW" goto Refresh
     if /I "%Url%"=="NNEW" call Launcher.bat
     if /I "%Url%"=="X" exit
-    if /I "%Url%"=="MATRIX" call Reset.bat
+    if /I "%Url%"=="MATRIX" cls & set mtx=1 & call Launcher.bat
     if /I "%Url%"=="" call MainMenu.bat
 
 ::Open Url Handler
@@ -28,5 +28,6 @@ cls
 
 ::NEW Command
     :Refresh
+    set mtx=
     start New.bat
     exit

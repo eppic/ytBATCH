@@ -1,6 +1,6 @@
 @echo off
 title Queue Mode - ytBATCH %version%
-cls
+if /I "%mtx%"=="" cls
 
 echo Nothing here yet.
 pause

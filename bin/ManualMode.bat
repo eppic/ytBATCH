@@ -1,12 +1,12 @@
 @echo off
 title Manual Mode - ytBATCH %version%
-cls
+if /I "%mtx%"=="" cls
 
 ::Manual Mode
     set mmexe=youtube-dl
     set manualcode=
     :mmplus
-    cls
+    if /I "%mtx%"=="" cls
     echo Manual Mode - Enter Code by yourself - If not allocated the output is in the root folder of ytBATCH. 
     echo - - - - -
     echo (B) Go Back...
@@ -15,7 +15,7 @@ cls
     set /p manualcode=%mmexe% 
     if /I "%manualcode%"=="M" set mmexe= & goto mmplus
     if /I "%manualcode%"=="B" call Launcher.bat
-    cls
+    if /I "%mtx%"=="" cls
     echo %mmexe% %manualcode% 
     %mmexe% %manualcode%
     pause

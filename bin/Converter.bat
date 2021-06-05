@@ -1,6 +1,6 @@
 @echo off
 title Convert Audio or Video to another File - ytBATCH %version%
-cls
+if /I "%mtx%"=="" cls
 
 ::Converter
     echo WARNING! - This script is not fully tested!
@@ -27,7 +27,7 @@ cls
     goto ConvFin
 
     :ConvFin
-    cls
+    if /I "%mtx%"=="" cls
     echo Finished converting %Url%
     echo - - - - -
     call MainMenu.bat

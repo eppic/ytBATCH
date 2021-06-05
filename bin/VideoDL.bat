@@ -1,13 +1,13 @@
 @echo off
 title Download Video - ytBATCH %version%
-cls
+if /I "%mtx%"=="" cls
 
 ::Download Video
     echo Video
     youtube-dl -o "%Destination%%FileNaming%" %CookieSet% --add-metadata %Url%
     if "%DestOpen%"=="T" explorer %Destination% 
     pause
-    cls
+    if /I "%mtx%"=="" cls
     echo - - - - -
     echo Saved "%Url%" under "%Destination%".
     echo - - - - -

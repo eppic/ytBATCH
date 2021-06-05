@@ -1,6 +1,6 @@
 @echo off
 title Download Audio - ytBATCH %version%
-cls
+if /I "%mtx%"=="" cls
 
 ::Set File Format
     set AudioDLCode=
@@ -27,7 +27,7 @@ cls
     :AudioDLCheck
 
 ::Download Audio
-    cls
+    if /I "%mtx%"=="" cls
     echo Audio
     youtube-dl -x --audio-format %AudioDLFormat% -o "%Destination%%FileNaming%" %CookieSet% --add-metadata --embed-thumbnail %Url%
     if "%DestOpen%"=="T" explorer %Destination% 

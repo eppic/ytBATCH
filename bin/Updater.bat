@@ -1,6 +1,6 @@
 @echo off
 title Checking for Updates - ytBATCH %version%
-cls
+if /I "%mtx%"=="" cls
 
 ::Check for Updates
 echo Please Wait...

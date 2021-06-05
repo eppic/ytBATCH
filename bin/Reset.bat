@@ -1,6 +1,6 @@
 @echo off
 title Reset - ytBATCH %version%
-cls
+if /I "%mtx%"=="" cls
 
 ::Reset Menu
 echo WARNING!
@@ -32,5 +32,5 @@ if exist UserConfig.bat del UserConfig.bat
 echo - - - - -
 echo Deleted everything.
 pause
-cls
+if /I "%mtx%"=="" cls
 call Launcher.bat

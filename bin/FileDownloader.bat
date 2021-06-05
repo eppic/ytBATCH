@@ -1,6 +1,6 @@
 @echo off
 title Download Files - ytBATCH %version%
-cls
+if /I "%mtx%"=="" cls
 
 ::Launch Checker
     if /i "%fdcode%"=="ytdl" goto ytdl_dl
@@ -30,7 +30,7 @@ cls
 
 ::File Downloader
     :ytdl_dl
-    cls
+    if /I "%mtx%"=="" cls
     echo Wait for youtube-dl.exe to download... 
     echo This will take a moment.
     powershell -command "(New-Object System.Net.WebClient).DownloadFile(\"https://youtube-dl.org/downloads/latest/youtube-dl.exe\", \"youtube-dl.exe\")"

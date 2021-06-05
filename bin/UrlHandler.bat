@@ -1,11 +1,11 @@
 @echo off
 title Enter Action - ytBATCH %version%
-cls
+if /I "%mtx%"=="" cls
 
 ::Cookie Settings
     if "%AutoCookies%"=="T" (set CookieSet=--cookies "cookies.txt") else (set CookieSet=)
     :CookiesPassed
-    cls
+    if /I "%mtx%"=="" cls
 
 ::Url Handler
     set UrlCode=
@@ -42,7 +42,7 @@ cls
     goto CookiesPassed
     
     :NoCookies
-    cls
+    if /I "%mtx%"=="" cls
     echo cookies.txt not found.
     echo Download the extension "cookies.txt" for your Browser and export your cookies into the root of ytBATCH.
     pause

@@ -1,6 +1,6 @@
 @echo off
 title Preferences - ytBATCH %version%
-cls
+if /I "%mtx%"=="" cls
 
 ::Preferences
     set PrefCode=
@@ -39,7 +39,7 @@ cls
 
 ::Change Output Path
     :OutputPath
-    cls
+    if /I "%mtx%"=="" cls
     echo Type in your desired output path: (Type "D" for Default / Type "B" to go back)
     set /p Destination=Path:
 
