@@ -3,7 +3,7 @@ title Convert Audio or Video to another File - ytBATCH %version%
 if /I "%mtx%"=="" cls
 
 ::Converter
-    echo WARNING! - This script is not fully tested!
+    echo WARNING! - This script is not working properly!!
     echo (A) Convert File to Audio File
     echo (V) Convert File to Video File
     echo 
