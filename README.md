@@ -17,7 +17,7 @@ There are two variants for installing ytBATCH:
    - `Audio`: Downloads Audio, Afterwards select File Format
    - `Video`: Downloads Video (When available)
    - `List all Formats...`: Lists all available Formats found under the URL
-   - `Use Cookies...`: When available, uses cookies.txt to download with account
+   - `Use Cookies...`: When available, uses cookies.txt to download with account information
 4. Download starts
 5. Puts the Downloaded File in your Download folder under /ytBATCH.
 
