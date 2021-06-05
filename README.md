@@ -8,7 +8,7 @@ There are two variants for installing ytBATCH:
    - *The installer puts a Shortcut for ytBATCH on the Desktop and into the Start Menu folder.*  
    - *ytBATCH gets installed into AppData/Roaming.*  
 2. Download ytBATCH manually.  
-   - *You won't have automatically generated shortcuts*
+   - *No automatically generated shortcuts*
 
 ## USAGE
 1. Open the ytBATCH shortcut / Open Launcher.bat
