@@ -29,7 +29,7 @@ if /I "%mtx%"=="" cls
 ::Download Audio
     if /I "%mtx%"=="" cls
     echo Audio
-    youtube-dl -x --audio-format %AudioDLFormat% -o "%Destination%%FileNaming%" %CookieSet% --add-metadata --embed-thumbnail %Url%
+    ..\exe\youtube-dl -x --audio-format %AudioDLFormat% -o "%Destination%%FileNaming%" %CookieSet% --add-metadata --embed-thumbnail %Url%
     if "%DestOpen%"=="T" explorer %Destination% 
     echo - - - - -
     echo Saved "%Url%" under "%Destination%".

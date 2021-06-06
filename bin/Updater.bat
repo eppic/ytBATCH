@@ -4,6 +4,6 @@ if /I "%mtx%"=="" cls
 
 ::Check for Updates
 echo Please Wait...
-youtube-dl -U
+..\exe\youtube-dl -U
 pause
 call MainMenu.bat

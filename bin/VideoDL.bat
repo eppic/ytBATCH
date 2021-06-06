@@ -4,7 +4,7 @@ if /I "%mtx%"=="" cls
 
 ::Download Video
     echo Video
-    youtube-dl -o "%Destination%%FileNaming%" %CookieSet% --add-metadata %Url%
+    ..\exe\youtube-dl -o "%Destination%%FileNaming%" %CookieSet% --add-metadata %Url%
     if "%DestOpen%"=="T" explorer %Destination% 
     pause
     if /I "%mtx%"=="" cls

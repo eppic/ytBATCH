@@ -6,7 +6,7 @@ if /I "%mtx%"=="" cls
     set FormatListCode=
     echo Checking available formats...
     echo - - - - -
-    youtube-dl -F %Url%
+    ..\exe\youtube-dl -F %Url%
     echo - - - - -
     echo (B) Go Back...
     echo - - - - -
