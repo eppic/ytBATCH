@@ -19,7 +19,7 @@ if /I "%mtx%"=="" cls
     if /I "%manualcode%"=="M" set mmexe= & goto mreturn
     if /I "%manualcode%"=="B" call Launcher.bat
    
-    %mmexe% %manualcode%
+    ..\exe\%mmexe% %manualcode%
     echo - - - - -
     goto mreturn
     
