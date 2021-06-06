@@ -49,20 +49,20 @@ if /I "%mtx%"=="" cls
 
 ::True/False Preferences
     :AutoCookiesSet
-    if /I "%AutoCookies%"=="F" (set AutoCookies=T) else (set AutoCookies=F)
-    call Preferences.bat
+    if /I "%AutoCookies%"=="T" (set AutoCookies=F) else (set AutoCookies=T)
+    goto ConfigSet
 
     :DestOpenSet
-    if /I "%DestOpen%"=="F" (set DestOpen=T) else (set DestOpen=F)
-    call Preferences.bat
+    if /I "%DestOpen%"=="T" (set DestOpen=F) else (set DestOpen=T)
+    goto ConfigSet
 
 ::Apply Config to UserConfig.bat
     :ConfigSet
-    if not exist UserConfig.bat copy nul "UserConfig.bat"
+    if not exist ..\UserConfig.bat copy nul ..\UserConfig.bat
 
-    echo set Destination=%Destination%> UserConfig.bat
-    echo set DestOpen=%DestOpen%>> UserConfig.bat
-    echo set AutoCookies=%AutoCookies%>> UserConfig.bat
-    call UserConfig.bat
+    echo set Destination=%Destination%> ..\UserConfig.bat
+    echo set DestOpen=%DestOpen%>> ..\UserConfig.bat
+    echo set AutoCookies=%AutoCookies%>> ..\UserConfig.bat
+    call ..\UserConfig.bat
     call Preferences.bat
 
