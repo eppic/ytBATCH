@@ -4,15 +4,11 @@ if /I "%mtx%"=="" cls
 
 ::Reset Menu
 echo WARNING!
-echo If you proceed following will get deleted:
-echo -youtube-dl.exe
-echo -ffmpeg.exe
-echo -AtomicParsley.exe
-if exist ffprobe.exe echo -ffprobe.exe
-if exist UserConfig.bat echo -UserConfig.bat
+echo If you proceed ytBATCH will get deleted and re-downloaded.
 echo - - - - -
 echo [reset123] Proceed...
 echo [B] Go Back...
+echo - - - - -
 
 set /p ResetCode=COMMAND:
 
