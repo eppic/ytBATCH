@@ -13,7 +13,7 @@ if /I "%mtx%"=="" cls
     if "%AutoCookies%"=="T" set CookieSet=--cookies "cookies.txt"
 
 ::File Check
-    if exist "youtube-dl.exe" goto filecheck_ytdl
+    if exist "..\exe\youtube-dl.exe" goto filecheck_ytdl
     echo youtube-dl.exe not found. 
     echo Press any key to download the latest version of youtube-dl.exe...
     pause>nul
@@ -21,7 +21,7 @@ if /I "%mtx%"=="" cls
     call FileDownloader.bat
     :filecheck_ytdl
 
-    if exist "ffmpeg.exe" goto filecheck_ffmpeg
+    if exist "..\exe\ffmpeg.exe" goto filecheck_ffmpeg
     echo ffmpeg.exe not found. 
     echo Press any key to download ffmpeg.exe ...
     pause>nul
@@ -32,7 +32,7 @@ if /I "%mtx%"=="" cls
     ::Skipping AtomicParsley
     goto filecheck_atomic
 
-    if exist "AtomicParsley.exe" goto filecheck_atomic
+    if exist "..\exe\AtomicParsley.exe" goto filecheck_atomic
     echo AtomicParsley.exe not found. 
     echo Press any key to download AtomicParsley.exe ...
     pause>nul
