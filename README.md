@@ -3,12 +3,11 @@
 An easy to use Batch Script using [youtube-dl](https://github.com/ytdl-org/youtube-dl).
 
 ## INSTALL
-There are two ways to install ytBATCH:  
-1. Use the provided [installer](https://github.com/eppic/ytBATCH/blob/main/installer).  
-   - *The installer generates Shortcuts for ytBATCH on the Desktop and in the Start Menu folder.*  
-   - *ytBATCH gets installed into AppData/Roaming.*  
-2. Download ytBATCH manually.  
-   - *No automatically generated shortcuts*
+1. Download the [latest code](https://github.com/eppic/ytBATCH/archive/refs/heads/main.zip) or a [release](https://github.com/eppic/ytBATCH/releases)  
+2. Run ytBATCH.bat in the provided folder  
+3. A prompt will appear asking to install ytBATCH.  
+   - *`Yes`: Install ytBATCH and generate shortcuts*  
+   - *`No`: Keep ytBATCH in its download folder.*  
 
 ## USAGE
 1. Open the ytBATCH shortcut / Open Launcher.bat
