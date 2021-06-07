@@ -21,8 +21,8 @@ if /I "%mtx%"=="" cls
     :ResetCheck
     pause
     del /q ..\UserConfig.bat
-    del /q ..\ytBATCH.lnk
     rmdir /s /q ..\exe
+	move Installer.bat ..\
     start ..\Installer.bat
     rmdir /s /q ..\bin
     

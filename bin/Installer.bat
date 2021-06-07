@@ -5,18 +5,14 @@ cls
 :ChoosePath
 set icode=
 cls
-echo Welcome to the ytBATCH Installer!!
-echo Choose a location to install ytBATCH:
-echo - - - - -
-echo [A] AppData... [Recommended]
-echo - - - - -
-echo [X] Do not install...
+echo Welcome to the ytBATCH Installer!
+echo Recommended: Install ytBATCH to AppData? (Y/N)
 echo - - - - -
 
 set /p icode=COMMAND:
 
-if /i "%icode%"=="A" goto appdata_install
-if /i "%icode%"=="X" copy nul "..\UserConfig.bat" & call New.bat
+if /i "%icode%"=="Y" goto appdata_install
+if /i "%icode%"=="N copy nul "..\UserConfig.bat" & call New.bat
 goto ChoosePath
 
 :appdata_install
@@ -32,24 +28,26 @@ copy nul "%AppData%\ytBATCH\UserConfig.bat"
 :RmOGD
 cls
 echo Moved and created shortcuts successfully!
-echo Remove original folder (Y/N)?
+echo Keep original folder? (Y/N)
 echo - - - - - 
 set /p icode=COMMAND:
 if /i "%icode%"=="Y" goto rm_yes
 if /i "%icode%"=="N" goto rm_no
 goto RmOGD
 
-:rm_yes
-cls
-echo Installation finished!
-echo - - - - -
-echo Press any key to close the installer and delete the Original Directory...
-rmdir ".\" /s /q
-exit
-
 :rm_no
 cls
 echo Installation finished!
 echo - - - - -
+echo Press any key to close the installer and delete the Original Folder...
+explorer %AppData%\ytBATCH
+rmdir ".\" /s /q
+exit
+
+:rm_yes
+cls
+echo Installation finished!
+echo - - - - -
 echo Press any key to close the installer...
+explorer %AppData%\ytBATCH
 exit
