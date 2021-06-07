@@ -2,21 +2,11 @@
 title ytBATCH Installer
 cls
 
-echo Welcome to the ytBATCH Installer!!
-echo - - - - -
-pause
-cls
-
-echo Please wait for ytBATCH to download...
-echo - - - - -
-pause
-
-::download to batch path
-
 :ChoosePath
 set icode=
 cls
-echo Please choose a place to install ytBATCH:
+echo Welcome to the ytBATCH Installer!!
+echo Choose a location to install ytBATCH:
 echo - - - - -
 echo [A] AppData... [Recommended]
 echo - - - - -
@@ -26,28 +16,41 @@ echo - - - - -
 set /p icode=COMMAND:
 
 if /i "%icode%"=="A" goto appdata_install
-if /i "%icode%"=="PF" goto pfiles_install
-if /i "%icode%"=="CT" goto custom_install
 if /i "%icode%"=="X" exit
-if /i "%icode%"=="" goto ChoosePath
 goto ChoosePath
 
 :appdata_install
 
 echo Installing to AppData...
 echo - - - - -
-xcopy ".\ytBATCH_dl" "%AppData%\ytBATCH" /I /Y
+xcopy ".\" "%AppData%\ytBATCH" /I /Y
 echo - - - - -
 echo Creating Shortcuts...
 echo - - - - -
-xcopy ".\ytBATCH_dl\ytBATCH.lnk" "%userprofile%\Desktop" /Y
-xcopy ".\ytBATCH_dl\ytBATCH.lnk" "%AppData%\Microsoft\Windows\Start Menu\Programs" /Y
+xcopy ".\ytBATCH.lnk" "%userprofile%\Desktop" /Y
+xcopy ".\ytBATCH.lnk" "%AppData%\Microsoft\Windows\Start Menu\Programs" /Y
+
+:RmOGF
+cls
+echo Moved and created shortcuts successfully!
+echo Remove original folder (Y/N)?
+echo - - - - - 
+set /p icode=COMMAND:
+if /i "%icode%"=="Y" goto rm_yes
+if /i "%icode%"=="N" goto rm_no
+goto 
+
+:rm_yes
+cls
+echo Installation finished!
 echo - - - - -
-echo Removing original folder...
-rmdir "ytBATCH_dl" /s /q
-echo - - - - -
+echo Press any key to close the installer and delete the Original Directory...
+rmdir ".\" /s /q
+exit
+
+:rm_no
+cls
 echo Installation finished!
 echo - - - - -
 echo Press any key to close the installer...
-pause >nul
 exit
