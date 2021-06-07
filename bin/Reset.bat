@@ -3,6 +3,7 @@ title Reset - ytBATCH %version%
 if /I "%mtx%"=="" cls
 
 ::Reset Menu
+    set ResetCode=
     echo WARNING!
     echo If you proceed ytBATCH will get deleted and re-downloaded.
     echo - - - - -
