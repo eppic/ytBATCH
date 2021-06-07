@@ -3,7 +3,7 @@ title ytBATCH %version%
 if /I "%mtx%"=="" cls
 
 ::Set Config
-    set Version=2.0
+    set Version=2.1
 
     call DefaultConfig.bat
     call UserConfig.bat
