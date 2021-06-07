@@ -16,15 +16,18 @@ echo - - - - -
 set /p icode=COMMAND:
 
 if /i "%icode%"=="A" goto appdata_install
-if /i "%icode%"=="X" exit
+if /i "%icode%"=="X" copy nul "..\UserConfig.bat" & call New.bat
 goto ChoosePath
 
 :appdata_install
 cd ..\
 xcopy ".\" "%AppData%\ytBATCH" /I /Y
+
 ren .\bin\ytbsc ytBATCH.lnk
 xcopy ".\bin\ytBATCH.lnk" "%userprofile%\Desktop" /Y
 xcopy ".\bin\ytBATCH.lnk" "%AppData%\Microsoft\Windows\Start Menu\Programs" /Y
+
+copy nul "%AppData%\ytBATCH\UserConfig.bat"
 
 :RmOGD
 cls
