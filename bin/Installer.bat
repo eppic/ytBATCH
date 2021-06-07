@@ -21,8 +21,7 @@ goto ChoosePath
 
 :appdata_install
 cd ..\
-::xcopy ".\" "%AppData%\ytBATCH" /I /Y
-copy ".\" "%AppData%\ytBATCH" 
+xcopy ".\" "%AppData%\ytBATCH" /S /I /Y
 
 ren .\bin\ytbsc ytBATCH.lnk
 xcopy ".\bin\ytBATCH.lnk" "%userprofile%\Desktop" /Y
