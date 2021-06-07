@@ -6,7 +6,7 @@ if /I "%mtx%"=="" cls
     set Version=2.1
 
     call DefaultConfig.bat
-    call UserConfig.bat
+    call ..\UserConfig.bat
     
     if /I "%mtx%"=="" cls
 
