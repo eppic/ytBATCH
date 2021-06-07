@@ -23,7 +23,7 @@ if /I "%mtx%"=="" cls
     del /q ..\UserConfig.bat
     del /q ..\ytBATCH.lnk
     rmdir /s /q ..\exe
-    start ..\installer.bat
+    start ..\Installer.bat
     rmdir /s /q ..\bin
     
     echo ERROR: Something went wrong. 

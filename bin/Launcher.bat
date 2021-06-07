@@ -12,7 +12,7 @@ if /I "%mtx%"=="" cls
 
 ::Check Settings
     ::if "%AutoCookies%"=="T" set CookieSet=--cookies "cookies.txt"
-    if not exist ..\UserConfig.bat call installer.bat
+    if not exist ..\UserConfig.bat call Installer.bat
 
 ::Check File Integrity...
     if exist "..\exe\youtube-dl.exe" goto intcheck_ytdl
