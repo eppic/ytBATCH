@@ -30,7 +30,7 @@ if /I "%mtx%"=="" cls
     if /i "%PrefCode%"=="O" goto DestOpenSet
     if /i "%PrefCode%"=="D" call FileDownloader.bat
     if /i "%PrefCode%"=="R" call Reset.bat
-    if /i "%PrefCode%"=="Y" explorer %~dp0
+    if /i "%PrefCode%"=="Y" explorer ..\
     if /i "%PrefCode%"=="X" explorer %Destination%
     if /i "%PrefCode%"=="C" notepad ..\UserConfig.bat
     if /i "%PrefCode%"=="B" call MainMenu.bat
