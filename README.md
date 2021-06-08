@@ -1,6 +1,7 @@
 [![icon](https://github.com/eppic/ytBATCH/blob/main/bin/256.ico)](https://github.com/eppic/ytBATCH)
 # ytBATCH
-An easy to use Batch Script using [youtube-dl](https://github.com/ytdl-org/youtube-dl).
+An easy to use Batch Script using [youtube-dl](https://github.com/ytdl-org/youtube-dl).  
+(There currently are still bugs to fix and features not working rightfully)  
 
 ## INSTALL
 1. Download the [latest code](https://github.com/eppic/ytBATCH/archive/refs/heads/main.zip) or a [release](https://github.com/eppic/ytBATCH/releases)  
