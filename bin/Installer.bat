@@ -3,7 +3,7 @@ title ytBATCH Installer
 cls
 
 ::Check if ytBATCH data is there
-    if exist .\exe\ goto :ChoosePath
+    if exist ..\exe\ goto :ChoosePath
     echo ytBATCH data not found. 
     echo Automatic Downloads are currently not supported.
     echo Now opening GitHub Page.
@@ -22,7 +22,7 @@ cls
     set /p icode=COMMAND:
     
     if /i "%icode%"=="Y" goto appdata_install
-    if /i "%icode%"=="N copy nul "..\UserConfig.bat" & call New.bat
+    if /i "%icode%"=="N" copy nul "..\UserConfig.bat" & call New.bat
     goto ChoosePath
     
     :appdata_install

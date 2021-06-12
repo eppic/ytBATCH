@@ -1,6 +1,6 @@
 @echo off
 title Help - ytBATCH %version%
-if /I "%mtx%"=="" cls
+%mcls%
 
 ::Open youtube-dl Help Page
     ..\exe\youtube-dl --help

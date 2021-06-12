@@ -1,6 +1,6 @@
 @echo off
 title Reset - ytBATCH %version%
-if /I "%mtx%"=="" cls
+%mcls%
 
 ::Reset Menu
     set ResetCode=

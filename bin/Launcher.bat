@@ -1,6 +1,6 @@
 @echo off
 title ytBATCH %version%
-if /I "%mtx%"=="" cls
+%mcls%
 
 ::Set Config
     set Version=2.1
@@ -8,7 +8,7 @@ if /I "%mtx%"=="" cls
     call DefaultConfig.bat
     call ..\UserConfig.bat
     
-    if /I "%mtx%"=="" cls
+    if /I "%mtx%"=="" set mcls=cls else set mcls=echo 
 
 ::Check Settings
     ::if "%AutoCookies%"=="T" set CookieSet=--cookies "cookies.txt"

@@ -1,6 +1,6 @@
 @echo off
 title Downloading youtube-dl.exe - ytBATCH %version%
-if /I "%mtx%"=="" cls
+%mcls%
 
 echo Wait for youtube-dl.exe to download... 
 echo This will take a moment.

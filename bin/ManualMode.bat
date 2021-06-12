@@ -1,10 +1,10 @@
 @echo off
 title Manual Mode - ytBATCH %version%
-if /I "%mtx%"=="" cls
+%mcls%
 
 ::Manual Mode
     set manualcode=
-    if /I "%mtx%"=="" cls
+    %mcls%
     
     echo Manual Mode - Path is root of ytBATCH
     echo - - - - -
@@ -23,7 +23,7 @@ if /I "%mtx%"=="" cls
     goto mmreturn
     
     :mmplus
-    if /I "%mtx%"=="" cls
+    %mcls%
     echo Manual Mode ++ - no prefix
     echo - - - - -
     echo (B) Go Back...

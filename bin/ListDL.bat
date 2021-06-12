@@ -1,6 +1,6 @@
 @echo off
 title Choose Format - ytBATCH %version%
-if /I "%mtx%"=="" cls
+%mcls%
 
 ::Download Audio
     set FormatListCode=
