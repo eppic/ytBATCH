@@ -23,6 +23,7 @@ title Manual Mode - ytBATCH %version%
     goto mmreturn
     
     :mmplus
+
     %mcls%
     echo Manual Mode ++ - no prefix
     echo - - - - -
@@ -34,7 +35,7 @@ title Manual Mode - ytBATCH %version%
     
     if /I "%manualpluscode%"=="B" call Launcher.bat
 
-    %manualpluscode%
+    ..\%manualpluscode%
 
     goto mmpreturn
     
