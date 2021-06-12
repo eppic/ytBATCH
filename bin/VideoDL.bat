@@ -10,7 +10,6 @@ title Download Video - ytBATCH %version%
     echo (S) Source
     echo (4) .MP4
     echo (V) .MKV
-    echo (G) .OGG
     echo - - - - -
     echo (B) Go Back...
     echo - - - - -
