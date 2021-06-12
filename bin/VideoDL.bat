@@ -2,12 +2,40 @@
 title Download Video - ytBATCH %version%
 %mcls%
 
-::Download Video
+::Set File Format
+    set mopf=--merge-output-format 
+    set VideoDLCode=
     echo Video
-    ..\exe\youtube-dl -o "%Destination%%FileNaming%" %CookieSet% --add-metadata %Url%
-    if "%DestOpen%"=="T" explorer %Destination% 
-    pause
+    echo - - - - -
+    echo (S) Source
+    echo (4) .MP4
+    echo (V) .MKV
+    echo (G) .OGG
+    echo - - - - -
+    echo (B) Go Back...
+    echo - - - - -
+
+    set /p VideoDLCode=COMMAND:
+    
+    if /I "%VideoDLCode%"=="S" goto VideoDLCheckSource
+    if /I "%VideoDLCode%"=="4" set VideoDLFormat=mp4 & goto VideoDLCheck
+    if /I "%VideoDLCode%"=="V" set VideoDLFormat=mkv & goto VideoDLCheck
+    if /I "%VideoDLCode%"=="G" set VideoDLFormat=ogg & goto VideoDLCheck
+    if /I "%VideoDLCode%"=="B" call UrlHandler
+    call VideoDL.bat
+    
+    :VideoDLCheckSource
+    set mopf=
+    set VideoDLFormat=
+
+    :VideoDLCheck
+
+::Download Video
     %mcls%
+    echo Video
+    ..\exe\youtube-dl %mopf%%VideoDLFormat% -o "%Destination%%FileNaming%" %CookieSet% --add-metadata %Url%
+    if "%DestOpen%"=="T" explorer %Destination%
+
     echo - - - - -
     echo Saved "%Url%" under "%Destination%".
     echo - - - - -
