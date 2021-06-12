@@ -20,7 +20,8 @@ title Enter URL - ytBATCH %version%
     if /I "%Url%"=="NNEW" call Launcher.bat
     if /I "%Url%"=="X" exit
     if /I "%Url%"=="MATRIX" set mtx=1 & call Launcher.bat
-    if /I "%Url%"=="" call MainMenu.bat
+    if /I "%Url%"=="B" call MainMenu.bat
+    if /I "%Url%"=="" call MainMenu.
 
 ::Open Url Handler
     call UrlHandler.bat
