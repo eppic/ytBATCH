@@ -32,7 +32,7 @@ cls
     ren .\bin\ytbsc ytBATCH.lnk
     xcopy ".\bin\ytBATCH.lnk" "%userprofile%\Desktop" /Y
     xcopy ".\bin\ytBATCH.lnk" "%AppData%\Microsoft\Windows\Start Menu\Programs" /Y
-    
+        
     copy nul "%AppData%\ytBATCH\UserConfig.bat"
     
     :RmOGD
