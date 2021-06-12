@@ -12,7 +12,7 @@ if /I "%mtx%"=="" cls
     echo - - - - -
     set /P FormatListCode=Code:
     if /I "%FormatListCode%"=="B" goto M_Link
-    youtube-dl -f %FormatListCode% -o "%Destination%%FileNaming%" %CookieSet% --add-metadata %Url%
+    ..\exe\youtube-dl -f %FormatListCode% -o "%Destination%%FileNaming%" %CookieSet% --add-metadata %Url%
     if "%DestOpen%"=="T" explorer %Destination% 
     echo - - - - -
     echo Saved "%Url%" under "%Destination%".
