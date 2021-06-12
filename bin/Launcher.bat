@@ -8,7 +8,7 @@ title ytBATCH %version%
     call DefaultConfig.bat
     call ..\UserConfig.bat
     
-    if /I "%mtx%"=="" set mcls=cls else set mcls=echo 
+    if /I "%mtx%"=="" (set mcls=cls) else (set mcls=echo -)
 
 ::Check Settings
     ::if "%AutoCookies%"=="T" set CookieSet=--cookies "cookies.txt"
