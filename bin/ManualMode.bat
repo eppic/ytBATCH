@@ -3,7 +3,6 @@ title Manual Mode - ytBATCH %version%
 if /I "%mtx%"=="" cls
 
 ::Manual Mode
-    set mmexe=youtube-dl
     set manualcode=
     if /I "%mtx%"=="" cls
     
@@ -13,13 +12,29 @@ if /I "%mtx%"=="" cls
     echo (M) Manual Mode++
     echo - - - - -
 
-    :mreturn
+    :mmreturn
     set /p manualcode=%mmexe% 
 
-    if /I "%manualcode%"=="M" set mmexe= & goto mreturn
+    if /I "%manualcode%"=="M" goto mmplus
     if /I "%manualcode%"=="B" call Launcher.bat
    
     ..\exe\%mmexe% %manualcode%
     echo - - - - -
-    goto mreturn
+    goto mmreturn
+    
+    :mmplus
+    if /I "%mtx%"=="" cls
+    echo Manual Mode ++ - no prefix
+    echo - - - - -
+    echo (B) Go Back...
+    echo - - - - -
+
+    :mmpreturn
+    set /p manualpluscode=
+    
+    if /I "%manualpluscode%"=="B" call Launcher.bat
+
+    %manualpluscode%
+
+    goto mmpreturn
     
