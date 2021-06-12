@@ -13,12 +13,12 @@ title Manual Mode - ytBATCH %version%
     echo - - - - -
 
     :mmreturn
-    set /p manualcode=%mmexe% 
+    set /p manualcode=youtube-dl 
 
     if /I "%manualcode%"=="M" goto mmplus
     if /I "%manualcode%"=="B" call Launcher.bat
    
-    ..\exe\%mmexe% %manualcode%
+    ..\exe\youtube-dl.exe %manualcode%
     echo - - - - -
     goto mmreturn
     
