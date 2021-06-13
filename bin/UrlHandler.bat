@@ -3,7 +3,7 @@ title Enter Action - ytBATCH %version%
 %mcls%
 
 ::Cookie Settings
-    if "%AutoCookies%"=="T" (set CookieSet=--cookies "cookies.txt") else (set CookieSet=)
+    if "%AutoCookies%"=="T" (set CookieSet=--cookies "..\cookies.txt") else (set CookieSet=)
     :CookiesPassed
     %mcls%
 
@@ -15,8 +15,8 @@ title Enter Action - ytBATCH %version%
     echo (V) Video
     echo (F) List All Formats...
     echo - - - - -
-    if "%CookieSet%"=="--cookies "cookies.txt"" echo (C) Cookies activated!
-    if not "%CookieSet%"=="--cookies "cookies.txt"" echo (C) Use Cookies...
+    if "%CookieSet%"=="--cookies "..\cookies.txt"" echo (C) Cookies activated!
+    if not "%CookieSet%"=="--cookies "..\cookies.txt"" echo (C) Use Cookies...
     echo - - - - -
     ::echo (K) Convert File...
     ::echo - - - - -
@@ -36,8 +36,8 @@ title Enter Action - ytBATCH %version%
 
 ::Cookie Handler
     :CookieSetHandler
-    if not exist cookies.txt goto NoCookies
-    set CookieSet=--cookies "cookies.txt"
+    if not exist ..\cookies.txt goto NoCookies
+    set CookieSet=--cookies "..\cookies.txt"
     goto CookiesPassed
     
     :NoCookies
