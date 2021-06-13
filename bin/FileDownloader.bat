@@ -26,8 +26,7 @@ powershell -command "(Expand-Archive -Force ..\ytb_temp.zip ..\ )"
 pause
 
 ::move
-::move /Y ..\ytBATCH-main\*.* ..\
-xcopy ..\ytBATCH-main\* ..\ /E /I /H
+xcopy ..\ytBATCH-main\* ..\ /E /I /H /Y
 pause
 
 ::delete
