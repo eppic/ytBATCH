@@ -3,7 +3,7 @@ title ytBATCH %version%
 %mcls%
 
 ::Set Config
-    set Version=2.3
+    set Version=2.3.1
 
     call DefaultConfig.bat
     call ..\UserConfig.bat
