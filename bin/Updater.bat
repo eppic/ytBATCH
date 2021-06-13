@@ -4,8 +4,16 @@ title Checking for Updates - ytBATCH %version%
 
 ::Update Menu
     set UpdateCode=
-    echo d= ytdl; t= ytbatch-main; b= back
+
+    echo (A) Update All...
+    echo (T) Update ytBATCH...
+    echo (D) Update youtube-dl...
+    echo - - - - -
+    echo (B) Go Back...
+
     set /p UpdateCode=COMMAND:
+    
+    if /I "%UpdateCode%"=="A" set UpAll=T & goto ytdl-dl
     if /I "%UpdateCode%"=="T" goto ytbatch-main-dl
     if /I "%UpdateCode%"=="D" goto ytdl-dl
     if /I "%UpdateCode%"=="B" call MainMenu.bat
@@ -18,11 +26,15 @@ title Checking for Updates - ytBATCH %version%
     echo Please Wait...
     ..\exe\youtube-dl -U
     echo - - - - -
+
+    if not "%UpAll%"=="" goto ytbatch-main-dl
+
     pause
     call MainMenu.bat
 
 ::ytBATCH Updater
     :ytbatch-main-dl
+    set UpAll=
     echo - - - - -
 
     ::download
