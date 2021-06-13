@@ -13,7 +13,7 @@ title Checking for Updates - ytBATCH %version%
     call Updater.bat
 
 ::youtube-dl Updater
-    :ytdl-
+    :ytdl-dl
     echo - - - - -
     echo Please Wait...
     ..\exe\youtube-dl -U
