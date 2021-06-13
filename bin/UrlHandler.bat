@@ -31,7 +31,6 @@ title Enter Action - ytBATCH %version%
     if /I "%UrlCode%"=="C" goto CookieSetHandler
     if /I "%UrlCode%"=="K" call Converter.bat
     if /I "%UrlCode%"=="B" call MainMenu.bat
-    if /I "%UrlCode%"=="" call UrlHandler.bat
 
     call UrlHandler.bat
 

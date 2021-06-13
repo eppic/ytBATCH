@@ -35,7 +35,6 @@ title Preferences - ytBATCH %version%
     if /i "%PrefCode%"=="C" notepad ..\UserConfig.bat
     if /i "%PrefCode%"=="B" call MainMenu.bat
 	if /i "%PrefCode%"=="G" start "" "https://github.com/eppic/ytBATCH"
-    if /i "%PrefCode%"=="" call Preferences.bat
 
     call Preferences.bat
 
