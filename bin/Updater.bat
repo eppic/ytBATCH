@@ -1,5 +1,5 @@
 @echo off
-title Checking for Updates - ytBATCH %version%
+title Check for Updates - ytBATCH %version%
 %mcls%
 
 ::Update Menu
@@ -10,6 +10,7 @@ title Checking for Updates - ytBATCH %version%
     echo (D) Update youtube-dl...
     echo.
     echo (B) Go Back...
+    echo.
 
     set /p UpdateCode=COMMAND:
     
