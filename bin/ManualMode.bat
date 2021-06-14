@@ -7,9 +7,9 @@ title Manual Mode - ytBATCH %version%
     %mcls%
     
     echo Manual Mode - Path is .\bin
-    echo - - - - -
+    echo.
     echo (B) Go Back...
-    echo - - - - -
+    echo.
 
     :mmreturn
     set /p manualcode=youtube-dl 

@@ -8,7 +8,7 @@ title Checking for Updates - ytBATCH %version%
     echo (A) Update All...
     echo (T) Update ytBATCH...
     echo (D) Update youtube-dl...
-    echo - - - - -
+    echo.
     echo (B) Go Back...
 
     set /p UpdateCode=COMMAND:
@@ -22,10 +22,10 @@ title Checking for Updates - ytBATCH %version%
 
 ::youtube-dl Updater
     :ytdl-dl
-    echo - - - - -
+    echo.
     echo Please Wait...
     ..\exe\youtube-dl -U
-    echo - - - - -
+    echo.
 
     if not "%UpAll%"=="" goto ytbatch-main-dl
 
@@ -35,7 +35,7 @@ title Checking for Updates - ytBATCH %version%
 ::ytBATCH Updater
     :ytbatch-main-dl
     set UpAll=
-    echo - - - - -
+    echo.
 
     ::download
     echo Downloading latest Main Branch...
@@ -53,7 +53,7 @@ title Checking for Updates - ytBATCH %version%
     echo Deleting temporary files...
     rmdir ..\ytBATCH-main /S /Q
     del ..\ytb_temp.zip /Q
-    echo - - - - -
+    echo.
     echo Updated ytBATCH to latest Main Branch (Problems may occur!)
     pause
     call New.bat

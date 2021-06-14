@@ -10,18 +10,18 @@ title Enter Action - ytBATCH %version%
 ::Url Handler
     set UrlCode=
     echo URL/FILE:"%Url%"
-    echo - - - - -
+    echo.
     echo (A) Audio
     echo (V) Video
     echo (F) List All Formats...
-    echo - - - - -
+    echo.
     if "%CookieSet%"=="--cookies "..\cookies.txt"" echo (C) Cookies activated!
     if not "%CookieSet%"=="--cookies "..\cookies.txt"" echo (C) Use Cookies...
-    echo - - - - -
+    echo.
     ::echo (K) Convert File...
-    ::echo - - - - -
+    ::echo.
     echo (B) Go Back...
-    echo - - - - -
+    echo.
 
     set /p UrlCode=COMMAND:
 

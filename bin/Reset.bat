@@ -6,10 +6,10 @@ title Reset - ytBATCH %version%
     set ResetCode=
     echo WARNING!
     echo If you proceed ytBATCH will get deleted and re-downloaded.
-    echo - - - - -
+    echo.
     echo [reset123] Proceed...
     echo [B] Go Back...
-    echo - - - - -
+    echo.
     
     set /p ResetCode=COMMAND:
     

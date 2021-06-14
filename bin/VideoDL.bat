@@ -10,13 +10,13 @@ title Download Video - ytBATCH %version%
     if /i not "%DefaultVideo%"=="none" set VideoDLFormat=%DefaultVideo% & goto VideoDLCheck
 
     echo Video
-    echo - - - - -
+    echo.
     echo (S) Source
     echo (4) .MP4
     echo (V) .MKV
-    echo - - - - -
+    echo.
     echo (B) Go Back...
-    echo - - - - -
+    echo.
 
     set /p VideoDLCode=COMMAND:
     
@@ -39,9 +39,9 @@ title Download Video - ytBATCH %version%
     ..\exe\youtube-dl %mopf%%VideoDLFormat% -o "%Destination%%FileNaming%" %CookieSet% --add-metadata %Url%
     if "%DestOpen%"=="T" explorer %Destination%
 
-    echo - - - - -
+    echo.
     echo Saved "%Url%" under "%Destination%".
-    echo - - - - -
+    echo.
     pause
     call MainMenu
     

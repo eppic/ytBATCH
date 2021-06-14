@@ -5,17 +5,17 @@ title Choose Format - ytBATCH %version%
 ::Download Audio
     set FormatListCode=
     echo Checking available formats...
-    echo - - - - -
+    echo.
     ..\exe\youtube-dl -F %Url%
-    echo - - - - -
+    echo.
     echo (B) Go Back...
-    echo - - - - -
+    echo.
     set /P FormatListCode=Code:
     if /I "%FormatListCode%"=="B" goto M_Link
     ..\exe\youtube-dl -f %FormatListCode% -o "%Destination%%FileNaming%" %CookieSet% --add-metadata %Url%
     if "%DestOpen%"=="T" explorer %Destination% 
-    echo - - - - -
+    echo.
     echo Saved "%Url%" under "%Destination%".
-    echo - - - - -
+    echo.
     pause
     call MainMenu

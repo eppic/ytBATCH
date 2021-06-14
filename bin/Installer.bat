@@ -17,7 +17,7 @@ cls
     cls
     echo Welcome to the ytBATCH Installer!
     echo Recommended: Install ytBATCH to AppData? (Y/N)
-    echo - - - - -
+    echo.
     
     set /p icode=COMMAND:
     
@@ -40,7 +40,7 @@ cls
     cls
     echo Moved and created shortcuts successfully!
     echo Keep original folder? (Y/N)
-    echo - - - - - 
+    echo. 
     set /p icode=COMMAND:
     if /i "%icode%"=="Y" goto rm_yes
     if /i "%icode%"=="N" goto rm_no
@@ -49,7 +49,7 @@ cls
     :rm_no
     cls
     echo Installation finished!
-    echo - - - - -
+    echo.
     echo Press any key to close the installer and delete the Original Folder...
     explorer %AppData%\ytBATCH
     rmdir ".\" /s /q
@@ -58,7 +58,7 @@ cls
     :rm_yes
     cls
     echo Installation finished!
-    echo - - - - -
+    echo.
     echo Press any key to close the installer...
     explorer %AppData%\ytBATCH
     exit

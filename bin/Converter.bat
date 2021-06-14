@@ -7,7 +7,7 @@ title Convert Audio or Video to another File - ytBATCH %version%
     echo (A) Convert File to Audio File
     echo (V) Convert File to Video File
     echo 
-    echo - - - - -
+    echo.
 
     set /P ConvCode=COMMAND:
 
@@ -29,5 +29,5 @@ title Convert Audio or Video to another File - ytBATCH %version%
     :ConvFin
     %mcls%
     echo Finished converting %Url%
-    echo - - - - -
+    echo.
     call MainMenu.bat

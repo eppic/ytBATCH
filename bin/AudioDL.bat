@@ -6,15 +6,15 @@ title Download Audio - ytBATCH %version%
     set AudioDLCode=
     if /i not "%DefaultAudio%"=="none" set AudioDLFormat=%DefaultAudio% & goto AudioDLCheck
     echo Audio
-    echo - - - - -
+    echo.
     echo (S) Source (Best/No Formatting)
     echo (W) .WAV
     echo (3) .MP3
     echo (4) .M4A
     echo (F) .FLAC
-    echo - - - - -
+    echo.
     echo (B) Go Back...
-    echo - - - - -
+    echo.
 
     set /p AudioDLCode=COMMAND:
     
@@ -32,9 +32,9 @@ title Download Audio - ytBATCH %version%
     echo Audio
     ..\exe\youtube-dl -x --audio-format %AudioDLFormat% -o "%Destination%%FileNaming%" %CookieSet% --add-metadata --embed-thumbnail %Url%
     if "%DestOpen%"=="T" explorer %Destination% 
-    echo - - - - -
+    echo.
     echo Saved "%Url%" under "%Destination%".
-    echo - - - - -
+    echo.
     pause
     call MainMenu
 

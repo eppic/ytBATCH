@@ -14,16 +14,16 @@ title Preferences - ytBATCH %version%
     if /i not "%DestOpen%"=="T" echo   (O) Open Containing Folder after Download... (FALSE)
     echo   (D) Download youtube-dl...
     echo   (R) Reset ytBATCH...
-    echo - - - - -
+    echo.
     echo Open:
     echo   (L) Open Changelog...
     echo   (C) Open Config File...
     echo   (Y) Open Root Folder...
     echo   (X) Open Download Folder...
 	echo   (G) Open GitHub Page...
-    echo - - - - -
+    echo.
     echo (B) Go Back...
-    echo - - - - -
+    echo.
 
     set /p PrefCode=COMMAND:
 
@@ -47,7 +47,7 @@ title Preferences - ytBATCH %version%
     :OutputPath
     %mcls%
     echo Type in your desired output path: 
-    echo - - - - -
+    echo.
     echo (D) Default (Downloads\)
     
     
@@ -72,12 +72,12 @@ title Preferences - ytBATCH %version%
     %mcls%
     set dfscode=
     echo Set Default Format for Audio or Video?
-    echo - - - - -
+    echo.
     echo (A) Audio
     echo (V) Video
-    echo - - - - -
+    echo.
     echo (B) Go Back...
-    echo - - - - -
+    echo.
     set /p dfscode=COMMAND:
     if /i "%dfscode%"=="a" goto dfsAudio
     if /i "%dfscode%"=="v" goto dfsVideo
@@ -88,16 +88,16 @@ title Preferences - ytBATCH %version%
     %mcls%
     set dfsAcode=
     echo Set Default Format for Audio:
-    echo - - - - -
+    echo.
     echo (N) None
     echo (S) Source
     echo (W) .WAV
     echo (3) .MP3
     echo (4) .M4A
     echo (F) .FLAC
-    echo - - - - -
+    echo.
     echo (B) Go Back...
-    echo - - - - -
+    echo.
     set /p dfsAcode=COMMAND:
     if /i "%dfsAcode%"=="n" set DefaultAudio=none & goto ConfigSet
     if /i "%dfsAcode%"=="s" set DefaultAudio=best & goto ConfigSet
@@ -112,15 +112,15 @@ title Preferences - ytBATCH %version%
     %mcls%
     set dfsVcode=
     echo Set Default Format for Video:
-    echo - - - - -
+    echo.
     echo (N) None
     echo (S) Source
     echo (4) .MP4
     echo (V) .MKV
     echo (G) .OGG
-    echo - - - - -
+    echo.
     echo (B) Go Back...
-    echo - - - - -
+    echo.
     set /p dfsVcode=COMMAND:
     if /i "%dfsVcode%"=="n" set DefaultVideo=none & goto ConfigSet
     if /i "%dfsVcode%"=="s" set DefaultVideo=source & goto ConfigSet
