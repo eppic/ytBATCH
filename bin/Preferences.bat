@@ -102,7 +102,7 @@ title Preferences - ytBATCH %version%
     echo (B) Go Back...
     echo.
     set /p dfsAcode=COMMAND:
-    if /i "%dfsAcode%"=="n" set DefaultAudio=none & goto ConfigSet
+    if /i "%dfsAcode%"=="n" set DefaultAudio=none& goto ConfigSet
     if /i "%dfsAcode%"=="s" set DefaultAudio=best & goto ConfigSet
     if /i "%dfsAcode%"=="w" set DefaultAudio=wav & goto ConfigSet
     if /i "%dfsAcode%"=="3" set DefaultAudio=mp3 & goto ConfigSet
@@ -125,7 +125,7 @@ title Preferences - ytBATCH %version%
     echo (B) Go Back...
     echo.
     set /p dfsVcode=COMMAND:
-    if /i "%dfsVcode%"=="n" set DefaultVideo=none & goto ConfigSet
+    if /i "%dfsVcode%"=="n" set DefaultVideo=none& goto ConfigSet
     if /i "%dfsVcode%"=="s" set DefaultVideo=source & goto ConfigSet
     if /i "%dfsVcode%"=="4" set DefaultVideo=mp4 & goto ConfigSet
     if /i "%dfsVcode%"=="v" set DefaultVideo=mkv & goto ConfigSet
