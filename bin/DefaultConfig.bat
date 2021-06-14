@@ -6,3 +6,6 @@ set Destination=%userprofile%\Downloads\ytBATCH
 set DestOpen=F
 ::Use Cookies automatically when downloading
 set AutoCookies=F
+::Use a default format for Video and Audio Downloads (Customizable)
+set DefaultAudio=
+set DefaultVideo=
