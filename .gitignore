@@ -4,9 +4,8 @@ test.bat
 exe/youtube-dl.exe
 UserConfig.bat
 cookies.txt
-ytBATCH.zip
 ytBATCH-main
-ytb_temp.zip
+*.zip
 *.mkv
 *.mp4
 *.mp3
