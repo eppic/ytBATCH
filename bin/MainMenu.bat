@@ -18,7 +18,7 @@ title Enter URL - ytBATCH %version%
     if /I "%Url%"=="M" call ManualMode.bat
     if /I "%Url%"=="NEW" goto Refresh
     if /I "%Url%"=="NNEW" call Launcher.bat
-    if /I "%Url%"=="C" cd ..\exe & start cmd.exe & exit
+    if /I "%Url%"=="C" cls & title cmd & cd ..\exe & cmd.exe & call ..\bin\MainMenu.bat 
     if /I "%Url%"=="X" exit
     if /I "%Url%"=="MATRIX" set mtx=1 & call Launcher.bat
     if /I "%Url%"=="B" call MainMenu.bat
