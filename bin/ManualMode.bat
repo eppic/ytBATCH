@@ -6,7 +6,7 @@ title Manual Mode - ytBATCH %version%
     set manualcode=
     %mcls%
     
-    echo Manual Mode - Path is root of ytBATCH
+    echo Manual Mode - Path is .\bin
     echo - - - - -
     echo (B) Go Back...
     echo - - - - -
