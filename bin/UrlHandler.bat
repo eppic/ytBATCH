@@ -11,12 +11,12 @@ title Enter Action - ytBATCH %version%
     set UrlCode=
     echo URL/FILE:"%Url%"
     echo.
-    echo (A) Audio
-    echo (V) Video
-    echo (F) List All Formats...
+    echo   (A) Audio
+    echo   (V) Video
+    echo   (F) List All Formats...
     echo.
-    if "%CookieSet%"=="--cookies "..\cookies.txt"" echo (C) Cookies activated!
-    if not "%CookieSet%"=="--cookies "..\cookies.txt"" echo (C) Use Cookies...
+    if "%CookieSet%"=="--cookies "..\cookies.txt"" echo   (C) Cookies activated!
+    if not "%CookieSet%"=="--cookies "..\cookies.txt"" echo   (C) Use Cookies...
     echo.
     ::echo (K) Convert File...
     ::echo.

@@ -9,11 +9,9 @@ title Download Video - ytBATCH %version%
     if /i "%DefaultVideo%"=="source" goto VideoDLCheckSource
     if /i not "%DefaultVideo%"=="none" set VideoDLFormat=%DefaultVideo% & goto VideoDLCheck
 
-    echo Video
-    echo.
-    echo (S) Source
-    echo (4) .MP4
-    echo (V) .MKV
+    echo   (S) Source
+    echo   (4) .MP4
+    echo   (V) .MKV
     echo.
     echo (B) Go Back...
     echo.

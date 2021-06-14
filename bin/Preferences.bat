@@ -46,16 +46,19 @@ title Preferences - ytBATCH %version%
 ::Change Output Path
     :OutputPath
     %mcls%
-    echo Type in your desired output path: 
+    echo Type in your desired output path (For Example: "C:\Your\Own\Path")
     echo.
-    echo (D) Default (Downloads\)
+    echo   (D) Default (Downloads\ytBATCH\.) 
+    echo   (R) Root (ytBATCH\dl\.)
+    echo.
+    echo (B) Go Back...
+    echo.    
     
-    
-    (Type "D" for Default / Type "B" to go back)
-    set /p Destination=Path:
+    set /p Destination=PATH:
 
     if /I "%Destination%"=="B" call Preferences.bat
     if /I "%Destination%"=="D" set Destination=%userprofile%\Downloads\ytBATCH
+    if /I "%Destination%"=="R" set Destination=..\dl\
     goto ConfigSet
 
 ::True/False Preferences
@@ -73,8 +76,8 @@ title Preferences - ytBATCH %version%
     set dfscode=
     echo Set Default Format for Audio or Video?
     echo.
-    echo (A) Audio
-    echo (V) Video
+    echo   (A) Audio (Current=%DefaultAudio%)
+    echo   (V) Video (Current=%DefaultVideo%)
     echo.
     echo (B) Go Back...
     echo.
@@ -89,12 +92,12 @@ title Preferences - ytBATCH %version%
     set dfsAcode=
     echo Set Default Format for Audio:
     echo.
-    echo (N) None
-    echo (S) Source
-    echo (W) .WAV
-    echo (3) .MP3
-    echo (4) .M4A
-    echo (F) .FLAC
+    echo   (N) None
+    echo   (S) Source
+    echo   (W) .WAV
+    echo   (3) .MP3
+    echo   (4) .M4A
+    echo   (F) .FLAC
     echo.
     echo (B) Go Back...
     echo.
@@ -113,11 +116,11 @@ title Preferences - ytBATCH %version%
     set dfsVcode=
     echo Set Default Format for Video:
     echo.
-    echo (N) None
-    echo (S) Source
-    echo (4) .MP4
-    echo (V) .MKV
-    echo (G) .OGG
+    echo   (N) None
+    echo   (S) Source
+    echo   (4) .MP4
+    echo   (V) .MKV
+    echo   (G) .OGG
     echo.
     echo (B) Go Back...
     echo.
