@@ -4,6 +4,7 @@ title Download Audio - ytBATCH %version%
 
 ::Set File Format
     set AudioDLCode=
+    if /i not "%DefaultAudio%"=="none" set AudioDLFormat=%DefaultAudio% & goto AudioDLCheck
     echo Audio
     echo - - - - -
     echo (S) Source (Best/No Formatting)
