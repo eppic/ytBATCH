@@ -18,12 +18,12 @@ title Download Audio - ytBATCH %version%
 
     set /p AudioDLCode=COMMAND:
     
-    if /I "%AudioDLCode%"=="S" set AudioDLFormat=best & goto AudioDLCheck
-    if /I "%AudioDLCode%"=="W" set AudioDLFormat=wav & goto AudioDLCheck
-    if /I "%AudioDLCode%"=="3" set AudioDLFormat=mp3 & goto AudioDLCheck
-    if /I "%AudioDLCode%"=="4" set AudioDLFormat=m4a & goto AudioDLCheck
-    if /I "%AudioDLCode%"=="F" set AudioDLFormat=flac & goto AudioDLCheck
-    if /I "%AudioDLCode%"=="B" call UrlHandler
+    if /i "%AudioDLCode%"=="S" set AudioDLFormat=best & goto AudioDLCheck
+    if /i "%AudioDLCode%"=="W" set AudioDLFormat=wav & goto AudioDLCheck
+    if /i "%AudioDLCode%"=="3" set AudioDLFormat=mp3 & goto AudioDLCheck
+    if /i "%AudioDLCode%"=="4" set AudioDLFormat=m4a & goto AudioDLCheck
+    if /i "%AudioDLCode%"=="F" set AudioDLFormat=flac & goto AudioDLCheck
+    if /i "%AudioDLCode%"=="B" call UrlHandler
     call AudioDL.bat
     :AudioDLCheck
 

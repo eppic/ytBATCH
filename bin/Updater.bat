@@ -14,10 +14,10 @@ title Check for Updates - ytBATCH %version%
 
     set /p UpdateCode=COMMAND:
     
-    if /I "%UpdateCode%"=="A" set UpAll=T & goto ytdl-dl
-    if /I "%UpdateCode%"=="T" goto ytbatch-main-dl
-    if /I "%UpdateCode%"=="D" goto ytdl-dl
-    if /I "%UpdateCode%"=="B" call MainMenu.bat
+    if /i "%UpdateCode%"=="A" set UpAll=T & goto ytdl-dl
+    if /i "%UpdateCode%"=="T" goto ytbatch-main-dl
+    if /i "%UpdateCode%"=="D" goto ytdl-dl
+    if /i "%UpdateCode%"=="B" call MainMenu.bat
     
     call Updater.bat
 
@@ -48,7 +48,7 @@ title Check for Updates - ytBATCH %version%
 
     ::move
     echo Moving...
-    xcopy ..\ytBATCH-main\* ..\ /E /I /H /Y
+    xcopy ..\ytBATCH-main\* ..\ /E /i /H /Y
 
     ::delete
     echo Deleting temporary files...

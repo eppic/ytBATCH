@@ -12,18 +12,18 @@ title Enter URL - ytBATCH %version%
 
     set /p Url=URL/FILE/COMMAND:
 
-    if /I "%Url%"=="Q" call Queue.bat
-    if /I "%Url%"=="P" call Preferences.bat
-    if /I "%Url%"=="U" call Updater.bat
-    if /I "%Url%"=="H" call Help.bat
-    if /I "%Url%"=="M" call ManualMode.bat
-    if /I "%Url%"=="NEW" goto Refresh
-    if /I "%Url%"=="NNEW" call Launcher.bat
-    if /I "%Url%"=="C" %mcls% & title cmd & cd ..\exe & cmd.exe & cd ..\bin & call MainMenu.bat 
-    if /I "%Url%"=="X" exit
-    if /I "%Url%"=="MATRIX" set mtx=1 & call Launcher.bat
-    if /I "%Url%"=="B" call MainMenu.bat
-    if /I "%Url%"=="" call MainMenu.bat
+    if /i "%Url%"=="Q" call Queue.bat
+    if /i "%Url%"=="P" call Preferences.bat
+    if /i "%Url%"=="U" call Updater.bat
+    if /i "%Url%"=="H" call Help.bat
+    if /i "%Url%"=="M" call ManualMode.bat
+    if /i "%Url%"=="NEW" goto Refresh
+    if /i "%Url%"=="NNEW" call Launcher.bat
+    if /i "%Url%"=="C" %mcls% & title cmd & cd ..\exe & cmd.exe & cd ..\bin & call MainMenu.bat 
+    if /i "%Url%"=="X" exit
+    if /i "%Url%"=="MATRIX" set mtx=1 & call Launcher.bat
+    if /i "%Url%"=="B" call MainMenu.bat
+    if /i "%Url%"=="" call MainMenu.bat
 
 ::Open Url Handler
     call UrlHandler.bat

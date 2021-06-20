@@ -56,20 +56,22 @@ title Preferences - ytBATCH %version%
     
     set /p Destination=PATH:
 
-    if /I "%Destination%"=="B" call Preferences.bat
-    if /I "%Destination%"=="D" set Destination=%userprofile%\Downloads\ytBATCH
-    if /I "%Destination%"=="R" set Destination=..\dl\
+    if /i "%Destination%"=="B" call Preferences.bat
+    if /i "%Destination%"=="D" set Destination=%userprofile%\Downloads\ytBATCH
+    if /i "%Destination%"=="R" set Destination=..\dl\
     goto ConfigSet
 
 ::True/False Preferences
     :AutoCookiesSet
-    if /I "%AutoCookies%"=="T" (set AutoCookies=F) else (set AutoCookies=T)
+    if /i "%AutoCookies%"=="T" (set AutoCookies=F) else (set AutoCookies=T)
     goto ConfigSet
 
     :DestOpenSet
-    if /I "%DestOpen%"=="T" (set DestOpen=F) else (set DestOpen=T)
+    if /i "%DestOpen%"=="T" (set DestOpen=F) else (set DestOpen=T)
     goto ConfigSet
 
+    :DownloadHistorySet
+    if /i
 ::Default Formats
     :DefaultFormatSet
     %mcls%

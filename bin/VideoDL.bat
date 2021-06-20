@@ -18,11 +18,11 @@ title Download Video - ytBATCH %version%
 
     set /p VideoDLCode=COMMAND:
     
-    if /I "%VideoDLCode%"=="S" goto VideoDLCheckSource
-    if /I "%VideoDLCode%"=="4" set VideoDLFormat=mp4 & goto VideoDLCheck
-    if /I "%VideoDLCode%"=="V" set VideoDLFormat=mkv & goto VideoDLCheck
-    if /I "%VideoDLCode%"=="G" set VideoDLFormat=ogg & goto VideoDLCheck
-    if /I "%VideoDLCode%"=="B" call UrlHandler
+    if /i "%VideoDLCode%"=="S" goto VideoDLCheckSource
+    if /i "%VideoDLCode%"=="4" set VideoDLFormat=mp4 & goto VideoDLCheck
+    if /i "%VideoDLCode%"=="V" set VideoDLFormat=mkv & goto VideoDLCheck
+    if /i "%VideoDLCode%"=="G" set VideoDLFormat=ogg & goto VideoDLCheck
+    if /i "%VideoDLCode%"=="B" call UrlHandler
     call VideoDL.bat
     
     :VideoDLCheckSource

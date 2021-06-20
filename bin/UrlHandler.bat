@@ -23,11 +23,11 @@ title Enter Action - ytBATCH %version%
 
     set /p UrlCode=COMMAND:
 
-    if /I "%UrlCode%"=="A" call AudioDL.bat
-    if /I "%UrlCode%"=="V" call VideoDL.bat
-    if /I "%UrlCode%"=="F" call ListDL.bat
-    if /I "%UrlCode%"=="C" goto CookieSetHandler
-    if /I "%UrlCode%"=="B" call MainMenu.bat
+    if /i "%UrlCode%"=="A" call AudioDL.bat
+    if /i "%UrlCode%"=="V" call VideoDL.bat
+    if /i "%UrlCode%"=="F" call ListDL.bat
+    if /i "%UrlCode%"=="C" goto CookieSetHandler
+    if /i "%UrlCode%"=="B" call MainMenu.bat
 
     call UrlHandler.bat
 
