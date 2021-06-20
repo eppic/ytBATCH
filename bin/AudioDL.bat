@@ -30,7 +30,7 @@ title Download Audio - ytBATCH %version%
 ::Download Audio
     %mcls%
     echo Audio
-    ..\exe\youtube-dl -x --audio-format %AudioDLFormat% -o "%Destination%%FileNaming%" %CookieSet% --add-metadata --embed-thumbnail %Url%
+    ..\exe\youtube-dl -x --audio-format %AudioDLFormat% -o "%Destination%%FileNaming%" %CookieSet% --add-metadata --embed-thumbnail --config-location ..\custom.conf %Url% 
     if "%DestOpen%"=="T" explorer %Destination% 
     echo.
     echo Saved "%Url%" under "%Destination%".

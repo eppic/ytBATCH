@@ -12,7 +12,7 @@ title Choose Format - ytBATCH %version%
     echo.
     set /P FormatListCode=Code:
     if /i "%FormatListCode%"=="B" goto M_Link
-    ..\exe\youtube-dl -f %FormatListCode% -o "%Destination%%FileNaming%" %CookieSet% --add-metadata %Url%
+    ..\exe\youtube-dl -f %FormatListCode% -o "%Destination%%FileNaming%" %CookieSet% --add-metadata --config-location ..\custom.conf %Url%
     if "%DestOpen%"=="T" explorer %Destination% 
     echo.
     echo Saved "%Url%" under "%Destination%".

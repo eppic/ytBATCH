@@ -34,7 +34,7 @@ title Download Video - ytBATCH %version%
 ::Download Video
     %mcls%
     echo Video
-    ..\exe\youtube-dl %mopf%%VideoDLFormat% -o "%Destination%%FileNaming%" %CookieSet% --add-metadata %Url%
+    ..\exe\youtube-dl %mopf%%VideoDLFormat% -o "%Destination%%FileNaming%" %CookieSet% --add-metadata --config-location ..\custom.conf %Url%
     if "%DestOpen%"=="T" explorer %Destination%
 
     echo.
