@@ -18,8 +18,6 @@ title Enter Action - ytBATCH %version%
     if "%CookieSet%"=="--cookies "..\cookies.txt"" echo   (C) Cookies activated!
     if not "%CookieSet%"=="--cookies "..\cookies.txt"" echo   (C) Use Cookies...
     echo.
-    ::echo (K) Convert File...
-    ::echo.
     echo (B) Go Back...
     echo.
 
@@ -29,7 +27,6 @@ title Enter Action - ytBATCH %version%
     if /I "%UrlCode%"=="V" call VideoDL.bat
     if /I "%UrlCode%"=="F" call ListDL.bat
     if /I "%UrlCode%"=="C" goto CookieSetHandler
-    if /I "%UrlCode%"=="K" call Converter.bat
     if /I "%UrlCode%"=="B" call MainMenu.bat
 
     call UrlHandler.bat
