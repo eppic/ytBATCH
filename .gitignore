@@ -1,8 +1,7 @@
 
 notes.bat
 exe/youtube-dl.exe
-UserConfig.bat
-cookies.txt
+cfg
 ytBATCH-main
 *.zip
 *.mkv
@@ -11,3 +10,4 @@ ytBATCH-main
 *.webm
 *.wav
 *.conf
+*.txt
