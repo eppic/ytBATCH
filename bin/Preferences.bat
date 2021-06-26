@@ -37,7 +37,7 @@ title Preferences - ytBATCH %version%
     if /i "%PrefCode%"=="R" call Reset.bat
     if /i "%PrefCode%"=="Y" explorer ..\
     if /i "%PrefCode%"=="X" explorer %Destination%
-    if /i "%PrefCode%"=="C" notepad ..\UserConfig.bat
+    if /i "%PrefCode%"=="C" notepad ..\cfg\userconfig.bat
     if /i "%PrefCode%"=="V" goto YtdlConfigSet
     if /i "%PrefCode%"=="B" call MainMenu.bat
       
@@ -139,19 +139,19 @@ title Preferences - ytBATCH %version%
 
 ::Apply Config to UserConfig.bat
     :ConfigSet
-    if not exist ..\UserConfig.bat copy nul ..\UserConfig.bat
+    if not exist ..\cfg\userconfig.bat copy nul ..\cfg\userconfig.bat
 
-    echo set Destination=%Destination%> ..\UserConfig.bat
-    echo set DestOpen=%DestOpen%>> ..\UserConfig.bat
-    echo set AutoCookies=%AutoCookies%>> ..\UserConfig.bat
-    echo set DefaultAudio=%DefaultAudio%>> ..\UserConfig.bat
-    echo set DefaultVideo=%DefaultVideo%>> ..\UserConfig.bat
+    echo set Destination=%Destination%> ..\cfg\userconfig.bat
+    echo set DestOpen=%DestOpen%>> ..\cfg\userconfig.bat
+    echo set AutoCookies=%AutoCookies%>> ..\cfg\userconfig.bat
+    echo set DefaultAudio=%DefaultAudio%>> ..\cfg\userconfig.bat
+    echo set DefaultVideo=%DefaultVideo%>> ..\cfg\userconfig.bat
 
-    call ..\UserConfig.bat
+    call ..\cfg\userconfig.bat
     call Preferences.bat
 
 ::youtube-dl config
     :YtdlConfigSet
-    if exist "..\custom.conf" notepad "..\custom.conf" 
-    if not exist "..\custom.conf" copy nul "..\custom.conf" & notepad "..\custom.conf"
+    if exist "..\cfg\custom.conf" notepad "..\cfg\custom.conf" 
+    if not exist "..\cfg\custom.conf" copy nul "..\cfg\custom.conf" & notepad "..\cfg\custom.conf"
     call Preferences.bat
