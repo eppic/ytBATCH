@@ -3,7 +3,7 @@ title Enter Action - ytBATCH %version%
 %mcls%
 
 ::Cookie/Playlist Settings
-    if "%AutoCookies%"=="T" (set CookieSet=--cookies "..\cookies.txt") else (set CookieSet=)
+    if "%AutoCookies%"=="T" (set CookieSet=--cookies "..\cfg\cookies.txt") else (set CookieSet=)
     set PlaylistSet=--no-playlist
     :UrlHPassed
     %mcls%
@@ -20,8 +20,8 @@ title Enter Action - ytBATCH %version%
 
     if "%PlaylistSet%"=="--yes-playlist" echo   (P) Playlist (TRUE)
     if "%PlaylistSet%"=="--no-playlist" echo   (P) Playlist (FALSE)
-    if "%CookieSet%"=="--cookies "..\cookies.txt"" echo   (C) Cookies (TRUE)
-    if not "%CookieSet%"=="--cookies "..\cookies.txt"" echo   (C) Cookies (FALSE)
+    if "%CookieSet%"=="--cookies "..\cfg\cookies.txt"" echo   (C) Cookies (TRUE)
+    if not "%CookieSet%"=="--cookies "..\cfg\cookies.txt"" echo   (C) Cookies (FALSE)
 
     echo.
     echo (B) Go Back...
@@ -30,7 +30,7 @@ title Enter Action - ytBATCH %version%
     set /p UrlCode=COMMAND:
     
     ::Set Download Options
-       set DlOpt=-o "%Destination%%FileNaming%" %CookieSet% %PlaylistSet% --add-metadata --config-location ..\custom.conf 
+       set DlOpt=-o "%Destination%%FileNaming%" %CookieSet% %PlaylistSet% -i --add-metadata --config-location ..\cfg\custom.conf 
 
     if /i "%UrlCode%"=="A" call AudioDL.bat
     if /i "%UrlCode%"=="V" call VideoDL.bat
@@ -49,14 +49,15 @@ title Enter Action - ytBATCH %version%
     
 ::Cookie Handler
     :CookieSetHandler
-    if not exist ..\cookies.txt goto NoCookies
-    if "%CookieSet%"=="--cookies "..\cookies.txt"" set CookieSet=&goto UrlHPassed
-    set CookieSet=--cookies "..\cookies.txt"
+    if not exist ..\cfg\cookies.txt goto NoCookies
+    if "%CookieSet%"=="--cookies "..\cfg\cookies.txt"" set CookieSet=&goto UrlHPassed
+    set CookieSet=--cookies "..\cfg\cookies.txt"
     goto UrlHPassed
     
     :NoCookies
     %mcls%
     echo cookies.txt not found.
-    echo Download the extension "cookies.txt" for your Browser and export your cookies into the root of ytBATCH.
+    echo Download the extension "cookies.txt" for your Browser and export your cookies into "ytBATCH\cfg".
     pause
+    explorer ..\cfg
     call UrlHandler.bat
