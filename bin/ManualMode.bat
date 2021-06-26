@@ -3,20 +3,20 @@ title Manual Mode - ytBATCH %version%
 %mcls%
 
 ::Manual Mode
-    set manualcode=
-    %mcls%
+    cd ..\
     
-    echo Manual Mode - Path is .\bin
+    echo Manual Mode - Path is Root
     echo.
     echo (B) Go Back...
     echo.
 
     :mmreturn
+    set manualcode=
     set /p manualcode=youtube-dl 
 
-    if /i "%manualcode%"=="B" call Launcher.bat
+    if /i "%manualcode%"=="B" cd .\bin&call Launcher.bat 
    
-    ..\exe\youtube-dl.exe %manualcode%
+    .\exe\youtube-dl.exe %manualcode%
 
     goto mmreturn
     
