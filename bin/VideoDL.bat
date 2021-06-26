@@ -34,13 +34,10 @@ title Download Video - ytBATCH %version%
 ::Download Video
     %mcls%
     echo Video
-    ..\exe\youtube-dl %mopf%%VideoDLFormat% -o "%Destination%%FileNaming%" %CookieSet% --add-metadata --config-location ..\custom.conf %Url%
+
+    ..\exe\youtube-dl %mopf%%VideoDLFormat% %DlOpt% %Url%
     if "%DestOpen%"=="T" explorer %Destination%
 
     echo.
-    echo Saved "%Url%" under "%Destination%".
-    echo.
     pause
     call MainMenu
-    
-    ::-f bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4

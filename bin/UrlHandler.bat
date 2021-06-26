@@ -8,6 +8,7 @@ title Enter Action - ytBATCH %version%
     %mcls%
 
 ::Url Handler
+    set DlOpt=
     set UrlCode=
     echo URL/FILE:"%Url%"
     echo.
@@ -22,6 +23,9 @@ title Enter Action - ytBATCH %version%
     echo.
 
     set /p UrlCode=COMMAND:
+    
+    ::Set Download Options
+       set DlOpt=-o "%Destination%%FileNaming%" %CookieSet% --add-metadata --config-location ..\custom.conf 
 
     if /i "%UrlCode%"=="A" call AudioDL.bat
     if /i "%UrlCode%"=="V" call VideoDL.bat

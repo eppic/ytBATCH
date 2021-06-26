@@ -10,12 +10,14 @@ title Choose Format - ytBATCH %version%
     echo.
     echo (B) Go Back...
     echo.
+    
+    :ReturnFLC
     set /P FormatListCode=Code:
-    if /i "%FormatListCode%"=="B" goto M_Link
-    ..\exe\youtube-dl -f %FormatListCode% -o "%Destination%%FileNaming%" %CookieSet% --add-metadata --config-location ..\custom.conf %Url%
+    if /i "%FormatListCode%"=="B" call UrlHandler
+    if /i "%FormatListCode%"=="" goto ReturnFLC
+    ..\exe\youtube-dl -f %FormatListCode%+bestaudio %DlOpt% %Url%
     if "%DestOpen%"=="T" explorer %Destination% 
-    echo.
-    echo Saved "%Url%" under "%Destination%".
+
     echo.
     pause
     call MainMenu
