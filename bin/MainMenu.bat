@@ -10,7 +10,7 @@ title Enter URL - ytBATCH %version%
     echo (U) Check for Updates...
     echo.
 
-    set /p Url=URL/FILE/COMMAND:
+    set /p Url=URL/COMMAND:
 
     if /i "%Url%"=="Q" call Queue.bat
     if /i "%Url%"=="P" call Preferences.bat
