@@ -22,7 +22,7 @@ cls
     set /p icode=COMMAND:
     
     if /i "%icode%"=="Y" goto appdata_install
-    if /i "%icode%"=="N" copy nul "..\cfg\userconfig.bat" & call New.bat
+    if /i "%icode%"=="N" mkdir ..\cfg & copy nul "..\cfg\userconfig.bat" & call New.bat
     goto ChoosePath
     
     :appdata_install
