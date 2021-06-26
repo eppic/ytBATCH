@@ -22,7 +22,7 @@ cls
     set /p icode=COMMAND:
     
     if /i "%icode%"=="Y" goto appdata_install
-    if /i "%icode%"=="N" mkdir ..\cfg & copy nul "..\cfg\userconfig.bat" & call New.bat
+    if /i "%icode%"=="N" mkdir ..\cfg & copy nul "..\cfg\UserConfig.bat" & call New.bat
     goto ChoosePath
     
     :appdata_install
@@ -33,7 +33,7 @@ cls
     xcopy ".\bin\ytBATCH.lnk" "%userprofile%\Desktop" /Y
     xcopy ".\bin\ytBATCH.lnk" "%AppData%\Microsoft\Windows\Start Menu\Programs" /Y
         
-    copy nul "%AppData%\ytBATCH\cfg\userconfig.bat"
+    copy nul "%AppData%\ytBATCH\cfg\UserConfig.bat"
     
     :RmOGD
     set icode=

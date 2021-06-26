@@ -37,7 +37,7 @@ title Preferences - ytBATCH %version%
     if /i "%PrefCode%"=="R" call Reset.bat
     if /i "%PrefCode%"=="Y" explorer ..\
     if /i "%PrefCode%"=="X" explorer %Destination%
-    if /i "%PrefCode%"=="C" notepad ..\cfg\userconfig.bat
+    if /i "%PrefCode%"=="C" notepad ..\cfg\UserConfig.bat
     if /i "%PrefCode%"=="V" goto YtdlConfigSet
     if /i "%PrefCode%"=="B" call MainMenu.bat
       
@@ -139,15 +139,15 @@ title Preferences - ytBATCH %version%
 
 ::Apply Config to UserConfig.bat
     :ConfigSet
-    if not exist ..\cfg\userconfig.bat copy nul ..\cfg\userconfig.bat
+    if not exist ..\cfg\UserConfig.bat copy nul ..\cfg\UserConfig.bat
 
-    echo set Destination=%Destination%> ..\cfg\userconfig.bat
-    echo set DestOpen=%DestOpen%>> ..\cfg\userconfig.bat
-    echo set AutoCookies=%AutoCookies%>> ..\cfg\userconfig.bat
-    echo set DefaultAudio=%DefaultAudio%>> ..\cfg\userconfig.bat
-    echo set DefaultVideo=%DefaultVideo%>> ..\cfg\userconfig.bat
+    echo set Destination=%Destination%> ..\cfg\UserConfig.bat
+    echo set DestOpen=%DestOpen%>> ..\cfg\UserConfig.bat
+    echo set AutoCookies=%AutoCookies%>> ..\cfg\UserConfig.bat
+    echo set DefaultAudio=%DefaultAudio%>> ..\cfg\UserConfig.bat
+    echo set DefaultVideo=%DefaultVideo%>> ..\cfg\UserConfig.bat
 
-    call ..\cfg\userconfig.bat
+    call ..\cfg\UserConfig.bat
     call Preferences.bat
 
 ::youtube-dl config

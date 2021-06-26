@@ -6,12 +6,12 @@ title ytBATCH %version%
     set Version=2.3.1
 
     call DefaultConfig.bat
-    call ..\cfg\userconfig.bat
+    call ..\cfg\UserConfig.bat
     
     if /i "%mecho%"=="" (set mcls=cls) else (set mcls=echo -)
 
 ::Check Config
-    if not exist ..\cfg\userconfig.bat call Installer.bat
+    if not exist ..\cfg\UserConfig.bat call Installer.bat
 
 ::Check File Integrity...
     if exist "..\exe\youtube-dl.exe" goto intcheck_ytdl
