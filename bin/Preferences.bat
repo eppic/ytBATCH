@@ -31,7 +31,7 @@ title Preferences - ytBATCH %version%
     if /i "%PrefCode%"=="L" notepad Changelog.txt
     if /i "%PrefCode%"=="P" goto OutputPath
     if /i "%PrefCode%"=="F" goto DefaultFormatSet
-    if /i "%PrefCode%"=="K" goto AutoCookiesSet
+    if /i "%PrefCode%"=="K" goto AutoCoS
     if /i "%PrefCode%"=="O" goto DestOpenSet
     if /i "%PrefCode%"=="D" call FileDownloader.bat
     if /i "%PrefCode%"=="R" call Reset.bat
@@ -64,7 +64,7 @@ title Preferences - ytBATCH %version%
     goto ConfigSet
 
 ::True/False Preferences
-    :AutoCookiesSet
+    :AutoCoS
     if /i "%AutoCookies%"=="T" (set AutoCookies=F) else (set AutoCookies=T)
     goto ConfigSet
 
