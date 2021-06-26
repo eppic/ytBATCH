@@ -21,7 +21,7 @@ title Enter URL - ytBATCH %version%
     if /i "%Url%"=="NNEW" call Launcher.bat
     if /i "%Url%"=="C" %mcls% & title cmd & cd ..\exe & cmd.exe & cd ..\bin & call MainMenu.bat 
     if /i "%Url%"=="X" exit
-    if /i "%Url%"=="MATRIX" set mtx=1 & call Launcher.bat
+    if /i "%Url%"=="echo" set mecho=1 & call Launcher.bat
     if /i "%Url%"=="B" call MainMenu.bat
     if /i "%Url%"=="" call MainMenu.bat
 
@@ -30,6 +30,6 @@ title Enter URL - ytBATCH %version%
 
 ::NEW Command
     :Refresh
-    set mtx=
+    set mecho=
     start New.bat
     exit
