@@ -21,7 +21,7 @@ title Reset - ytBATCH %version%
     
     :ResetCheck
     pause
-    del /q ..\cfg\userconfig.bat
+    rmdir /s /q ..\cfg
     rmdir /s /q ..\exe
 	move Installer.bat ..\
     start ..\Installer.bat
