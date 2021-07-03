@@ -3,7 +3,7 @@ title ytBATCH Installer
 cls
 
 ::Check if ytBATCH data exists
-    if exist ..\exe\ goto :ChoosePath
+    if exist ..\bin\ goto :ChoosePath
     echo ytBATCH data not found. 
     echo Automatic Downloads are currently not supported.
     echo Now opening GitHub Page.
