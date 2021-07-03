@@ -155,3 +155,4 @@ title Preferences - ytBATCH %version%
     if exist "..\cfg\custom.conf" notepad "..\cfg\custom.conf" 
     if not exist "..\cfg\custom.conf" copy nul "..\cfg\custom.conf" & notepad "..\cfg\custom.conf"
     call Preferences.bat
+    
