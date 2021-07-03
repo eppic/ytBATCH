@@ -2,7 +2,7 @@
 title ytBATCH Installer
 cls
 
-::Check if ytBATCH data is there
+::Check if ytBATCH data exists
     if exist ..\exe\ goto :ChoosePath
     echo ytBATCH data not found. 
     echo Automatic Downloads are currently not supported.
