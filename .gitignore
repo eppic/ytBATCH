@@ -1,6 +1,5 @@
 
 notes.bat
-exe/youtube-dl.exe
 cfg
 ytBATCH-main
 *.zip
@@ -11,3 +10,4 @@ ytBATCH-main
 *.wav
 *.conf
 *.txt
+*.exe
