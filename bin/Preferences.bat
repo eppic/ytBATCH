@@ -12,7 +12,6 @@ title Preferences - ytBATCH %version%
     if /i not "%AutoCookies%"=="T" echo   (K) Use Cookies by default... (FALSE)
     if "%DestOpen%"=="T" echo   (O) Open Containing Folder after Download... (TRUE)
     if /i not "%DestOpen%"=="T" echo   (O) Open Containing Folder after Download... (FALSE)
-    echo   (R) Reset ytBATCH...
     echo.
     echo Open:
     echo   (C) Open ytBATCH Config...
@@ -32,7 +31,6 @@ title Preferences - ytBATCH %version%
     if /i "%PrefCode%"=="K" goto AutoCookieSet
     if /i "%PrefCode%"=="O" goto DestOpenSet
     if /i "%PrefCode%"=="Download" call FileDownloader.bat
-    if /i "%PrefCode%"=="R" call Reset.bat
     if /i "%PrefCode%"=="Y" explorer ..\
     if /i "%PrefCode%"=="X" explorer %Destination%
     if /i "%PrefCode%"=="C" notepad ..\cfg\UserConfig.bat
