@@ -43,6 +43,7 @@ title Preferences - ytBATCH %version%
 
 ::Change Output Path
     :OutputPath
+    set DestinationCode=
     %mcls%
     echo Type in your desired output path (For Example: "C:\Your\Own\Path")
     echo.
@@ -52,11 +53,12 @@ title Preferences - ytBATCH %version%
     echo (B) Go Back...
     echo.    
     
-    set /p Destination=PATH:
+    set /p DestinationCode=PATH:
 
-    if /i "%Destination%"=="B" call Preferences.bat
-    if /i "%Destination%"=="D" set Destination=%userprofile%\Downloads\ytBATCH
-    if /i "%Destination%"=="R" set Destination=..\dl\
+    if /i "%DestinationCode%"=="B" call Preferences.bat & goto ConfigSet
+    if /i "%DestinationCode%"=="D" set Destination=%userprofile%\Downloads\ytBATCH & goto ConfigSet
+    if /i "%DestinationCode%"=="R" set Destination=..\dl\ & goto ConfigSet
+    set Destination=%DestinationCode%
     goto ConfigSet
 
 ::True/False Preferences
@@ -70,6 +72,7 @@ title Preferences - ytBATCH %version%
 
     :DownloadHistorySet
     if /i
+
 ::Default Formats
     :DefaultFormatSet
     %mcls%
