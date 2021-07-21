@@ -12,7 +12,6 @@ title Enter URL - ytBATCH %version%
 
     set /p Url=URL/COMMAND:
 
-    if /i "%Url%"=="Q" call Queue.bat
     if /i "%Url%"=="P" call Preferences.bat
     if /i "%Url%"=="U" call Updater.bat
     if /i "%Url%"=="H" call Help.bat
