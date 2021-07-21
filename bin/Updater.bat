@@ -2,11 +2,15 @@
 title Check for Updates - ytBATCH %version%
 %mcls%
 
+::Temporary Fix for Downloader, doesnt download releases only main
+goto ytdl-dl
+
 ::Update Menu
+
     set UpdateCode=
 
     echo   (A) Update All...
-    echo   (T) Update ytBATCH...
+    echo   (T) Update ytBATCH... 
     echo   (D) Update youtube-dl...
     echo.
     echo (B) Go Back...
