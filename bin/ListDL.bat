@@ -15,6 +15,10 @@ title Choose Format - ytBATCH %version%
     set /P FormatListCode=Code:
     if /i "%FormatListCode%"=="B" call UrlHandler
     if /i "%FormatListCode%"=="" goto ReturnFLC
+
+    ::Add Url to History 
+       if "%HstEnb%"=="T" echo %Url%>> ..\History.txt
+
     ..\exe\youtube-dl -f %FormatListCode%+bestaudio %DlOpt% %Url%
     if "%DestOpen%"=="T" explorer %Destination% 
 

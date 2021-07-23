@@ -34,6 +34,9 @@ title Download Video - ytBATCH %version%
 ::Download Video
     %mcls%
     echo Video
+    
+    ::Add Url to History 
+       if "%HstEnb%"=="T" echo %Url%>> ..\History.txt
 
     ..\exe\youtube-dl %mopf%%VideoDLFormat% %DlOpt% %Url%
     if "%DestOpen%"=="T" explorer %Destination%
