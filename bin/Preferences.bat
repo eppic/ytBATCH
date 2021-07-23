@@ -12,13 +12,15 @@ title Preferences - ytBATCH %version%
     if /i not "%AutoCookies%"=="T" echo   (K) Use Cookies by default... (FALSE)
     if "%DestOpen%"=="T" echo   (O) Open Containing Folder after Download... (TRUE)
     if /i not "%DestOpen%"=="T" echo   (O) Open Containing Folder after Download... (FALSE)
+    if "%HstEnb%"=="T" echo   (H) Keep Download History... (TRUE)
+    if /i not "%HstEnb%"=="T" echo   (H) Keep Download History... (FALSE)
     echo.
     echo Open:
     echo   (C) Open ytBATCH Config...
     echo   (V) Open youtube-dl Config...
     echo   (Y) Open Root Directory...
     echo   (X) Open Download Directory...
-	echo   (G) Open GitHub Page...
+	echo   (G) Open GitHub Repository...
     echo.
     echo (B) Go Back...
     echo.
@@ -30,6 +32,7 @@ title Preferences - ytBATCH %version%
     if /i "%PrefCode%"=="F" goto DefaultFormatSet
     if /i "%PrefCode%"=="K" goto AutoCookieSet
     if /i "%PrefCode%"=="O" goto DestOpenSet
+    if /i "%PrefCode%"=="H" goto HistorySet
     if /i "%PrefCode%"=="Download" call FileDownloader.bat
     if /i "%PrefCode%"=="Y" explorer ..\
     if /i "%PrefCode%"=="X" explorer %Destination%
@@ -70,8 +73,9 @@ title Preferences - ytBATCH %version%
     if /i "%DestOpen%"=="T" (set DestOpen=F) else (set DestOpen=T)
     goto ConfigSet
 
-    :DownloadHistorySet
-    if /i
+    :HistorySet
+    if /i "%HstEnb%"=="T" (set HstEnb=F) else (set HstEnb=T)
+    goto ConfigSet
 
 ::Default Formats
     :DefaultFormatSet
@@ -145,6 +149,7 @@ title Preferences - ytBATCH %version%
     echo set AutoCookies=%AutoCookies%>> ..\cfg\UserConfig.bat
     echo set DefaultAudio=%DefaultAudio%>> ..\cfg\UserConfig.bat
     echo set DefaultVideo=%DefaultVideo%>> ..\cfg\UserConfig.bat
+    echo set HstEnb=%HstEnb%>> ..\cfg\UserConfig.bat
 
     call ..\cfg\UserConfig.bat
     call Preferences.bat

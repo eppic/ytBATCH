@@ -7,8 +7,11 @@ if not exist ..\exe mkdir ..\exe
 if "%fdcode%"=="ytdl" goto fdl_ytdl
 if "%fdcode%"=="ffmp" goto fdl_ffmp
 if "%fdcode%"=="atps" goto fdl_atps
-echo no prefix
-pause
+echo prefix? ytdl/ffmp/atps?
+echo %fdcode% .
+set /p fdcode=
+call FileDownloader.bat
+
 :fdl_ytdl
 echo Wait for youtube-dl.exe to download... 
 echo This will take a moment.
