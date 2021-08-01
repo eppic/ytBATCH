@@ -42,7 +42,7 @@ title Enter Action - ytBATCH %version%
     if /i "%UrlCode%"=="B" call MainMenu.bat
     if /i "%UrlCode%"=="Q" goto QueueSetHandler
 
-    call UrlHandler.bat
+    goto UrlHPassed
 
 ::Playlist Handler
     :PlSetHandler
@@ -63,7 +63,7 @@ title Enter Action - ytBATCH %version%
     echo Download the extension "cookies.txt" for your Browser and export your cookies into "ytBATCH\cfg".
     pause
     explorer ..\cfg
-    call UrlHandler.bat
+    goto UrlHPassed
 
 ::Queue Handler
     :QueueSetHandler
