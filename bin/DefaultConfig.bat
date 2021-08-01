@@ -15,3 +15,5 @@ set DefaultAudio=none
 set DefaultVideo=none
 ::Create a Download History
 set HstEnb=F
+::Clean Queue when restarting
+set CleanQueueStart=T
