@@ -8,14 +8,19 @@ title Enter URL - ytBATCH %version%
     ::echo (Q) Queue Download...
     echo (P) Preferences...
     echo (U) Check for Updates...
+    if exist "..\QueueList.bat" echo.
+    if exist "..\QueueList.bat" echo (Q) Start Queue...
+    if exist "..\QueueList.bat" echo (E) Empty Queue...
+    
     echo.
 
     set /p Url=URL/COMMAND:
 
     if /i "%Url%"=="P" call Preferences.bat
     if /i "%Url%"=="U" call Updater.bat
+    if /i "%Url%"=="Q" start Queue.bat & call MainMenu.bat
+    if /i "%Url%"=="E" del ..\QueueList.bat & call MainMenu.bat
     if /i "%Url%"=="H" call Help.bat
-    if /i "%Url%"=="M" call ManualMode.bat
     if /i "%Url%"=="NEW" goto Refresh
     if /i "%Url%"=="NNEW" call Launcher.bat
     if /i "%Url%"=="C" %mcls% & title cmd & cd ..\exe & cmd.exe & cd ..\bin & call MainMenu.bat 
@@ -30,5 +35,5 @@ title Enter URL - ytBATCH %version%
 ::NEW Command
     :Refresh
     set mecho=
-    start New.bat
+    start Launcher.bat
     exit

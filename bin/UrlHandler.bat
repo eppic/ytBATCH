@@ -5,6 +5,7 @@ title Enter Action - ytBATCH %version%
 ::Cookie/Playlist Settings
     if "%AutoCookies%"=="T" (set CookieSet=--cookies "..\cfg\cookies.txt") else (set CookieSet=)
     set PlaylistSet=--no-playlist
+    if exist ..\QueueList.bat (set QueueSet=T) else (set QueueSet=F)
     :UrlHPassed
     %mcls%
 
@@ -17,12 +18,13 @@ title Enter Action - ytBATCH %version%
     echo   (V) Video
     echo   (F) List All Formats...
     echo.
-
+    if "%QueueSet%"=="T" echo   (Q) Add to Queue... (TRUE)
+    if not "%QueueSet%"=="T" echo   (Q) Add to Queue... (FALSE)
+    echo.
     if "%PlaylistSet%"=="--yes-playlist" echo   (P) Playlist (TRUE)
     if "%PlaylistSet%"=="--no-playlist" echo   (P) Playlist (FALSE)
     if "%CookieSet%"=="--cookies "..\cfg\cookies.txt"" echo   (C) Cookies (TRUE)
     if not "%CookieSet%"=="--cookies "..\cfg\cookies.txt"" echo   (C) Cookies (FALSE)
-
     echo.
     echo (B) Go Back...
     echo.
@@ -38,6 +40,7 @@ title Enter Action - ytBATCH %version%
     if /i "%UrlCode%"=="C" goto CookieSetHandler
     if /i "%UrlCode%"=="P" goto PlSetHandler
     if /i "%UrlCode%"=="B" call MainMenu.bat
+    if /i "%UrlCode%"=="Q" goto QueueSetHandler
 
     call UrlHandler.bat
 
@@ -61,3 +64,9 @@ title Enter Action - ytBATCH %version%
     pause
     explorer ..\cfg
     call UrlHandler.bat
+
+::Queue Handler
+    :QueueSetHandler
+    if "%QueueSet%"=="T" set QueueSet=F&goto UrlHPassed
+    set QueueSet=T
+    goto UrlHPassed

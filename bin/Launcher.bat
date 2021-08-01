@@ -3,7 +3,7 @@ title ytBATCH %version%
 %mcls%
 
 ::Set Config
-    set Version=2.5
+    set Version=2.6
 
     call DefaultConfig.bat
     call ..\cfg\UserConfig.bat
@@ -12,6 +12,9 @@ title ytBATCH %version%
 
 ::Check Config
     if not exist ..\cfg\UserConfig.bat call Installer.bat
+
+::Clean Queue
+    if "%CleanQueueStart%"=="T" del ..\QueueList.bat
 
 ::Check File Integrity...
     if not exist "..\exe\youtube-dl.exe" set fdcode=ytdl& echo youtube-dl.exe not found. & echo Press any key to download the latest version of youtube-dl.exe... & pause>nul & call FileDownloader.bat
@@ -23,3 +26,4 @@ title ytBATCH %version%
 
 ::Open Menu
     call MainMenu.bat
+    

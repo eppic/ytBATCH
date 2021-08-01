@@ -61,4 +61,4 @@ goto ytdl-dl
     echo.
     echo Updated ytBATCH to latest Main Branch (Problems may occur!)
     pause
-    call New.bat
+    call Launcher.bat

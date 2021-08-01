@@ -8,12 +8,19 @@ title Preferences - ytBATCH %version%
     echo General:
     echo   (P) Change Output Path...
     echo   (F) Set Default Audio and Video Formats...
+
     if "%AutoCookies%"=="T" echo   (K) Use Cookies by default... (TRUE)
     if /i not "%AutoCookies%"=="T" echo   (K) Use Cookies by default... (FALSE)
+
     if "%DestOpen%"=="T" echo   (O) Open Containing Folder after Download... (TRUE)
     if /i not "%DestOpen%"=="T" echo   (O) Open Containing Folder after Download... (FALSE)
+
+    if "%CleanQueueStart%"=="T" echo   (Q) Clean Queue when restarting... (TRUE)
+    if /i not "%CleanQueueStart%"=="T" echo   (Q) Clean Queue when restarting... (FALSE)
+
     if "%HstEnb%"=="T" echo   (H) Keep Download History... (TRUE)
     if /i not "%HstEnb%"=="T" echo   (H) Keep Download History... (FALSE)
+
     echo.
     echo Open:
     echo   (C) Open ytBATCH Config...
@@ -30,8 +37,9 @@ title Preferences - ytBATCH %version%
     if /i "%PrefCode%"=="L" notepad Changelog.txt
     if /i "%PrefCode%"=="P" goto OutputPath
     if /i "%PrefCode%"=="F" goto DefaultFormatSet
-    if /i "%PrefCode%"=="K" goto AutoCookieSet
+    if /i "%PrefCode%"=="K" goto AutoCookieSetp
     if /i "%PrefCode%"=="O" goto DestOpenSet
+    if /i "%PrefCode%"=="Q" goto CleanQueueStartSet
     if /i "%PrefCode%"=="H" goto HistorySet
     if /i "%PrefCode%"=="Download" call FileDownloader.bat
     if /i "%PrefCode%"=="Y" explorer ..\
@@ -75,6 +83,10 @@ title Preferences - ytBATCH %version%
 
     :HistorySet
     if /i "%HstEnb%"=="T" (set HstEnb=F) else (set HstEnb=T)
+    goto ConfigSet
+
+    :CleanQueueStartSet
+    if /i "%CleanQueueStart%"=="T" (set CleanQueueStart=F) else (set CleanQueueStart=T)
     goto ConfigSet
 
 ::Default Formats
@@ -150,6 +162,7 @@ title Preferences - ytBATCH %version%
     echo set DefaultAudio=%DefaultAudio%>> ..\cfg\UserConfig.bat
     echo set DefaultVideo=%DefaultVideo%>> ..\cfg\UserConfig.bat
     echo set HstEnb=%HstEnb%>> ..\cfg\UserConfig.bat
+    echo set CleanQueueStart=%CleanQueueStart%>> ..\cfg\UserConfig.bat
 
     call ..\cfg\UserConfig.bat
     call Preferences.bat
@@ -159,5 +172,4 @@ title Preferences - ytBATCH %version%
     if exist "..\cfg\custom.conf" notepad "..\cfg\custom.conf" 
     if not exist "..\cfg\custom.conf" copy nul "..\cfg\custom.conf" & notepad "..\cfg\custom.conf"
     call Preferences.bat
-    
     
