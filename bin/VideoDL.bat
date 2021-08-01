@@ -30,17 +30,20 @@ title Download Video - ytBATCH %version%
     set VideoDLFormat=
 
     :VideoDLCheck
+    
+::Add Url to History 
+    if "%HstEnb%"=="T" echo %Url%>> ..\History.txt
+
+::Add to Queue
+    if "%QueueSet%"=="T" echo ..\exe\youtube-dl %mopf%%VideoDLFormat% %%DlOpt%% %Url% >> ..\QueueList.bat & call MainMenu.bat
 
 ::Download Video
     %mcls%
     echo Video
-    
-    ::Add Url to History 
-       if "%HstEnb%"=="T" echo %Url%>> ..\History.txt
 
     ..\exe\youtube-dl %mopf%%VideoDLFormat% %DlOpt% %Url%
     if "%DestOpen%"=="T" explorer %Destination%
 
     echo.
     pause
-    call MainMenu
+    call MainMenu.bat

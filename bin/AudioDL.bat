@@ -27,16 +27,19 @@ title Download Audio - ytBATCH %version%
     call AudioDL.bat
     :AudioDLCheck
 
+::Add Url to History 
+    if "%HstEnb%"=="T" echo %Url%>> ..\History.txt
+
+::Add to Queue
+    if "%QueueSet%"=="T" echo ..\exe\youtube-dl -x --audio-format %AudioDLFormat% %%DlOpt%% --embed-thumbnail %Url% >> ..\QueueList.bat & call MainMenu.bat
+
 ::Download Audio
     %mcls%
     echo Audio
-
-    ::Add Url to History 
-       if "%HstEnb%"=="T" echo %Url%>> ..\History.txt
 
     ..\exe\youtube-dl -x --audio-format %AudioDLFormat% %DlOpt% --embed-thumbnail %Url% 
     if "%DestOpen%"=="T" explorer %Destination% 
 
     echo.
     pause
-    call MainMenu
+    call MainMenu.bat

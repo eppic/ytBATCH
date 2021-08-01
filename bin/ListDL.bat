@@ -16,12 +16,16 @@ title Choose Format - ytBATCH %version%
     if /i "%FormatListCode%"=="B" call UrlHandler
     if /i "%FormatListCode%"=="" goto ReturnFLC
 
-    ::Add Url to History 
-       if "%HstEnb%"=="T" echo %Url%>> ..\History.txt
+::Add Url to History 
+    if "%HstEnb%"=="T" echo %Url%>> ..\History.txt
 
+::Add to Queue
+    if "%QueueSet%"=="T" echo ..\exe\youtube-dl -f %FormatListCode%+bestaudio %%DlOpt%% %Url% >> ..\QueueList.bat & call MainMenu.bat
+
+::Download
     ..\exe\youtube-dl -f %FormatListCode%+bestaudio %DlOpt% %Url%
     if "%DestOpen%"=="T" explorer %Destination% 
 
     echo.
     pause
-    call MainMenu
+    call MainMenu.bat
