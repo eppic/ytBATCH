@@ -33,7 +33,7 @@ An easy to use Batch Script using [youtube-dl](https://github.com/ytdl-org/youtu
 3. Select `Video`/`Audio`/`List All Formats`and File Extension
 4. Press Q to start Queue.
 5. Add more URLs to the Queue while downloading, when wanted
-6. When the download is finished, Queue closes
+6. When all downloads are finished, Queue closes
 
 ## PREFERENCES
  - `Change Output Path...`: Specify Download Output Path
