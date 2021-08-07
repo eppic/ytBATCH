@@ -1,7 +1,6 @@
 [![icon](https://github.com/eppic/ytBATCH/blob/main/bin/256.ico)](https://github.com/eppic/ytBATCH)
 # ytBATCH
 An easy to use Batch Script using [youtube-dl](https://github.com/ytdl-org/youtube-dl).  
-(There currently are still bugs to fix and features not working properly)  
 
 ## INSTALL
 1. Download the [latest code](https://github.com/eppic/ytBATCH/archive/refs/heads/main.zip) or a [release](https://github.com/eppic/ytBATCH/releases)  
@@ -18,8 +17,13 @@ An easy to use Batch Script using [youtube-dl](https://github.com/ytdl-org/youtu
 3. Select an Option  
    - `Audio`: Downloads Audio, Select Audio Format  
    - `Video`: Downloads Video (When available), Select Video Format  
-   - `List all Formats...`: Lists all available Formats found
-   - `Use Cookies...`: When available, uses cookies.txt  
-4. Download starts  
-5. Output is in Downloads\ytBATCH
+   - `List all Formats...`: Lists all available formats found
+   - `Add to Queue...`: Adds the link to the queue instead of downloading it separately
+   - `Playlist`: When the link obtains a playlist, download whole playlist
+   - `Cookies`: When available, uses cookies.txt  
+4.1. `Audio`/`Video`: Select format
+4.2. `List All Formats...`: Lists formats, type code of wanted format
+5. Download starts
+6. Output is Downloads/ytBATCH (by default)
+
 
