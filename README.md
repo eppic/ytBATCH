@@ -20,7 +20,7 @@ An easy to use Batch Script using [youtube-dl](https://github.com/ytdl-org/youtu
    - `List all Formats...`: Lists all available formats found
    - `Add to Queue...`: Adds the link to the queue instead of downloading it separately
    - `Playlist`: When the link obtains a playlist, download whole playlist
-   - `Cookies`: When available, uses cookies.txt  
+   - `Cookies`: When available, uses cookies.txt
 4.1. `Audio`/`Video`: Select format  
 4.2. `List All Formats...`: Lists formats, type code of wanted format  
 5. Download starts
