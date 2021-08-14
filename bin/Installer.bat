@@ -29,12 +29,11 @@ cls
     cd ..\
     xcopy ".\" "%AppData%\ytBATCH" /S /I /Y
     
-    ren .\bin\ytbsc ytBATCH.lnk
-    xcopy ".\bin\ytBATCH.lnk" "%userprofile%\Desktop" /Y
-    xcopy ".\bin\ytBATCH.lnk" "%AppData%\Microsoft\Windows\Start Menu\Programs" /Y
-        
+    powershell.exe "powershell -ExecutionPolicy Bypass -File bin\makeshortcut.ps1"
+
+    mkdir "%AppData%\ytBATCH\cfg"
     copy nul "%AppData%\ytBATCH\cfg\UserConfig.bat"
-    
+
     :RmOGD
     set icode=
     cls
@@ -51,6 +50,7 @@ cls
     echo Installation finished!
     echo.
     echo Press any key to close the installer and delete the Original Folder...
+    pause>nul
     explorer %AppData%\ytBATCH
     rmdir ".\" /s /q
     exit
@@ -60,6 +60,7 @@ cls
     echo Installation finished!
     echo.
     echo Press any key to close the installer...
+    pause>nul
     explorer %AppData%\ytBATCH
     exit
     
