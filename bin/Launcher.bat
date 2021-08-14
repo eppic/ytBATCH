@@ -15,6 +15,7 @@ title ytBATCH %version%
 
 ::Clean Queue
     if "%CleanQueueStart%"=="T" del ..\QueueList.bat
+    %mcls%
 
 ::Check File Integrity...
     if not exist "..\exe\youtube-dl.exe" set fdcode=ytdl& echo youtube-dl.exe not found. & echo Press any key to download the latest version of youtube-dl.exe... & pause>nul & call FileDownloader.bat
