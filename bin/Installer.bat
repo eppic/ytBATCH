@@ -2,15 +2,6 @@
 title ytBATCH Installer
 cls
 
-::Check if ytBATCH data exists
-    if exist ..\bin\ goto :ChoosePath
-    echo ytBATCH data not found. 
-    echo Automatic Downloads are currently not supported.
-    echo Now opening GitHub Page.
-    pause
-    start "" "https://github.com/eppic/ytBATCH"
-    exit
-
 ::Installer
     :ChoosePath
     set icode=
