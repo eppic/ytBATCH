@@ -13,7 +13,7 @@ cls
     set /p icode=COMMAND:
     
     if /i "%icode%"=="Y" goto appdata_install
-    if /i "%icode%"=="N" mkdir ..\cfg & copy nul "..\cfg\UserConfig.bat" & call Launcher.bat
+    if /i "%icode%"=="N" mkdir ..\cfg & copy nul "..\cfg\UserConfig.bat" & copy nul "..\cfg\custom.conf" & call Launcher.bat
     goto ChoosePath
     
     :appdata_install
@@ -24,6 +24,7 @@ cls
 
     mkdir "%AppData%\ytBATCH\cfg"
     copy nul "%AppData%\ytBATCH\cfg\UserConfig.bat"
+    copy nul "%AppData%\ytBATCH\cfg\custom.conf"
 
     :RmOGD
     set icode=
