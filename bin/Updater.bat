@@ -3,22 +3,24 @@ title Check for Updates - ytBATCH %version%
 %mcls%
 
 ::Temporary Fix for Downloader, doesnt download releases only main
-goto ytdl-dl
+
 
 ::Update Menu
 
     set UpdateCode=
-
-    echo   (A) Update All...
-    echo   (T) Update ytBATCH... 
+    echo Update Center
+    echo.
+    echo   (Y) Open latest ytBATCH release...
     echo   (D) Update youtube-dl...
+    echo.
+    echo   (T) Update to latest Main Branch (experimental)
     echo.
     echo (B) Go Back...
     echo.
-
+    
     set /p UpdateCode=COMMAND:
     
-    if /i "%UpdateCode%"=="A" set UpAll=T & goto ytdl-dl
+    if /i "%UpdateCode%"=="Y" start "" "https://github.com/eppic/ytBATCH/releases/latest"
     if /i "%UpdateCode%"=="T" goto ytbatch-main-dl
     if /i "%UpdateCode%"=="D" goto ytdl-dl
     if /i "%UpdateCode%"=="B" call MainMenu.bat
@@ -31,15 +33,12 @@ goto ytdl-dl
     echo Please Wait...
     ..\exe\youtube-dl -U
     echo.
-
-    if not "%UpAll%"=="" goto ytbatch-main-dl
-
+    
     pause
     call MainMenu.bat
 
 ::ytBATCH Updater
     :ytbatch-main-dl
-    set UpAll=
     echo.
 
     ::download
