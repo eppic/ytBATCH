@@ -12,7 +12,7 @@ title Enter Action - ytBATCH %version%
 ::Url Handler
     set DlOpt=
     set UrlCode=
-    echo URL/FILE:"%Url%"
+    echo URL:"%Url%"
     echo.
     echo   (A) Audio
     echo   (V) Video
