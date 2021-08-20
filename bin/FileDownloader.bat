@@ -5,9 +5,10 @@ title Downloading youtube-dl.exe - ytBATCH %version%
 if not exist ..\exe mkdir ..\exe
 
 if "%fdcode%"=="ytdl" goto fdl_ytdl
+if "%fdcode%"=="ytdlp" goto fdl_ytdlp
 if "%fdcode%"=="ffmp" goto fdl_ffmp
 if "%fdcode%"=="atps" goto fdl_atps
-echo prefix? ytdl/ffmp/atps?
+echo prefix? ytdl(p)/ffmp/atps?
 echo %fdcode% .
 set /p fdcode=
 call FileDownloader.bat
@@ -18,6 +19,16 @@ echo This will take a moment.
 powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://youtube-dl.org/downloads/latest/youtube-dl.exe', '..\exe\youtube-dl.exe')"
 echo.
 echo youtube-dl.exe downloaded.
+pause
+
+call Launcher.bat
+
+:fdl_ytdlp
+echo Wait for yt-dlp.exe to download... 
+echo This will take a moment.
+powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://github.com/yt-dlp/yt-dlp/releases/download/2021.08.10/yt-dlp.exe', '..\exe\yt-dlp.exe')"
+echo.
+echo yt-dlp.exe downloaded.
 pause
 
 call Launcher.bat
