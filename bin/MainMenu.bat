@@ -20,7 +20,7 @@ title Enter URL - ytBATCH %version%
     if /i "%Url%"=="U" call Updater.bat
     if /i "%Url%"=="Q" start Queue.bat & call MainMenu.bat
     if /i "%Url%"=="E" del ..\QueueList.bat & call MainMenu.bat
-    if /i "%Url%"=="H" call Help.bat
+    if /i "%Url%"=="H" title Help - ytBATCH %version% & cls & ..\exe\%ytdlv% --help & pause & call MainMenu.bat
     if /i "%Url%"=="NEW" goto Refresh
     if /i "%Url%"=="NNEW" call Launcher.bat
     if /i "%Url%"=="C" %mcls% & title cmd & cd ..\exe & cmd.exe & cd ..\bin & call MainMenu.bat 
