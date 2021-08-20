@@ -31,13 +31,13 @@ title Download Audio - ytBATCH %version%
     if "%HstEnb%"=="T" echo %Url%>> ..\History.txt
 
 ::Add to Queue
-    if "%QueueSet%"=="T" echo ..\exe\youtube-dl -x --audio-format %AudioDLFormat% %%DlOpt%% --embed-thumbnail %Url% >> ..\QueueList.bat & call MainMenu.bat
+    if "%QueueSet%"=="T" echo ..\exe\%ytdlv% -x --audio-format %AudioDLFormat% %%DlOpt%% --embed-thumbnail %Url% >> ..\QueueList.bat & call MainMenu.bat
 
 ::Download Audio
     %mcls%
     echo Audio
 
-    ..\exe\youtube-dl -x --audio-format %AudioDLFormat% %DlOpt% --embed-thumbnail %Url% 
+    ..\exe\%ytdlv% -x --audio-format %AudioDLFormat% %DlOpt% --embed-thumbnail %Url% 
     if "%DestOpen%"=="T" explorer %Destination% 
 
     echo.

@@ -6,7 +6,7 @@ title Choose Format - ytBATCH %version%
     set FormatListCode=
     echo Checking available formats...
     echo.
-    ..\exe\youtube-dl -F %Url%
+    ..\exe\%ytdlv% -F %Url%
     echo.
     echo (B) Go Back...
     echo.
@@ -20,10 +20,10 @@ title Choose Format - ytBATCH %version%
     if "%HstEnb%"=="T" echo %Url%>> ..\History.txt
 
 ::Add to Queue
-    if "%QueueSet%"=="T" echo ..\exe\youtube-dl -f %FormatListCode%+bestaudio %%DlOpt%% %Url% >> ..\QueueList.bat & call MainMenu.bat
+    if "%QueueSet%"=="T" echo ..\exe\%ytdlv% -f %FormatListCode%+bestaudio %%DlOpt%% %Url% >> ..\QueueList.bat & call MainMenu.bat
 
 ::Download
-    ..\exe\youtube-dl -f %FormatListCode%+bestaudio %DlOpt% %Url%
+    ..\exe\%ytdlv% -f %FormatListCode%+bestaudio %DlOpt% %Url%
     if "%DestOpen%"=="T" explorer %Destination% 
 
     echo.
