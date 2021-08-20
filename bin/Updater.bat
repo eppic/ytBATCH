@@ -2,9 +2,6 @@
 title Check for Updates - ytBATCH %version%
 %mcls%
 
-::Temporary Fix for Downloader, doesnt download releases only main
-
-
 ::Update Menu
 
     set UpdateCode=
@@ -39,8 +36,19 @@ title Check for Updates - ytBATCH %version%
 
 ::ytBATCH Updater
     :ytbatch-main-dl
+    set ytbupcode=
+    %mcls%
     echo.
-
+    echo WARNING! 
+    echo. 
+    echo Updating to this version of ytBATCH is NOT RECOMMENDED.
+    echo Update anyway?
+    
+    if /i "%ytbupcode%"=="Y" goto ytbuppassed
+    if /i "%ytbupcode%"=="N" call Updater.bat
+    goto ytbatch-main-dl
+    :ytbuppassed
+    
     ::download
     echo Downloading latest Main Branch...
     powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://github.com/eppic/ytBATCH/archive/refs/heads/main.zip', '..\ytb_temp.zip')"
