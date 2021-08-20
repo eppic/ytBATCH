@@ -8,7 +8,7 @@ An easy to use Batch Script using [youtube-dl](https://github.com/ytdl-org/youtu
 3. A prompt appears asking to install ytBATCH.  
    - *`Yes`: Install ytBATCH to AppData and generate shortcuts*  
    - *`No`: Keep ytBATCH in its download folder.*  
-4. Press any key to download the latest version of youtube-dl  
+4. Press any key to download youtube-dl.exe, ffmpeg.exe, AtomicParsley.exe  
 5. Done  
 
 ## USAGE
