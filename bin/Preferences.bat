@@ -21,12 +21,14 @@ title Preferences - ytBATCH %version%
     if "%HstEnb%"=="T" echo   (H) Keep Download History... (TRUE)
     if /i not "%HstEnb%"=="T" echo   (H) Keep Download History... (FALSE)
 
+    echo   (Y) yt-dl switch: %ytdlv%
+
     echo.
     echo Open:
     echo   (C) Open ytBATCH Config...
-    echo   (V) Open youtube-dl Config...
+    echo   (V) Open %ytdlv% Config...
     echo   (J) Open Download History...
-    echo   (Y) Open Root Directory...
+    echo   (R) Open Root Directory...
     echo   (X) Open Download Directory...
 	echo   (G) Open GitHub Repository...
     echo.
@@ -42,8 +44,9 @@ title Preferences - ytBATCH %version%
     if /i "%PrefCode%"=="O" goto DestOpenSet
     if /i "%PrefCode%"=="Q" goto CleanQueueStartSet
     if /i "%PrefCode%"=="H" goto HistorySet
+    if /i "%PrefCode%"=="Y" goto YtdlvSet
     if /i "%PrefCode%"=="Download" call FileDownloader.bat
-    if /i "%PrefCode%"=="Y" explorer ..\
+    if /i "%PrefCode%"=="R" explorer ..\
     if /i "%PrefCode%"=="X" explorer %Destination%
     if /i "%PrefCode%"=="C" notepad ..\cfg\UserConfig.bat
     if /i "%PrefCode%"=="V" goto YtdlConfigSet
@@ -90,6 +93,24 @@ title Preferences - ytBATCH %version%
     :CleanQueueStartSet
     if /i "%CleanQueueStart%"=="T" (set CleanQueueStart=F) else (set CleanQueueStart=T)
     goto ConfigSet
+
+    :YtdlvSet
+    if exist ..\exe\youtube-dl.exe goto YtdlvSetPass
+    %mcls%
+    set ytdlvsetcode=
+    echo youtube-dl.exe is currently not downloaded.
+    echo Download youtube-dl.exe now?
+    echo.
+    echo  (Y) Yes...
+    echo  (N) No...
+    echo.
+    set /p ytdlvsetcode=COMMAND:
+    if /i "%ytdlvsetcode%"=="y" set fdcode=ytdl& call FileDownloader.bat
+    if /i "%ytdlvsetcode%"=="n" call Preferences.bat
+    goto YtdlvSet
+       :YtdlvSetPass
+       if /i "%ytdlv%"=="youtube-dl" (set ytdlv=yt-dlp) else (set ytdlv=youtube-dl)
+       goto ConfigSet
 
 ::Default Formats
     :DefaultFormatSet
@@ -165,13 +186,14 @@ title Preferences - ytBATCH %version%
     echo set DefaultVideo=%DefaultVideo%>> ..\cfg\UserConfig.bat
     echo set HstEnb=%HstEnb%>> ..\cfg\UserConfig.bat
     echo set CleanQueueStart=%CleanQueueStart%>> ..\cfg\UserConfig.bat
+    echo set ytdlv=%ytdlv%>> ..\cfg\UserConfig.bat
 
     call ..\cfg\UserConfig.bat
     call Preferences.bat
 
 ::youtube-dl config
     :YtdlConfigSet
-    if exist "..\cfg\custom.conf" notepad "..\cfg\custom.conf" 
-    if not exist "..\cfg\custom.conf" copy nul "..\cfg\custom.conf" & notepad "..\cfg\custom.conf"
+    if exist "..\cfg\youtube-dl.conf" notepad "..\cfg\youtube-dl.conf" 
+    if not exist "..\cfg\youtube-dl.conf" copy nul "..\cfg\youtube-dl.conf" & notepad "..\cfg\youtube-dl.conf"
     call Preferences.bat
     
