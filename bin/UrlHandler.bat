@@ -32,7 +32,7 @@ title Enter Action - ytBATCH %version%
     set /p UrlCode=COMMAND:
     
     ::Set Download Options
-       set DlOpt=-o "%Destination%%FileNaming%" %CookieSet% %PlaylistSet% -i --add-metadata --config-location ..\cfg\custom.conf 
+       set DlOpt=-o "%Destination%%FileNaming%" %CookieSet% %PlaylistSet% -i --add-metadata --config-location ..\cfg\youtube-dl.conf 
 
     if /i "%UrlCode%"=="A" call AudioDL.bat
     if /i "%UrlCode%"=="V" call VideoDL.bat
