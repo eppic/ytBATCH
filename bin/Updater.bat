@@ -11,7 +11,7 @@ title Check for Updates - ytBATCH %version%
     echo Update Center
     echo.
     echo   (Y) Open latest ytBATCH release...
-    echo   (D) Update youtube-dl...
+    echo   (D) Update %ytdlv%...
     echo.
     echo   (T) Update to latest Main Branch (experimental)
     echo.
@@ -31,7 +31,7 @@ title Check for Updates - ytBATCH %version%
     :ytdl-dl
     echo.
     echo Please Wait...
-    ..\exe\youtube-dl -U
+    ..\exe\%ytdlv% -U
     echo.
     
     pause

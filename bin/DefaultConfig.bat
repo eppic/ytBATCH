@@ -17,3 +17,5 @@ set DefaultVideo=none
 set HstEnb=F
 ::Clean Queue when restarting
 set CleanQueueStart=T
+::Set *.exe for downloader (yt-dlp/youtube-dl)
+set ytdlv=yt-dlp
