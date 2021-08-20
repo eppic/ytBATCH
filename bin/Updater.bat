@@ -38,17 +38,23 @@ title Check for Updates - ytBATCH %version%
     :ytbatch-main-dl
     set ytbupcode=
     %mcls%
-    echo.
     echo WARNING! 
     echo. 
     echo Updating to this version of ytBATCH is NOT RECOMMENDED.
+    echo If you want do update, please download the latest version manually.
+    echo.
     echo Update anyway?
-    
+    echo.
+    echo  (Y) Yes...
+    echo  (N) No...
+    echo.
+
+    set /p ytbupcode=COMMAND:
     if /i "%ytbupcode%"=="Y" goto ytbuppassed
     if /i "%ytbupcode%"=="N" call Updater.bat
     goto ytbatch-main-dl
     :ytbuppassed
-    
+
     ::download
     echo Downloading latest Main Branch...
     powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://github.com/eppic/ytBATCH/archive/refs/heads/main.zip', '..\ytb_temp.zip')"
