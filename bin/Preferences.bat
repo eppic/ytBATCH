@@ -21,7 +21,7 @@ title Preferences - ytBATCH %version%
     if "%HstEnb%"=="T" echo   (H) Keep Download History... (TRUE)
     if /i not "%HstEnb%"=="T" echo   (H) Keep Download History... (FALSE)
 
-    echo   (Y) yt-dl switch: %ytdlv%
+    echo   (Y) Choose yt-dl version (CURRENT: %ytdlv%)
 
     echo.
     echo Open:
