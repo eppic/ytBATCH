@@ -4,4 +4,5 @@ title Queue Window - ytBATCH %version%
 
 call ..\QueueList.bat
 del ..\QueueList.bat
+pause
 exit
