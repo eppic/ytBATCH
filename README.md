@@ -3,15 +3,17 @@
 An easy to use Batch Script using [youtube-dl](https://github.com/ytdl-org/youtube-dl).  
 
 ## INSTALL
+
 1. Download the [latest code](https://github.com/eppic/ytBATCH/archive/refs/heads/main.zip) or a [release](https://github.com/eppic/ytBATCH/releases)  
 2. Run ytBATCH.bat in the provided folder  
 3. A prompt appears asking to install ytBATCH.  
    - *`Yes`: Install ytBATCH to AppData and generate shortcuts*  
    - *`No`: Keep ytBATCH in its download folder.*  
-4. Press any key to download youtube-dl.exe, ffmpeg.exe, AtomicParsley.exe  
+4. Press any key to download youtube-dl.exe and ffmpeg.exe  
 5. Done  
 
 ## USAGE
+
 1. Open ytBATCH.bat or the shortcut on the Desktop / Start Menu  
 2. Paste URL  
 3. Select an Option  
@@ -28,6 +30,7 @@ An easy to use Batch Script using [youtube-dl](https://github.com/ytdl-org/youtu
 6. Output is Downloads/ytBATCH (by default)
 
 ## QUEUE USAGE
+
 1. Paste URL
 2. Set `Add to Queue...` to `TRUE`
 3. Select `Video`/`Audio`/`List All Formats`and File Extension
@@ -36,6 +39,7 @@ An easy to use Batch Script using [youtube-dl](https://github.com/ytdl-org/youtu
 6. When all downloads are finished, Queue closes
 
 ## PREFERENCES
+
  - `Change Output Path...`: Specify Download Output Path
  - `Set Default Audio and Video Formats...`: Set `Audio/Video.*` (mp3, wav,... / mp4, mkv,...)
  - `Use Cookies by default...`: Use `cookies.txt` by default when downloading
