@@ -20,6 +20,9 @@ title Preferences - ytBATCH %version%
 
     if "%HstEnb%"=="T" echo   (H) Keep Download History... (TRUE)
     if /i not "%HstEnb%"=="T" echo   (H) Keep Download History... (FALSE)
+    
+    if "%EmbThb%"=="T" echo   (T) Download Video Thumbnail for Audio... (TRUE)
+    if /i not "%EmbThb%"=="T" echo   (T) Download Video Thumbnail for Audio... (FALSE)
 
     echo   (Y) Choose yt-dl version (CURRENT: %ytdlv%)
 
@@ -44,6 +47,7 @@ title Preferences - ytBATCH %version%
     if /i "%PrefCode%"=="O" goto DestOpenSet
     if /i "%PrefCode%"=="Q" goto CleanQueueStartSet
     if /i "%PrefCode%"=="H" goto HistorySet
+    if /i "%PrefCode%"=="T" goto EmbThbSet
     if /i "%PrefCode%"=="Y" goto YtdlvSet
     if /i "%PrefCode%"=="Download" call FileDownloader.bat
     if /i "%PrefCode%"=="R" explorer ..\
@@ -90,6 +94,10 @@ title Preferences - ytBATCH %version%
     if /i "%HstEnb%"=="T" (set HstEnb=F) else (set HstEnb=T)
     goto ConfigSet
 
+    :EmbThbSet
+    if /i "%EmbThb%"=="T" (set EmbThb=F) else (set EmbThb=T)
+    goto ConfigSet
+    
     :CleanQueueStartSet
     if /i "%CleanQueueStart%"=="T" (set CleanQueueStart=F) else (set CleanQueueStart=T)
     goto ConfigSet
@@ -187,6 +195,7 @@ title Preferences - ytBATCH %version%
     echo set HstEnb=%HstEnb%>> ..\cfg\UserConfig.bat
     echo set CleanQueueStart=%CleanQueueStart%>> ..\cfg\UserConfig.bat
     echo set ytdlv=%ytdlv%>> ..\cfg\UserConfig.bat
+    echo set EmbThb=%EmbThb%>> ..\cfg\UserConfig.bat
 
     call ..\cfg\UserConfig.bat
     call Preferences.bat
