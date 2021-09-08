@@ -10,7 +10,7 @@ title Download Video - ytBATCH %version%
     if /i not "%DefaultVideo%"=="none" set VideoDLFormat=%DefaultVideo% & goto VideoDLCheck
 
     echo   (S) Source
-    echo   (4) .MP4
+    echo   (M) .MP4
     echo   (V) .MKV
     echo.
     echo (B) Go Back...
@@ -20,6 +20,7 @@ title Download Video - ytBATCH %version%
     
     if /i "%VideoDLCode%"=="S" goto VideoDLCheckSource
     if /i "%VideoDLCode%"=="4" set VideoDLFormat=mp4 & goto VideoDLCheck
+    if /i "%VideoDLCode%"=="M" set VideoDLFormat=mp4 & goto VideoDLCheck
     if /i "%VideoDLCode%"=="V" set VideoDLFormat=mkv & goto VideoDLCheck
     if /i "%VideoDLCode%"=="G" set VideoDLFormat=ogg & goto VideoDLCheck
     if /i "%VideoDLCode%"=="B" call UrlHandler
