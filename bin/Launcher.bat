@@ -33,9 +33,11 @@ title ytBATCH %version%
     :oldvcheckpassed
     
 ::Check File Integrity...
+    if "%ytdlv%"=="yt-dlp" goto ChFIytdlPassed
+    if not exist "..\exe\youtube-dl.exe" set fdcode=ytdl& echo youtube-dl.exe not found. & echo Press any key to download the latest version of youtube-dl.exe... & pause>nul & call FileDownloader.bat
+    :ChFIytdlPassed
     if not exist "..\exe\yt-dlp.exe" set fdcode=ytdlp& echo yt-dlp.exe not found. & echo Press any key to download the latest version of yt-dlp.exe... & pause>nul & call FileDownloader.bat
     if not exist "..\exe\ffmpeg.exe" set fdcode=ffmp& echo ffmpeg.exe not found. & echo Press any key to download the latest version of ffmpeg.exe... & pause>nul & call FileDownloader.bat
-    if not exist "..\exe\AtomicParsley.exe" set fdcode=atps& echo AtomicParsley.exe not found. & echo Press any key to download the latest version of AtomicParsley.exe... & pause>nul & call FileDownloader.bat
 
 ::Open Menu
     call MainMenu.bat
