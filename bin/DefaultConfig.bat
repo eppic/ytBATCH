@@ -19,3 +19,5 @@ set HstEnb=F
 set CleanQueueStart=T
 ::Set *.exe for downloader (yt-dlp/youtube-dl)
 set ytdlv=yt-dlp
+::Download Video Thumbnail for Audio
+set EmbThb=T
