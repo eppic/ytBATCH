@@ -3,7 +3,7 @@ title ytBATCH %version%
 %mcls%
 
 ::Load Config
-    set Version=2.6.3
+    set Version=2.7
 
     ::Check for Config, open Installer 
     if not exist ..\cfg\UserConfig.bat call Installer.bat
