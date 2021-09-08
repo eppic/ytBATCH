@@ -27,6 +27,7 @@ call Launcher.bat
 echo Wait for yt-dlp.exe to download... 
 echo This will take a moment.
 powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://github.com/yt-dlp/yt-dlp/releases/download/2021.08.10/yt-dlp.exe', '..\exe\yt-dlp.exe')"
+..\exe\yt-dlp -U
 echo.
 echo yt-dlp.exe downloaded.
 pause
@@ -46,7 +47,8 @@ call Launcher.bat
 :fdl_atps
 echo Wait for AtomicParsley .exe to download...
 echo This will take a moment.
-powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://raw.githubusercontent.com/eppic/ytBATCH/main/exe/AtomicParsley.exe', '..\exe\AtomicParsley.exe')"
+::powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://raw.githubusercontent.com/eppic/ytBATCH/main/exe/AtomicParsley.exe', '..\exe\AtomicParsley.exe')"
+echo ERROR: No AtomicParsley Support anymore, download manually
 echo.
 echo AtomicParsley.exe downloaded.
 pause
