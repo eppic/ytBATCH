@@ -17,14 +17,14 @@ title Choose Format - ytBATCH %version%
     if /i "%FormatListCode%"=="" goto ReturnFLC
 
 ::Add Url to History 
-    if "%HstEnb%"=="T" echo %Url%>> ..\History.txt
+    if /i "%HstEnb%"=="T" echo %Url%>> ..\History.txt
 
 ::Add to Queue
-    if "%QueueSet%"=="T" echo ..\exe\%ytdlv% -f %FormatListCode%+bestaudio %%DlOpt%% %Url% >> ..\QueueList.bat & call MainMenu.bat
+    if /i "%QueueSet%"=="T" echo ..\exe\%ytdlv% -f %FormatListCode%+bestaudio %%DlOpt%% %Url% >> ..\QueueList.bat & call MainMenu.bat
 
 ::Download
     ..\exe\%ytdlv% -f %FormatListCode%+bestaudio %DlOpt% %Url%
-    if "%DestOpen%"=="T" explorer %Destination% 
+    if /i "%DestOpen%"=="T" explorer %Destination% 
 
     echo.
     pause

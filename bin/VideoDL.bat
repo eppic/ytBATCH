@@ -7,8 +7,14 @@ title Download Video - ytBATCH %version%
     set VideoDLCode=
 
     if /i "%DefaultVideo%"=="source" goto VideoDLCheckSource
-    if /i not "%DefaultVideo%"=="none" set VideoDLFormat=%DefaultVideo% & goto VideoDLCheck
+    
+    if /i "%DefaultVideo%"=="none" goto VDLDefFPassed
+    if "%FormatSet%"=="T" goto VDLDefFPassed
+    set VideoDLFormat=%DefaultVideo%& goto VideoDLCheck
 
+    :VDLDefFPassed
+    echo Select Video Format:
+    echo.
     echo   (S) Source
     echo   (M) .MP4
     echo   (V) .MKV
@@ -33,17 +39,17 @@ title Download Video - ytBATCH %version%
     :VideoDLCheck
     
 ::Add Url to History 
-    if "%HstEnb%"=="T" echo %Url%>> ..\History.txt
+    if /i "%HstEnb%"=="T" echo %Url%>> ..\History.txt
 
 ::Add to Queue
-    if "%QueueSet%"=="T" echo ..\exe\%ytdlv% %mopf%%VideoDLFormat% %%DlOpt%% %Url% >> ..\QueueList.bat & call MainMenu.bat
+    if /i "%QueueSet%"=="T" echo ..\exe\%ytdlv% %mopf%%VideoDLFormat% %%DlOpt%% %Url% >> ..\QueueList.bat & call MainMenu.bat
 
 ::Download Video
     %mcls%
     echo Video
 
     ..\exe\%ytdlv% %mopf%%VideoDLFormat% %DlOpt% %Url%
-    if "%DestOpen%"=="T" explorer %Destination%
+    if /i "%DestOpen%"=="T" explorer %Destination%
 
     echo.
     pause

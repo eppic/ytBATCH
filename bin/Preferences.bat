@@ -126,8 +126,8 @@ title Preferences - ytBATCH %version%
     set dfscode=
     echo Set Default Format for Audio or Video?
     echo.
-    echo   (A) Audio (Current=%DefaultAudio%)
-    echo   (V) Video (Current=%DefaultVideo%)
+    echo   (A) Audio (CURRENT: %DefaultAudio%)
+    echo   (V) Video (CURRENT: %DefaultVideo%)
     echo.
     echo (B) Go Back...
     echo.
@@ -153,11 +153,11 @@ title Preferences - ytBATCH %version%
     echo.
     set /p dfsAcode=COMMAND:
     if /i "%dfsAcode%"=="n" set DefaultAudio=none& goto ConfigSet
-    if /i "%dfsAcode%"=="s" set DefaultAudio=best & goto ConfigSet
-    if /i "%dfsAcode%"=="w" set DefaultAudio=wav & goto ConfigSet
-    if /i "%dfsAcode%"=="3" set DefaultAudio=mp3 & goto ConfigSet
-    if /i "%dfsAcode%"=="4" set DefaultAudio=m4a & goto ConfigSet
-    if /i "%dfsAcode%"=="f" set DefaultAudio=flac & goto ConfigSet
+    if /i "%dfsAcode%"=="s" set DefaultAudio=best& goto ConfigSet
+    if /i "%dfsAcode%"=="w" set DefaultAudio=wav& goto ConfigSet
+    if /i "%dfsAcode%"=="3" set DefaultAudio=mp3& goto ConfigSet
+    if /i "%dfsAcode%"=="4" set DefaultAudio=m4a& goto ConfigSet
+    if /i "%dfsAcode%"=="f" set DefaultAudio=flac& goto ConfigSet
     if /i "%dfsAcode%"=="b" goto DefaultFormatSet
     goto dfsAudio
 
@@ -176,10 +176,10 @@ title Preferences - ytBATCH %version%
     echo.
     set /p dfsVcode=COMMAND:
     if /i "%dfsVcode%"=="n" set DefaultVideo=none& goto ConfigSet
-    if /i "%dfsVcode%"=="s" set DefaultVideo=source & goto ConfigSet
-    if /i "%dfsVcode%"=="4" set DefaultVideo=mp4 & goto ConfigSet
-    if /i "%dfsVcode%"=="v" set DefaultVideo=mkv & goto ConfigSet
-    if /i "%dfsVcode%"=="g" set DefaultVideo=ogg & goto ConfigSet
+    if /i "%dfsVcode%"=="s" set DefaultVideo=source& goto ConfigSet
+    if /i "%dfsVcode%"=="4" set DefaultVideo=mp4& goto ConfigSet
+    if /i "%dfsVcode%"=="v" set DefaultVideo=mkv& goto ConfigSet
+    if /i "%dfsVcode%"=="g" set DefaultVideo=ogg& goto ConfigSet
     if /i "%dfsVcode%"=="b" goto DefaultFormatSet
     goto dfsVideo
 

@@ -2,9 +2,10 @@
 title Enter Action - ytBATCH %version%
 %mcls%
 
-::Cookie/Playlist Settings
+::Cookie/Playlist/Format Settings
     if "%AutoCookies%"=="T" (set CookieSet=--cookies "..\cfg\cookies.txt") else (set CookieSet=)
     set PlaylistSet=--no-playlist
+    set FormatSet=F
     if exist ..\QueueList.bat (set QueueSet=T) else (set QueueSet=F)
     :UrlHPassed
     %mcls%
@@ -16,7 +17,10 @@ title Enter Action - ytBATCH %version%
     echo.
     echo   (A) Audio
     echo   (V) Video
-    echo   (F) List All Formats...
+    echo   (L) List All...
+    echo.
+    if "%FormatSet%"=="T" echo   (F) Change Format... (CURRENT: %DefaultAudio%/%DefaultVideo%) (TRUE) 
+    if not "%FormatSet%"=="T" echo   (F) Change Format... (CURRENT: %DefaultAudio%/%DefaultVideo%) (FALSE)
     echo.
     if "%QueueSet%"=="T" echo   (Q) Add to Queue... (TRUE)
     if not "%QueueSet%"=="T" echo   (Q) Add to Queue... (FALSE)
@@ -36,7 +40,8 @@ title Enter Action - ytBATCH %version%
 
     if /i "%UrlCode%"=="A" call AudioDL.bat
     if /i "%UrlCode%"=="V" call VideoDL.bat
-    if /i "%UrlCode%"=="F" call ListDL.bat
+    if /i "%UrlCode%"=="L" call ListDL.bat
+    if /i "%UrlCode%"=="F" goto FormatSetHandler
     if /i "%UrlCode%"=="C" goto CookieSetHandler
     if /i "%UrlCode%"=="P" goto PlSetHandler
     if /i "%UrlCode%"=="B" call MainMenu.bat
@@ -44,9 +49,15 @@ title Enter Action - ytBATCH %version%
 
     goto UrlHPassed
 
+::Format Handler
+    :FormatSetHandler
+    if /i "%FormatSet%"=="T" set FormatSet=F&goto UrlHPassed
+    set FormatSet=T
+    goto UrlHPassed
+
 ::Playlist Handler
     :PlSetHandler
-    if "%PlaylistSet%"=="--yes-playlist" set PlaylistSet=--no-playlist&goto UrlHPassed
+    if /i "%PlaylistSet%"=="--yes-playlist" set PlaylistSet=--no-playlist&goto UrlHPassed
     set PlaylistSet=--yes-playlist
     goto UrlHPassed
     
@@ -67,6 +78,6 @@ title Enter Action - ytBATCH %version%
 
 ::Queue Handler
     :QueueSetHandler
-    if "%QueueSet%"=="T" set QueueSet=F&goto UrlHPassed
+    if /i "%QueueSet%"=="T" set QueueSet=F&goto UrlHPassed
     set QueueSet=T
     goto UrlHPassed
