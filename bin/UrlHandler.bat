@@ -19,8 +19,9 @@ title Enter Action - ytBATCH %version%
     echo   (V) Video
     echo   (L) List All...
     echo.
-    if "%FormatSet%"=="T" echo   (F) Change Format... (CURRENT: %DefaultAudio%/%DefaultVideo%) (TRUE) 
-    if not "%FormatSet%"=="T" echo   (F) Change Format... (CURRENT: %DefaultAudio%/%DefaultVideo%) (FALSE)
+    if "%FormatSet%"=="T" echo   (F) Change Format... (TRUE) 
+    if not "%FormatSet%"=="T" echo   (F) Change Format... (FALSE)
+    echo       (CURRENT: %DefaultAudio%/%DefaultVideo%)
     echo.
     if "%QueueSet%"=="T" echo   (Q) Add to Queue... (TRUE)
     if not "%QueueSet%"=="T" echo   (Q) Add to Queue... (FALSE)
