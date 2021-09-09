@@ -15,13 +15,14 @@ title Enter Action - ytBATCH %version%
     set UrlCode=
     echo URL:"%Url%"
     echo.
-    echo   (A) Audio
-    echo   (V) Video
+    if /i not "%DefaultAudio%"=="none" echo   (A) Audio (%DefaultAudio%) 
+    if /i "%DefaultAudio%"=="none" echo   (A) Audio
+    if /i not "%DefaultVideo%"=="none" echo   (V) Video (%DefaultVideo%) 
+    if /i "%DefaultVideo%"=="none" echo   (V) Video
     echo   (L) List All...
     echo.
     if "%FormatSet%"=="T" echo   (F) Change Format... (TRUE) 
     if not "%FormatSet%"=="T" echo   (F) Change Format... (FALSE)
-    echo       (CURRENT: %DefaultAudio%/%DefaultVideo%)
     echo.
     if "%QueueSet%"=="T" echo   (Q) Add to Queue... (TRUE)
     if not "%QueueSet%"=="T" echo   (Q) Add to Queue... (FALSE)
