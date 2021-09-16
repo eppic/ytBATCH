@@ -43,7 +43,7 @@ title Preferences - ytBATCH %version%
     if /i "%PrefCode%"=="L" notepad Changelog.txt
     if /i "%PrefCode%"=="P" goto OutputPath
     if /i "%PrefCode%"=="F" goto DefaultFormatSet
-    if /i "%PrefCode%"=="K" goto AutoCookieSetp
+    if /i "%PrefCode%"=="K" goto AutoCookieSet
     if /i "%PrefCode%"=="O" goto DestOpenSet
     if /i "%PrefCode%"=="Q" goto CleanQueueStartSet
     if /i "%PrefCode%"=="H" goto HistorySet
