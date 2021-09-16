@@ -9,12 +9,10 @@ title Check for Updates - ytBATCH %version%
     set UpdateCode=
     echo Update Center
     echo.
-    echo   (Y) Open latest ytBATCH release...
+    echo   (T) Update ytBATCH
     echo   (D) Update %ytdlv%...
     echo.
-    echo   (G) ytbatch update attempt (cur: %version%; uc: %latestversion%)
-    echo.
-    echo   (T) Update to latest Main Branch (experimental)
+    echo   (Y) View latest ytBATCH release...
     echo.
     echo (B) Go Back...
     echo.
@@ -22,9 +20,9 @@ title Check for Updates - ytBATCH %version%
     set /p UpdateCode=COMMAND:
     
     if /i "%UpdateCode%"=="Y" start "" "https://github.com/eppic/ytBATCH/releases/latest"
-    if /i "%UpdateCode%"=="T" goto ytbatch-main-dl
+    if /i "%UpdateCode%"=="MAIN" goto ytbatch-main-dl
     if /i "%UpdateCode%"=="D" goto ytdl-dl
-    if /i "%UpdateCode%"=="G" goto ytbatch-release-dl
+    if /i "%UpdateCode%"=="T" goto ytbatch-release-dl
     if /i "%UpdateCode%"=="B" call MainMenu.bat
     
     call Updater.bat
@@ -97,30 +95,21 @@ title Check for Updates - ytBATCH %version%
         
     :UpMsg_UpToDate
     echo latest
-    pause
     call Updater.bat
 
     :UpMsg_UpdateDL
     echo update!
-    pause
-    
     powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://github.com/eppic/ytBATCH/releases/download/2.7/ytBATCH_%latestversion%.zip', '..\ytb_temp.zip')"
-    pause
 
-    ::extract
     echo Extracting zip...
     powershell -command "(Expand-Archive -Force ..\ytb_temp.zip ..\temp\ )"
-    pause
 
     set ytbUpPass=pass
-    pause
     xcopy Updater.bat ..\ /E /i /H /Y
-    pause
     call ..\Updater.bat
-    :ytbUpPassed
-    explorer .
-    pause
     
+    :ytbUpPassed
+
     ::move
     echo Moving...
     xcopy ..\temp\* ..\ /E /i /H /Y
