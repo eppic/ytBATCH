@@ -2,8 +2,10 @@
 title Check for Updates - ytBATCH %version%
 %mcls%
 
-::Update Menu
+::Skip to ytb Update?
+    if /i "%ytbUpPass%"=="pass" goto ytbUpPassed
 
+::Update Menu
     set UpdateCode=
     echo Update Center
     echo.
@@ -103,11 +105,27 @@ title Check for Updates - ytBATCH %version%
     pause
     
     powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://github.com/eppic/ytBATCH/releases/download/2.7/ytBATCH_%latestversion%.zip', '..\ytb_temp.zip')"
-    
+    pause
+
     ::extract
     echo Extracting zip...
-    powershell -command "(Expand-Archive -Force ..\ytb_temp.zip ..\ )"
+    powershell -command "(Expand-Archive -Force ..\ytb_temp.zip ..\temp\ )"
+    pause
 
+    set ytbUpPass=pass
+    pause
+    xcopy Updater.bat ..\ /E /i /H /Y
+    pause
+    call ..\Updater.bat
+    :ytbUpPassed
+    explorer .
+    pause
+    
+
+    ::move
+    echo Moving...
+    xcopy ..\temp\* ..\ /E /i /H /Y
+    
     ::delete
     echo Deleting temporary files...
     del ..\ytb_temp.zip /Q
