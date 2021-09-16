@@ -121,7 +121,6 @@ title Check for Updates - ytBATCH %version%
     explorer .
     pause
     
-
     ::move
     echo Moving...
     xcopy ..\temp\* ..\ /E /i /H /Y
