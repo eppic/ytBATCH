@@ -108,15 +108,10 @@ title Check for Updates - ytBATCH %version%
     echo Extracting zip...
     powershell -command "(Expand-Archive -Force ..\ytb_temp.zip ..\ )"
 
-    ::move
-    echo Moving...
-    xcopy ..\ytBATCH-main\* ..\ /E /i /H /Y
-
     ::delete
     echo Deleting temporary files...
-    rmdir ..\ytBATCH-main /S /Q
     del ..\ytb_temp.zip /Q
     echo.
-    echo Updated ytBATCH to latest Main Branch (Problems may occur!)
+    echo Updated ytBATCH to latest version!
     pause
     call Launcher.bat
