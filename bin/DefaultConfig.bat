@@ -11,8 +11,8 @@ set DestOpen=F
 ::Use Cookies automatically when downloading
 set AutoCookies=F
 ::Use a default format for Video and Audio Downloads (Customizable)
-set DefaultAudio=none
-set DefaultVideo=none
+set DefaultAudio=mp3
+set DefaultVideo=mp4
 ::Create a Download History
 set HstEnb=F
 ::Clean Queue when restarting
