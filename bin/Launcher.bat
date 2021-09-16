@@ -3,7 +3,7 @@ title ytBATCH %version%
 %mcls%
 
 ::Load Config
-    set Version=2.7
+    set /p version=<VersionNumber.info
 
     ::Check for Config, open Installer 
     if not exist ..\cfg\UserConfig.bat call Installer.bat
@@ -15,7 +15,8 @@ title ytBATCH %version%
     ::rename custom.conf to youtube-dl.conf, create new one
     if exist "..\cfg\custom.conf" ren "..\cfg\custom.conf" "youtube-dl.conf"
     if not exist ..\cfg\youtube-dl.conf copy nul ..\cfg\youtube-dl.conf
-            
+    
+    :
     ::echo off switch ("echo")
     if /i "%mecho%"=="" (set mcls=cls) else (set mcls=echo -)
 
