@@ -16,7 +16,9 @@ title ytBATCH %version%
     if exist "..\cfg\custom.conf" ren "..\cfg\custom.conf" "youtube-dl.conf"
     if not exist ..\cfg\youtube-dl.conf copy nul ..\cfg\youtube-dl.conf
     
-    :
+    ::remove temporary files
+    del ..\Updater.bat
+
     ::echo off switch ("echo")
     if /i "%mecho%"=="" (set mcls=cls) else (set mcls=echo -)
 
