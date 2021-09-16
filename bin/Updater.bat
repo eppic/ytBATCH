@@ -128,6 +128,7 @@ title Check for Updates - ytBATCH %version%
     ::delete
     echo Deleting temporary files...
     del ..\ytb_temp.zip /Q
+    rmdir ..\temp /S /Q
     echo.
     echo Updated ytBATCH to latest version!
     pause
