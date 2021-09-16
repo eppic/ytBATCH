@@ -55,10 +55,10 @@ title Check for Updates - ytBATCH %version%
     echo.
 
     set /p ytbupcode=COMMAND:
-    if /i "%ytbupcode%"=="Y" goto ytbuppassed
+    if /i "%ytbupcode%"=="Y" goto ytbuppassedmain
     if /i "%ytbupcode%"=="N" call Updater.bat
     goto ytbatch-main-dl
-    :ytbuppassed
+    :ytbuppassedmain
 
     ::download
     echo Downloading latest Main Branch...
