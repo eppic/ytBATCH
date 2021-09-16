@@ -1,0 +1,1 @@
+set latestversion=2.7
