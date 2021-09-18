@@ -81,7 +81,7 @@ title Check for Updates - ytBATCH %version%
 
 ::ytBATCH Updater (Release)
     :ytbatch-release-dl
-    powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://raw.githubusercontent.com/eppic/ytBATCH/main/bin/VersionNumber.info', '..\updatecheck_temp.info')"
+    powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://raw.githubusercontent.com/eppic/ytBATCH/main/bin/versionnumber.info', '..\updatecheck_temp.info')"
     
     ::set latest version to var
     set /p latestversion=<..\updatecheck_temp.info

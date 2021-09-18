@@ -3,7 +3,7 @@ title ytBATCH %version%
 %mcls%
 
 ::Load Config
-    set /p version=<VersionNumber.info
+    set /p version=<versionnumber.info
 
     ::Check for Config, open Installer 
     if not exist ..\cfg\UserConfig.bat call Installer.bat
