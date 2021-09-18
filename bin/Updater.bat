@@ -35,7 +35,7 @@ title Check for Updates - ytBATCH %version%
     echo.
     
     pause
-    call MainMenu.bat
+    call Updater.bat
 
 ::ytBATCH Updater (Main)
     :ytbatch-main-dl
