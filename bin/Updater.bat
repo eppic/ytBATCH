@@ -94,14 +94,33 @@ title Check for Updates - ytBATCH %version%
     if /i "%version%"=="%latestversion%" (goto UpMsg_UpToDate) else (goto UpMsg_UpdateDL)
         
     :UpMsg_UpToDate
-    echo latest
+    echo ytBATCH is up to date. (%latestversion%)
+    pause
     call Updater.bat
 
     :UpMsg_UpdateDL
-    echo update!
+    set ytbupcode=
+    %mcls%
+    echo There is a new version of ytBATCH. (%latestversion%) 
+    echo.
+    echo Do you want to update now?
+
+    echo.
+    echo  (Y) Yes...
+    echo  (N) No...
+    echo.
+
+    set /p ytbupcode=COMMAND:
+    if /i "%ytbupcode%"=="Y" goto ytbuppassedrelease
+    if /i "%ytbupcode%"=="N" call Updater.bat
+    goto UpMsg_UpdateDL
+    :ytbuppassedrelease
+    
+    %mcls%
+    echo Downloading...
     powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://github.com/eppic/ytBATCH/releases/download/2.7/ytBATCH_%latestversion%.zip', '..\ytb_temp.zip')"
 
-    echo Extracting zip...
+    echo Extracting...
     powershell -command "(Expand-Archive -Force ..\ytb_temp.zip ..\temp\ )"
 
     set ytbUpPass=pass
@@ -110,15 +129,14 @@ title Check for Updates - ytBATCH %version%
     
     :ytbUpPassed
 
-    ::move
     echo Moving...
     xcopy ..\temp\* ..\ /E /i /H /Y
-    
-    ::delete
-    echo Deleting temporary files...
+
+    echo Cleaning temporary files...
     del ..\ytb_temp.zip /Q
     rmdir ..\temp /S /Q
     echo.
-    echo Updated ytBATCH to latest version!
+    echo Updated ytBATCH to the latest version!
+    set ytbUpPass=
     pause
     call Launcher.bat
