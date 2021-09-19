@@ -49,7 +49,7 @@ title Preferences - ytBATCH %version%
     if /i "%PrefCode%"=="H" goto HistorySet
     if /i "%PrefCode%"=="T" goto EmbThbSet
     if /i "%PrefCode%"=="Y" goto YtdlvSet
-    if /i "%PrefCode%"=="Download" call FileDownloader.bat
+    if /i "%PrefCode%"=="Download" set fdcode= & call FileDownloader.bat
     if /i "%PrefCode%"=="R" explorer ..\
     if /i "%PrefCode%"=="X" explorer %Destination%
     if /i "%PrefCode%"=="C" notepad ..\cfg\UserConfig.bat
