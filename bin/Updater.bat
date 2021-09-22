@@ -117,7 +117,7 @@ title Check for Updates - ytBATCH %version%
     
     %mcls%
     echo Downloading...
-    powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://github.com/eppic/ytBATCH/releases/download/%version%/ytBATCH_%latestversion%.zip', '..\ytb_temp.zip')"
+    powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://github.com/eppic/ytBATCH/releases/download/%latestversion%/ytBATCH_%latestversion%.zip', '..\ytb_temp.zip')"
 
     echo Extracting...
     powershell -command "(Expand-Archive -Force ..\ytb_temp.zip ..\temp\ )"
