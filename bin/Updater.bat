@@ -44,7 +44,6 @@ title Check for Updates - ytBATCH %version%
     echo WARNING! 
     echo. 
     echo Updating to this version of ytBATCH is NOT RECOMMENDED.
-    echo If you want do update, please download the latest version manually.
     echo.
     echo Update anyway?
     echo.
