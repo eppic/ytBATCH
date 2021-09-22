@@ -2,6 +2,8 @@
 # ytBATCH
 An easy to use Batch Script for downloading Audio and Video using [yt-dlp](https://github.com/yt-dlp/yt-dlp).  
 
+## [SCREENSHOTS]()
+
 ## INSTALL
 
 1. Download the [latest code](https://github.com/eppic/ytBATCH/archive/refs/heads/main.zip) or a [release](https://github.com/eppic/ytBATCH/releases)  
