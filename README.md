@@ -1,6 +1,6 @@
 [![icon](https://github.com/eppic/ytBATCH/blob/main/bin/256.ico)](https://github.com/eppic/ytBATCH)
 # ytBATCH
-An easy to use Batch Script using [yt-dlp](https://github.com/yt-dlp/yt-dlp).  
+An easy to use Batch Script for downloading Audio and Video using [yt-dlp](https://github.com/yt-dlp/yt-dlp).  
 
 ## INSTALL
 
