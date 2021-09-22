@@ -2,15 +2,19 @@
 # ytBATCH
 An easy to use Batch Script for downloading Audio and Video using [yt-dlp](https://github.com/yt-dlp/yt-dlp).  
 
-## [SCREENSHOTS]()
+## SCREENSHOTS
+
+   - [Main Menu](https://raw.githubusercontent.com/eppic/ytBATCH-externals/main/image_295.png)
+   - [Download Menu](https://raw.githubusercontent.com/eppic/ytBATCH-externals/main/image_293.png)  
+   - [Preferences](https://raw.githubusercontent.com/eppic/ytBATCH-externals/main/image_294.png)  
 
 ## INSTALL
 
 1. Download the [latest code](https://github.com/eppic/ytBATCH/archive/refs/heads/main.zip) or a [release](https://github.com/eppic/ytBATCH/releases)  
 2. Run ytBATCH.bat in the provided folder  
 3. A prompt appears asking to install ytBATCH.  
-   - *`Yes`: Install ytBATCH to AppData and generate shortcuts*  
-   - *`No`: Keep ytBATCH in its download folder.*  
+   - `Yes`: Install ytBATCH to AppData and generate shortcuts  
+   - `No`: Keep ytBATCH in its download folder.  
 4. Press any key to download yt-dlp.exe and ffmpeg.exe  
 5. Done  
 
