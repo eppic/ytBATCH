@@ -1,6 +1,6 @@
 [![icon](https://github.com/eppic/ytBATCH/blob/main/bin/256.ico)](https://github.com/eppic/ytBATCH)
 # ytBATCH
-An easy to use Batch Script using [youtube-dl](https://github.com/ytdl-org/youtube-dl).  
+An easy to use Batch Script using [yt-dlp](https://github.com/yt-dlp/yt-dlp).  
 
 ## INSTALL
 
@@ -9,7 +9,7 @@ An easy to use Batch Script using [youtube-dl](https://github.com/ytdl-org/youtu
 3. A prompt appears asking to install ytBATCH.  
    - *`Yes`: Install ytBATCH to AppData and generate shortcuts*  
    - *`No`: Keep ytBATCH in its download folder.*  
-4. Press any key to download youtube-dl.exe and ffmpeg.exe  
+4. Press any key to download yt-dlp.exe and ffmpeg.exe  
 5. Done  
 
 ## USAGE
