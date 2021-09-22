@@ -44,7 +44,7 @@ title ytBATCH %version%
 
     ::ffmpeg
     if exist "..\exe\ffmpeg.zip" powershell -command "(Expand-Archive -Force ..\exe\ffmpeg.zip ..\exe\ )" & del "..\exe\ffmpeg.zip"
-    if not exist "..\exe\ffmpeg.exe" set fdcode=ffmp& echo ffmpeg.exe not found. & echo Press any key to download the latest version of ffmpeg.exe... & pause>nul & call FileDownloader.bat
+    if not exist "..\exe\ffmpeg.exe" set fdcode=ffmp& echo ffmpeg.exe not found. & echo Press any key to download ffmpeg.exe... & pause>nul & call FileDownloader.bat
     
 ::Open Menu
     call MainMenu.bat
