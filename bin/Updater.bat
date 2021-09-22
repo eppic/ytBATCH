@@ -112,6 +112,7 @@ title Check for Updates - ytBATCH %version%
     set /p ytbupcode=COMMAND:
     if /i "%ytbupcode%"=="Y" goto ytbuppassedrelease
     if /i "%ytbupcode%"=="N" call Updater.bat
+    if /i "%ytbupcode%"=="B" call Updater.bat
     goto UpMsg_UpdateDL
     :ytbuppassedrelease
     
