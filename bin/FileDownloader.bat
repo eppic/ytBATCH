@@ -38,7 +38,11 @@ call Launcher.bat
 :fdl_ffmp
 echo Wait for ffmpeg.exe to download...
 echo This will take a moment.
-powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://raw.githubusercontent.com/eppic/ytBATCH/main/exe/ffmpeg.exe', '..\exe\ffmpeg.exe')"
+powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://raw.githubusercontent.com/eppic/ytBATCH/main/exe/ffmpeg.zip', '..\exe\ffmpeg.zip')"
+echo Extract...
+powershell -command "(Expand-Archive -Force ..\exe\ffmpeg.zip ..\exe\ )"
+echo Clean Up...
+if exist ..\exe\ffmpeg.exe del ..\exe\ffmpeg.zip
 echo.
 echo ffmpeg.exe downloaded.
 pause
