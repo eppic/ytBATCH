@@ -9,7 +9,7 @@ An easy to use Batch Script using [yt-dlp](https://github.com/yt-dlp/yt-dlp).
 3. A prompt appears asking to install ytBATCH.  
    - *`Yes`: Install ytBATCH to AppData and generate shortcuts*  
    - *`No`: Keep ytBATCH in its download folder.*  
-4. Press any key to download youtube-dl.exe and ffmpeg.exe  
+4. Press any key to download yt-dlp.exe and ffmpeg.exe  
 5. Done  
 
 ## USAGE
