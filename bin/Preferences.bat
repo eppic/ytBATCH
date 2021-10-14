@@ -5,26 +5,31 @@ title Preferences - ytBATCH %version%
 ::Preferences Menu
     set PrefCode=
     
-    echo General:
-    echo   (P) Change Output Path...
-    echo   (F) Set Default Audio and Video Formats...
+    echo ytBATCH:
+    if "%AUEnb%"=="T" echo   (A) Check for Updates on Startup... (TRUE)
+    if /i not "%AUEnb%"=="T" echo   (A) Check for Updates on Startup... (FALSE)
 
-    if "%AutoCookies%"=="T" echo   (K) Use Cookies by default... (TRUE)
-    if /i not "%AutoCookies%"=="T" echo   (K) Use Cookies by default... (FALSE)
-
-    if "%DestOpen%"=="T" echo   (O) Open Containing Folder after Download... (TRUE)
-    if /i not "%DestOpen%"=="T" echo   (O) Open Containing Folder after Download... (FALSE)
+    echo   (Y) Change yt-dl version (CURRENT: %ytdlv%)
 
     if "%CleanQueueStart%"=="T" echo   (Q) Clean Queue when restarting... (TRUE)
     if /i not "%CleanQueueStart%"=="T" echo   (Q) Clean Queue when restarting... (FALSE)
 
     if "%HstEnb%"=="T" echo   (H) Keep Download History... (TRUE)
     if /i not "%HstEnb%"=="T" echo   (H) Keep Download History... (FALSE)
-    
+
+    echo.
+    echo Download:
+    echo   (F) Set Default Audio and Video Formats...
+    echo   (P) Change Output Path...
+
+    if "%DestOpen%"=="T" echo   (O) Open Containing Folder after Download... (TRUE)
+    if /i not "%DestOpen%"=="T" echo   (O) Open Containing Folder after Download... (FALSE)
+
+    if "%AutoCookies%"=="T" echo   (K) Use Cookies by default... (TRUE)
+    if /i not "%AutoCookies%"=="T" echo   (K) Use Cookies by default... (FALSE)
+
     if "%EmbThb%"=="T" echo   (T) Download Video Thumbnail for Audio... (TRUE)
     if /i not "%EmbThb%"=="T" echo   (T) Download Video Thumbnail for Audio... (FALSE)
-
-    echo   (Y) Choose yt-dl version (CURRENT: %ytdlv%)
 
     echo.
     echo Open:
@@ -49,6 +54,7 @@ title Preferences - ytBATCH %version%
     if /i "%PrefCode%"=="H" goto HistorySet
     if /i "%PrefCode%"=="T" goto EmbThbSet
     if /i "%PrefCode%"=="Y" goto YtdlvSet
+    if /i "%PrefCode%"=="A" goto AUSet
     if /i "%PrefCode%"=="Download" set fdcode= & call FileDownloader.bat
     if /i "%PrefCode%"=="R" explorer ..\
     if /i "%PrefCode%"=="X" explorer %Destination%
@@ -56,7 +62,6 @@ title Preferences - ytBATCH %version%
     if /i "%PrefCode%"=="V" goto YtdlConfigSet
     if /i "%PrefCode%"=="J" notepad ..\History.txt
     if /i "%PrefCode%"=="B" call MainMenu.bat
-      
 	if /i "%PrefCode%"=="G" start "" "https://github.com/eppic/ytBATCH"
 
     call Preferences.bat
@@ -119,6 +124,10 @@ title Preferences - ytBATCH %version%
        :YtdlvSetPass
        if /i "%ytdlv%"=="youtube-dl" (set ytdlv=yt-dlp) else (set ytdlv=youtube-dl)
        goto ConfigSet
+
+    :AUSet
+    if /i "%AUEnb%"=="T" (set AUEnb=F) else (set AUEnb=T)
+    goto ConfigSet
 
 ::Default Formats
     :DefaultFormatSet
@@ -196,6 +205,7 @@ title Preferences - ytBATCH %version%
     echo set CleanQueueStart=%CleanQueueStart%>> ..\cfg\UserConfig.bat
     echo set ytdlv=%ytdlv%>> ..\cfg\UserConfig.bat
     echo set EmbThb=%EmbThb%>> ..\cfg\UserConfig.bat
+    echo set AUEnb=%AUEnb%>> ..\cfg\UserConfig.bat
 
     call ..\cfg\UserConfig.bat
     call Preferences.bat
