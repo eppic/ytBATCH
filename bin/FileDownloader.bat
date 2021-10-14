@@ -27,7 +27,7 @@ call Launcher.bat
 :fdl_ytdlp
 echo Wait for yt-dlp.exe to download... 
 echo This will take a moment.
-powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://github.com/yt-dlp/yt-dlp/releases/download/2021.08.10/yt-dlp.exe', '..\exe\yt-dlp.exe')"
+powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://github.com/yt-dlp/yt-dlp/releases/download/2021.10.10/yt-dlp.exe', '..\exe\yt-dlp.exe')"
 ..\exe\yt-dlp -U
 echo.
 echo yt-dlp.exe downloaded.
