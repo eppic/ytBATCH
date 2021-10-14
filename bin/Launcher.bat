@@ -46,7 +46,8 @@ title ytBATCH %version%
     if exist "..\exe\ffmpeg.zip" powershell -command "(Expand-Archive -Force ..\exe\ffmpeg.zip ..\exe\ )" & del "..\exe\ffmpeg.zip"
     if not exist "..\exe\ffmpeg.exe" set fdcode=ffmp& echo ffmpeg.exe not found. & echo Press any key to download ffmpeg.exe... & pause>nul & call FileDownloader.bat
     
-    ::AutoUpdate
+::AutoUpdate
+    if /i not "%AUEnb%"=="T" goto :AU_Passed
     if not exist AutoUpdate.lnk powershell.exe "powershell -ExecutionPolicy Bypass -File AutoUpdate.ps1"
     start AutoUpdate.lnk
     if not exist ..\update.info goto AU_Passed

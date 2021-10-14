@@ -21,3 +21,5 @@ set CleanQueueStart=T
 set ytdlv=yt-dlp
 ::Download Video Thumbnail for Audio
 set EmbThb=T
+::Check for Updates on Startup
+set AUEnb=T
