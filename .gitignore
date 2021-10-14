@@ -13,3 +13,5 @@ ytBATCH-main
 *.exe
 QueueList.bat
 exe/ffmpeg.zip
+update.info
+AutoUpdate.lnk
