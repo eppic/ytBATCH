@@ -4,6 +4,7 @@ title Check for Updates - ytBATCH %version%
 
 ::Skip to ytb Update?
     if /i "%ytbUpPass%"=="pass" goto ytbUpPassed
+    if /i "%ytbAU%"=="pass" goto ytbatch-release-dl
 
 ::Update Menu
     set UpdateCode=
@@ -89,6 +90,8 @@ title Check for Updates - ytBATCH %version%
     ::check if error
     if /i "%latestversion%"=="" echo ERROR & pause & call Updater.bat
 
+    ::AutoUpdater Skip
+    if "%ytbAU%"=="pass" goto ytbuppassedrelease
     ::check if same
     if /i "%version%"=="%latestversion%" (goto UpMsg_UpToDate) else (goto UpMsg_UpdateDL)
         
@@ -135,6 +138,7 @@ title Check for Updates - ytBATCH %version%
     echo Cleaning temporary files...
     del ..\ytb_temp.zip /Q
     rmdir ..\temp /S /Q
+    if exist ..\update.info del ..\update.info
     echo.
     echo Updated ytBATCH to the latest version!
     set ytbUpPass=
