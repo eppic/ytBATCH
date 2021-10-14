@@ -23,7 +23,7 @@ title Enter URL - ytBATCH %version%
     if /i "%Url%"=="H" title Help - ytBATCH %version% & cls & ..\exe\%ytdlv% --help & pause & call MainMenu.bat
     if /i "%Url%"=="NEW" goto Refresh
     if /i "%Url%"=="NNEW" call Launcher.bat
-    if /i "%Url%"=="C" %mcls% & title cmd & cd ..\exe & cmd.exe & cd ..\bin & call MainMenu.bat 
+    if /i "%Url%"=="C" %mcls% & title cmd & cd ..\exe & echo Type "EXIT" to return to the Main Menu... & cmd.exe & cd ..\bin & call MainMenu.bat 
     if /i "%Url%"=="X" exit
     if /i "%Url%"=="echo" set mecho=1 & call Launcher.bat
     if /i "%Url%"=="B" call MainMenu.bat
