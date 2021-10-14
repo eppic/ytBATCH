@@ -46,6 +46,33 @@ title ytBATCH %version%
     if exist "..\exe\ffmpeg.zip" powershell -command "(Expand-Archive -Force ..\exe\ffmpeg.zip ..\exe\ )" & del "..\exe\ffmpeg.zip"
     if not exist "..\exe\ffmpeg.exe" set fdcode=ffmp& echo ffmpeg.exe not found. & echo Press any key to download ffmpeg.exe... & pause>nul & call FileDownloader.bat
     
+    ::AutoUpdate
+    if not exist AutoUpdate.lnk powershell.exe "powershell -ExecutionPolicy Bypass -File AutoUpdate.ps1"
+    start AutoUpdate.lnk
+    if not exist ..\update.info goto AU_Passed
+    
+    set /p latestversion=<..\update.info
+
+    :UpMsg_UpdateDL
+    set ytbupcode=
+    %mcls%
+    echo There is a new version of ytBATCH. (%latestversion%) 
+    echo.
+    echo Do you want to update now?
+
+    echo.
+    echo  (Y) Yes...
+    echo  (N) No...
+    echo.
+
+    set /p ytbupcode=COMMAND:
+    if /i "%ytbupcode%"=="Y" set ytbAU=pass& call Updater.bat 
+    if /i "%ytbupcode%"=="N" goto AU_Passed
+    if /i "%ytbupcode%"=="B" goto AU_Passed
+    goto UpMsg_UpdateDL
+
+    :AU_Passed
+
 ::Open Menu
     call MainMenu.bat
     
