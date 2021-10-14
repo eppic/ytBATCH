@@ -6,10 +6,9 @@ title Download Video - ytBATCH %version%
     set mopf=--merge-output-format 
     set VideoDLCode=
 
+    if /i "%FormatSet%"=="T" goto VDLDefFPassed
     if /i "%DefaultVideo%"=="source" goto VideoDLCheckSource
-    
     if /i "%DefaultVideo%"=="none" goto VDLDefFPassed
-    if "%FormatSet%"=="T" goto VDLDefFPassed
     set VideoDLFormat=%DefaultVideo%& goto VideoDLCheck
 
     :VDLDefFPassed
