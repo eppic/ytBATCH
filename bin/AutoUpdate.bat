@@ -22,4 +22,4 @@ title Auto Updater
     :UpMsg_UpdateDL
     copy nul ..\update.info
     echo %latestversion% > ..\update.info
-    goto ytBATCH_AU_Check
+    exit
