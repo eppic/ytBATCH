@@ -70,6 +70,7 @@ title ytBATCH %version%
     if /i "%ytbupcode%"=="Y" set ytbAU=pass& call Updater.bat 
     if /i "%ytbupcode%"=="N" goto AU_Passed
     if /i "%ytbupcode%"=="B" goto AU_Passed
+    if /i "%ytbupcode%"=="DEL" del ..\update.info & goto AU_Passed
     goto UpMsg_UpdateDL
 
     :AU_Passed
