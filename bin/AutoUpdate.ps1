@@ -7,4 +7,3 @@ $Shortcut = $WshShell.CreateShortcut("$AUSc")
 $Shortcut.TargetPath = "$AULink"
 $Shortcut.WindowStyle = 7
 $Shortcut.Save()
-
