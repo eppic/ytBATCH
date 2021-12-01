@@ -1,4 +1,3 @@
-@echo off
 title Auto Updater
 %mcls%
 
@@ -12,14 +11,13 @@ title Auto Updater
     
     ::check if error
     if /i "%latestversion%"=="" exit
-
+    
     ::check if same
     if /i "%version%"=="%latestversion%" (goto UpMsg_UpToDate) else (goto UpMsg_UpdateDL)
-        
+    
     :UpMsg_UpToDate
     exit
-
+    
     :UpMsg_UpdateDL
-    copy nul ..\update.info
     echo %latestversion% > ..\update.info
     exit
