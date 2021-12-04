@@ -66,11 +66,13 @@ title ytBATCH %version%
     echo  (N) No...
     echo.
 
-    set /p ytbupcode=COMMAND:
-    if /i "%ytbupcode%"=="Y" set ytbAU=pass& call Updater.bat 
-    if /i "%ytbupcode%"=="N" goto AU_Passed
-    if /i "%ytbupcode%"=="B" goto AU_Passed
-    if /i "%ytbupcode%"=="DEL" del ..\update.info & goto AU_Passed
+    choice /c BYNX /n
+    set ytbupcode=%errorlevel%
+
+    if /i "%ytbupcode%"=="2" set ytbAU=pass& call Updater.bat 
+    if /i "%ytbupcode%"=="3" goto AU_Passed
+    if /i "%ytbupcode%"=="1" goto AU_Passed
+    if /i "%ytbupcode%"=="4" del ..\update.info & goto AU_Passed
     goto UpMsg_UpdateDL
 
     :AU_Passed

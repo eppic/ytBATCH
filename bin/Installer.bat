@@ -10,10 +10,11 @@ cls
     echo Recommended: Install ytBATCH to AppData? (Y/N)
     echo.
     
-    set /p icode=COMMAND:
+    choice /c YN /n
+    set icode=%errorlevel%
     
-    if /i "%icode%"=="Y" goto appdata_install
-    if /i "%icode%"=="N" mkdir ..\cfg & copy nul "..\cfg\UserConfig.bat" & copy nul "..\cfg\youtube-dl.conf" & call Launcher.bat
+    if /i "%icode%"=="1" goto appdata_install
+    if /i "%icode%"=="2" mkdir ..\cfg & copy nul "..\cfg\UserConfig.bat" & copy nul "..\cfg\youtube-dl.conf" & call Launcher.bat
     goto ChoosePath
     
     :appdata_install
@@ -32,9 +33,11 @@ cls
     echo Moved and created shortcuts successfully!
     echo Keep original folder? (Y/N)
     echo. 
-    set /p icode=COMMAND:
-    if /i "%icode%"=="Y" goto rm_yes
-    if /i "%icode%"=="N" goto rm_no
+
+    choice /c YN /n
+    set icode=%errorlevel%
+    if /i "%icode%"=="1" goto rm_yes
+    if /i "%icode%"=="2" goto rm_no
     goto RmOGD
     
     :rm_no

@@ -43,26 +43,26 @@ title Preferences - ytBATCH %version%
     echo (B) Go Back...
     echo.
 
-    set /p PrefCode=COMMAND:
-
-    if /i "%PrefCode%"=="L" notepad Changelog.txt
-    if /i "%PrefCode%"=="P" goto OutputPath
-    if /i "%PrefCode%"=="F" goto DefaultFormatSet
-    if /i "%PrefCode%"=="K" goto AutoCookieSet
-    if /i "%PrefCode%"=="O" goto DestOpenSet
-    if /i "%PrefCode%"=="Q" goto CleanQueueStartSet
-    if /i "%PrefCode%"=="H" goto HistorySet
-    if /i "%PrefCode%"=="T" goto EmbThbSet
-    if /i "%PrefCode%"=="Y" goto YtdlvSet
-    if /i "%PrefCode%"=="A" goto AUSet
-    if /i "%PrefCode%"=="Download" set fdcode= & call FileDownloader.bat
-    if /i "%PrefCode%"=="R" explorer ..\
-    if /i "%PrefCode%"=="X" explorer %Destination%
-    if /i "%PrefCode%"=="C" notepad ..\cfg\UserConfig.bat
-    if /i "%PrefCode%"=="V" goto YtdlConfigSet
-    if /i "%PrefCode%"=="J" notepad ..\History.txt
-    if /i "%PrefCode%"=="B" call MainMenu.bat
-	if /i "%PrefCode%"=="G" start "" "https://github.com/eppic/ytBATCH"
+    choice /c LPFKOQHTYARXCVJBG /n
+    set PrefCode=%errorlevel%
+    
+    if /i "%PrefCode%"=="1" set fdcode= & call FileDownloader.bat
+    if /i "%PrefCode%"=="2" goto OutputPath
+    if /i "%PrefCode%"=="3" goto DefaultFormatSet
+    if /i "%PrefCode%"=="4" goto AutoCookieSet
+    if /i "%PrefCode%"=="5" goto DestOpenSet
+    if /i "%PrefCode%"=="6" goto CleanQueueStartSet
+    if /i "%PrefCode%"=="7" goto HistorySet
+    if /i "%PrefCode%"=="8" goto EmbThbSet
+    if /i "%PrefCode%"=="9" goto YtdlvSet
+    if /i "%PrefCode%"=="10" goto AUSet
+    if /i "%PrefCode%"=="11" explorer ..\
+    if /i "%PrefCode%"=="12" explorer %Destination%
+    if /i "%PrefCode%"=="13" start notepad ..\cfg\UserConfig.bat
+    if /i "%PrefCode%"=="14" goto YtdlConfigSet
+    if /i "%PrefCode%"=="15" start notepad ..\History.txt
+    if /i "%PrefCode%"=="16" call MainMenu.bat
+	if /i "%PrefCode%"=="17" start "" "https://github.com/eppic/ytBATCH"
 
     call Preferences.bat
 
@@ -78,7 +78,7 @@ title Preferences - ytBATCH %version%
     echo (B) Go Back...
     echo.    
     
-    set /p DestinationCode=PATH:
+    set /p DestinationCode=CODE/PATH:
 
     if /i "%DestinationCode%"=="B" call Preferences.bat & goto ConfigSet
     if /i "%DestinationCode%"=="D" set Destination=%userprofile%\Downloads\ytBATCH & goto ConfigSet
@@ -117,10 +117,14 @@ title Preferences - ytBATCH %version%
     echo  (Y) Yes...
     echo  (N) No...
     echo.
-    set /p ytdlvsetcode=COMMAND:
-    if /i "%ytdlvsetcode%"=="y" set fdcode=ytdl& call FileDownloader.bat
-    if /i "%ytdlvsetcode%"=="n" call Preferences.bat
+
+    choice /c YN /n
+    set ytdlvsetcode=%errorlevel%
+
+    if /i "%ytdlvsetcode%"=="1" set fdcode=ytdl& call FileDownloader.bat
+    if /i "%ytdlvsetcode%"=="2" call Preferences.bat
     goto YtdlvSet
+
        :YtdlvSetPass
        if /i "%ytdlv%"=="youtube-dl" (set ytdlv=yt-dlp) else (set ytdlv=youtube-dl)
        goto ConfigSet
@@ -140,10 +144,13 @@ title Preferences - ytBATCH %version%
     echo.
     echo (B) Go Back...
     echo.
-    set /p dfscode=COMMAND:
-    if /i "%dfscode%"=="a" goto dfsAudio
-    if /i "%dfscode%"=="v" goto dfsVideo
-    if /i "%dfscode%"=="b" call Preferences.bat
+
+    choice /c BAV /n
+    set dfscode=%errorlevel%
+
+    if /i "%dfscode%"=="1" call Preferences.bat
+    if /i "%dfscode%"=="2" goto dfsAudio
+    if /i "%dfscode%"=="3" goto dfsVideo
     goto DefaultFormatSet
 
     :dfsAudio
@@ -160,14 +167,17 @@ title Preferences - ytBATCH %version%
     echo.
     echo (B) Go Back...
     echo.
-    set /p dfsAcode=COMMAND:
-    if /i "%dfsAcode%"=="n" set DefaultAudio=none& goto ConfigSet
-    if /i "%dfsAcode%"=="s" set DefaultAudio=best& goto ConfigSet
-    if /i "%dfsAcode%"=="w" set DefaultAudio=wav& goto ConfigSet
-    if /i "%dfsAcode%"=="3" set DefaultAudio=mp3& goto ConfigSet
-    if /i "%dfsAcode%"=="4" set DefaultAudio=m4a& goto ConfigSet
-    if /i "%dfsAcode%"=="f" set DefaultAudio=flac& goto ConfigSet
-    if /i "%dfsAcode%"=="b" goto DefaultFormatSet
+
+    choice /c BNSW34F /n
+    set dfsAcode=%errorlevel%
+
+    if /i "%dfsAcode%"=="1" goto DefaultFormatSet
+    if /i "%dfsAcode%"=="2" set DefaultAudio=none& goto ConfigSet
+    if /i "%dfsAcode%"=="3" set DefaultAudio=best& goto ConfigSet
+    if /i "%dfsAcode%"=="4" set DefaultAudio=wav& goto ConfigSet
+    if /i "%dfsAcode%"=="5" set DefaultAudio=mp3& goto ConfigSet
+    if /i "%dfsAcode%"=="6" set DefaultAudio=m4a& goto ConfigSet
+    if /i "%dfsAcode%"=="7" set DefaultAudio=flac& goto ConfigSet
     goto dfsAudio
 
     :dfsVideo
@@ -183,13 +193,16 @@ title Preferences - ytBATCH %version%
     echo.
     echo (B) Go Back...
     echo.
-    set /p dfsVcode=COMMAND:
-    if /i "%dfsVcode%"=="n" set DefaultVideo=none& goto ConfigSet
-    if /i "%dfsVcode%"=="s" set DefaultVideo=source& goto ConfigSet
+
+    choice /c BNS4VG /n
+    set dfsVcode=%errorlevel%
+
+    if /i "%dfsVcode%"=="1" goto DefaultFormatSet
+    if /i "%dfsVcode%"=="2" set DefaultVideo=none& goto ConfigSet
+    if /i "%dfsVcode%"=="3" set DefaultVideo=source& goto ConfigSet
     if /i "%dfsVcode%"=="4" set DefaultVideo=mp4& goto ConfigSet
-    if /i "%dfsVcode%"=="v" set DefaultVideo=mkv& goto ConfigSet
-    if /i "%dfsVcode%"=="g" set DefaultVideo=ogg& goto ConfigSet
-    if /i "%dfsVcode%"=="b" goto DefaultFormatSet
+    if /i "%dfsVcode%"=="5" set DefaultVideo=mkv& goto ConfigSet
+    if /i "%dfsVcode%"=="6" set DefaultVideo=ogg& goto ConfigSet
     goto dfsVideo
 
 ::Apply Config to UserConfig.bat
@@ -212,7 +225,7 @@ title Preferences - ytBATCH %version%
 
 ::youtube-dl config
     :YtdlConfigSet
-    if exist "..\cfg\youtube-dl.conf" notepad "..\cfg\youtube-dl.conf" 
-    if not exist "..\cfg\youtube-dl.conf" copy nul "..\cfg\youtube-dl.conf" & notepad "..\cfg\youtube-dl.conf"
+    if exist "..\cfg\youtube-dl.conf" start notepad "..\cfg\youtube-dl.conf" 
+    if not exist "..\cfg\youtube-dl.conf" copy nul "..\cfg\youtube-dl.conf" & start notepad "..\cfg\youtube-dl.conf"
     call Preferences.bat
     

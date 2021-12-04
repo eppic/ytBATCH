@@ -35,19 +35,21 @@ title Enter Action - ytBATCH %version%
     echo (B) Go Back...
     echo.
 
-    set /p UrlCode=COMMAND:
+    choice /c BAVLFCPQ /n
+    set UrlCode=%errorlevel%
     
     ::Set Download Options
        set DlOpt=-o "%Destination%%FileNaming%" %CookieSet% %PlaylistSet% -i --add-metadata --config-location ..\cfg\youtube-dl.conf 
 
-    if /i "%UrlCode%"=="A" call AudioDL.bat
-    if /i "%UrlCode%"=="V" call VideoDL.bat
-    if /i "%UrlCode%"=="L" call ListDL.bat
-    if /i "%UrlCode%"=="F" goto FormatSetHandler
-    if /i "%UrlCode%"=="C" goto CookieSetHandler
-    if /i "%UrlCode%"=="P" goto PlSetHandler
-    if /i "%UrlCode%"=="B" call MainMenu.bat
-    if /i "%UrlCode%"=="Q" goto QueueSetHandler
+    if /i "%UrlCode%"=="1" call MainMenu.bat
+    if /i "%UrlCode%"=="2" call AudioDL.bat
+    if /i "%UrlCode%"=="3" call VideoDL.bat
+    if /i "%UrlCode%"=="4" call ListDL.bat
+    if /i "%UrlCode%"=="5" goto FormatSetHandler
+    if /i "%UrlCode%"=="6" goto CookieSetHandler
+    if /i "%UrlCode%"=="7" goto PlSetHandler
+    if /i "%UrlCode%"=="8" goto QueueSetHandler
+    pause
 
     goto UrlHPassed
 

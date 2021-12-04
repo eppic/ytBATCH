@@ -12,7 +12,7 @@ title Choose Format - ytBATCH %version%
     echo.
     
     :ReturnFLC
-    set /P FormatListCode=CODE/ID:
+    set /p FormatListCode=CODE/ID:
     if /i "%FormatListCode%"=="B" call UrlHandler
     if /i "%FormatListCode%"=="" goto ReturnFLC
 

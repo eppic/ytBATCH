@@ -18,13 +18,14 @@ title Check for Updates - ytBATCH %version%
     echo (B) Go Back...
     echo.
     
-    set /p UpdateCode=COMMAND:
+    choice /c BYMDT /n
+    set UpdateCode=%errorlevel%
     
-    if /i "%UpdateCode%"=="Y" start "" "https://github.com/eppic/ytBATCH/releases/latest"
-    if /i "%UpdateCode%"=="MAIN" goto ytbatch-main-dl
-    if /i "%UpdateCode%"=="D" goto ytdl-dl
-    if /i "%UpdateCode%"=="T" goto ytbatch-release-dl
-    if /i "%UpdateCode%"=="B" call MainMenu.bat
+    if /i "%UpdateCode%"=="2" start "" "https://github.com/eppic/ytBATCH/releases/latest"
+    if /i "%UpdateCode%"=="3" goto ytbatch-main-dl
+    if /i "%UpdateCode%"=="4" goto ytdl-dl
+    if /i "%UpdateCode%"=="5" goto ytbatch-release-dl
+    if /i "%UpdateCode%"=="1" call MainMenu.bat
     
     call Updater.bat
 
@@ -52,9 +53,11 @@ title Check for Updates - ytBATCH %version%
     echo  (N) No...
     echo.
 
-    set /p ytbupcode=COMMAND:
-    if /i "%ytbupcode%"=="Y" goto ytbuppassedmain
-    if /i "%ytbupcode%"=="N" call Updater.bat
+    choice /c YN /n
+    set ytbupcode=%errorlevel%
+
+    if /i "%ytbupcode%"=="1" goto ytbuppassedmain
+    if /i "%ytbupcode%"=="2" call Updater.bat
     goto ytbatch-main-dl
     :ytbuppassedmain
 
@@ -113,10 +116,12 @@ title Check for Updates - ytBATCH %version%
     echo  (N) No...
     echo.
 
-    set /p ytbupcode=COMMAND:
-    if /i "%ytbupcode%"=="Y" goto ytbuppassedrelease
-    if /i "%ytbupcode%"=="N" call Updater.bat
-    if /i "%ytbupcode%"=="B" call Updater.bat
+    choice /c BYN /n
+    set ytbupcode=%errorlevel%
+
+    if /i "%ytbupcode%"=="2" goto ytbuppassedrelease
+    if /i "%ytbupcode%"=="3" call Updater.bat
+    if /i "%ytbupcode%"=="1" call Updater.bat
     goto UpMsg_UpdateDL
     :ytbuppassedrelease
     
