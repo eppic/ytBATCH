@@ -39,7 +39,7 @@ title Enter Action - ytBATCH %version%
     set UrlCode=%errorlevel%
     
     ::Set Download Options
-       set DlOpt=-o "%Destination%%FileNaming%" %CookieSet% %PlaylistSet% -i --add-metadata --config-location ..\cfg\youtube-dl.conf 
+       set DlOpt=-o "%Destination%%FileNaming%" -i --add-metadata --config-location ..\cfg\youtube-dl.conf 
 
     if /i "%UrlCode%"=="1" call MainMenu.bat
     if /i "%UrlCode%"=="2" call AudioDL.bat

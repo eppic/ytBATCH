@@ -42,13 +42,13 @@ title Download Video - ytBATCH %version%
     if /i "%HstEnb%"=="T" echo %Url%>> ..\History.txt
 
 ::Add to Queue
-    if /i "%QueueSet%"=="T" echo ..\exe\%ytdlv% %mopf%%VideoDLFormat% %%DlOpt%% %Url% >> ..\QueueList.bat & call MainMenu.bat
+    if /i "%QueueSet%"=="T" echo ..\exe\%ytdlv% %mopf%%VideoDLFormat% %%DlOpt%% %CookieSet% %PlaylistSet% %Url% >> ..\QueueList.bat & call MainMenu.bat
 
 ::Download Video
     %mcls%
     echo Video
 
-    ..\exe\%ytdlv% %mopf%%VideoDLFormat% %DlOpt% %Url%
+    ..\exe\%ytdlv% %mopf%%VideoDLFormat% %DlOpt% %CookieSet% %PlaylistSet% %Url%
     if /i "%DestOpen%"=="T" explorer %Destination%
 
     echo.

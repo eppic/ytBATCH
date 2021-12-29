@@ -20,10 +20,10 @@ title Choose Format - ytBATCH %version%
     if /i "%HstEnb%"=="T" echo %Url%>> ..\History.txt
 
 ::Add to Queue
-    if /i "%QueueSet%"=="T" echo ..\exe\%ytdlv% -f %FormatListCode%+bestaudio %%DlOpt%% %Url% >> ..\QueueList.bat & call MainMenu.bat
+    if /i "%QueueSet%"=="T" echo ..\exe\%ytdlv% -f %FormatListCode%+bestaudio %%DlOpt%% %CookieSet% %PlaylistSet% %Url% >> ..\QueueList.bat & call MainMenu.bat
 
 ::Download
-    ..\exe\%ytdlv% -f %FormatListCode%+bestaudio %DlOpt% %Url%
+    ..\exe\%ytdlv% -f %FormatListCode%+bestaudio %DlOpt% %CookieSet% %PlaylistSet% %Url%
     if /i "%DestOpen%"=="T" explorer %Destination% 
 
     echo.
