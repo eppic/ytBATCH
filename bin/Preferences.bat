@@ -71,6 +71,7 @@ title Preferences - ytBATCH %version%
     set DestinationCode=
     %mcls%
     echo Type in your desired output path (For Example: "C:\Your\Own\Path")
+    echo Current: "%Destination%"
     echo.
     echo   (D) Default (Downloads\ytBATCH\.) 
     echo   (R) Root (ytBATCH\dl\.)
@@ -80,8 +81,9 @@ title Preferences - ytBATCH %version%
     
     set /p DestinationCode=CODE/PATH:
 
+    if /i "%DestinationCode%"=="" goto OutputPath
     if /i "%DestinationCode%"=="B" call Preferences.bat & goto ConfigSet
-    if /i "%DestinationCode%"=="D" set Destination=%userprofile%\Downloads\ytBATCH & goto ConfigSet
+    if /i "%DestinationCode%"=="D" set Destination=%userprofile%\Downloads\ytBATCH& goto ConfigSet
     if /i "%DestinationCode%"=="R" set Destination=..\dl\ & goto ConfigSet
     set Destination=%DestinationCode%
     goto ConfigSet
