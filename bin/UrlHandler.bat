@@ -5,6 +5,7 @@ title Enter Action - ytBATCH %version%
 ::Cookie/Playlist/Format Settings
     if "%AutoCookies%"=="T" (set CookieSet=--cookies "..\cfg\cookies.txt") else (set CookieSet=)
     set PlaylistSet=--no-playlist
+    set SubSet=--no-write-subs
     set FormatSet=F
     if exist ..\QueueList.bat (set QueueSet=T) else (set QueueSet=F)
     :UrlHPassed
@@ -29,13 +30,15 @@ title Enter Action - ytBATCH %version%
     echo.
     if "%PlaylistSet%"=="--yes-playlist" echo   (P) Playlist (TRUE)
     if "%PlaylistSet%"=="--no-playlist" echo   (P) Playlist (FALSE)
+    if "%SubSet%"=="--write-subs" echo   (S) Subtitles (TRUE) (Only downloads 1 Language / Default:"en")
+    if "%SubSet%"=="--no-write-subs" echo   (S) Subtitles (FALSE)
     if "%CookieSet%"=="--cookies "..\cfg\cookies.txt"" echo   (C) Cookies (TRUE)
     if not "%CookieSet%"=="--cookies "..\cfg\cookies.txt"" echo   (C) Cookies (FALSE)
     echo.
     echo (B) Go Back...
     echo.
 
-    choice /c BAVLFCPQ /n
+    choice /c BAVLFCPQS /n
     set UrlCode=%errorlevel%
     
     ::Set Download Options
@@ -49,7 +52,7 @@ title Enter Action - ytBATCH %version%
     if /i "%UrlCode%"=="6" goto CookieSetHandler
     if /i "%UrlCode%"=="7" goto PlSetHandler
     if /i "%UrlCode%"=="8" goto QueueSetHandler
-    pause
+    if /i "%UrlCode%"=="9" goto SubSetHandler
 
     goto UrlHPassed
 
@@ -63,6 +66,12 @@ title Enter Action - ytBATCH %version%
     :PlSetHandler
     if /i "%PlaylistSet%"=="--yes-playlist" set PlaylistSet=--no-playlist&goto UrlHPassed
     set PlaylistSet=--yes-playlist
+    goto UrlHPassed
+
+::Subtitle Handler
+    :SubSetHandler
+    if /i "%SubSet%"=="--write-subs" set SubSet=--no-write-subs&goto UrlHPassed 
+    set SubSet=--write-subs
     goto UrlHPassed
     
 ::Cookie Handler
