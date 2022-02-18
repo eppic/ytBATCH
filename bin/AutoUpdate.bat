@@ -17,7 +17,7 @@ title Auto Updater
     
     :UpMsg_UpToDate
     exit
-    
+
     :UpMsg_UpdateDL
-    echo %latestversion% > ..\update.info
+    echo %latestversion%> ..\update.info
     exit
