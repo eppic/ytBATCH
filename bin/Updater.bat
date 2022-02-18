@@ -77,7 +77,6 @@ title Check for Updates - ytBATCH %version%
     echo Deleting temporary files...
     rmdir ..\ytBATCH-main /S /Q
     del ..\ytb_temp.zip /Q
-    del .\AutoUpdate.lnk
     echo.
     echo Updated ytBATCH to latest Main Branch (Problems may occur!)
     pause
@@ -144,7 +143,6 @@ title Check for Updates - ytBATCH %version%
     echo Cleaning temporary files...
     del ..\ytb_temp.zip /Q
     rmdir ..\temp /S /Q
-    del .\AutoUpdate.lnk
     if exist ..\update.info del ..\update.info
     echo.
     echo Updated ytBATCH to the latest version!
