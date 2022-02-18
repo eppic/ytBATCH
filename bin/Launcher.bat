@@ -17,7 +17,7 @@ title ytBATCH %version%
     if not exist ..\cfg\youtube-dl.conf copy nul ..\cfg\youtube-dl.conf
     
     ::remove temporary files
-    del ..\Updater.bat
+    if exist "..\Updater.bat" del ..\Updater.bat
 
     ::echo off switch ("echo")
     if /i "%mecho%"=="" (set mcls=cls) else (set mcls=echo -)
@@ -26,15 +26,6 @@ title ytBATCH %version%
     if "%CleanQueueStart%"=="T" del ..\QueueList.bat
     %mcls%
 
-    ::old version yt-dl check
-    if not exist ..\exe\youtube-dl.exe goto oldvcheckpassed
-    if exist ..\exe\yt-dlp.exe goto oldvcheckpassed
-    echo ytBATCH has switched from youtube-dl.exe to yt-dlp.exe
-    echo This requires the latest version of yt-dlp.
-    pause
-    %mcls%
-    :oldvcheckpassed
-    
 ::Check File Integrity...
     ::youtube-dl
     if "%ytdlv%"=="yt-dlp" goto ChFIytdlPassed
@@ -48,10 +39,8 @@ title ytBATCH %version%
     
 ::AutoUpdate
     if /i not "%AUEnb%"=="T" goto :AU_Passed
-    if not exist AutoUpdate.lnk powershell.exe "powershell -ExecutionPolicy Bypass -File AutoUpdate.ps1"
-    start AutoUpdate.lnk
+    start /min .\AutoUpdate.bat
     if not exist ..\update.info goto AU_Passed
-    
     set /p latestversion=<..\update.info
 
     :UpMsg_UpdateDL
