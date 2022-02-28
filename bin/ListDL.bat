@@ -22,6 +22,9 @@ title Choose Format - ytBATCH %version%
 ::Add to Queue
     if /i "%QueueSet%"=="T" echo ..\exe\%ytdlv% -f %FormatListCode%+bestaudio %%DlOpt%% %CookieSet% %PlaylistSet% %Url% >> ..\QueueList.bat & call MainMenu.bat
 
+::Show Destination Sc
+    set DescScShow=T
+
 ::Download
     ..\exe\%ytdlv% -f %FormatListCode%+bestaudio %DlOpt% %CookieSet% %PlaylistSet% %SubSet% %Url%
     if /i "%DestOpen%"=="T" explorer %Destination% 

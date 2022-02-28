@@ -43,6 +43,9 @@ title Download Audio - ytBATCH %version%
 ::Add to Queue
     if /i "%QueueSet%"=="T" echo ..\exe\%ytdlv% -x --audio-format %AudioDLFormat% %%DlOpt%% %CookieSet% %PlaylistSet% %SubSet% %EmbThbPref% %Url% >> ..\QueueList.bat & call MainMenu.bat
 
+::Show Destination Sc
+    set DescScShow=T
+    
 ::Download Audio
     %mcls%
     echo Audio

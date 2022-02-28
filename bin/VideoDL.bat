@@ -44,6 +44,9 @@ title Download Video - ytBATCH %version%
 ::Add to Queue
     if /i "%QueueSet%"=="T" echo ..\exe\%ytdlv% %mopf%%VideoDLFormat% %%DlOpt%% %CookieSet% %PlaylistSet% %SubSet% %Url% >> ..\QueueList.bat & call MainMenu.bat
 
+::Show Destination Sc
+    set DescScShow=T
+
 ::Download Video
     %mcls%
     echo Video
