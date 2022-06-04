@@ -1,6 +1,8 @@
 temp
 test
 cfg
+dl
+exe
 ytBATCH-main
 *.zip
 *.mkv
@@ -10,8 +12,5 @@ ytBATCH-main
 *.wav
 *.conf
 *.txt
-*.exe
 QueueList.bat
-exe/ffmpeg.zip
 update.info
-AutoUpdate.lnk
