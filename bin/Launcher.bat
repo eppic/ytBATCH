@@ -29,14 +29,16 @@ title ytBATCH %version%
 ::Check File Integrity...
     ::youtube-dl
     if "%ytdlv%"=="yt-dlp" goto ChFIytdlPassed
-    if not exist "..\exe\youtube-dl.exe" set fdcode=ytdl& echo youtube-dl.exe not found. & echo Press any key to download the latest version of youtube-dl.exe... & pause>nul & call FileDownloader.bat
+    if not exist "..\exe\youtube-dl.exe" set DLinfo=T& set fdcode=ytdl& echo youtube-dl.exe not found. & call FileDownloader.bat
     :ChFIytdlPassed
-    if not exist "..\exe\yt-dlp.exe" set fdcode=ytdlp& echo yt-dlp.exe not found. & echo Press any key to download the latest version of yt-dlp.exe... & pause>nul & call FileDownloader.bat
+    if not exist "..\exe\yt-dlp.exe" set DLinfo=T& set fdcode=ytdlp& echo yt-dlp.exe not found. & call FileDownloader.bat
 
     ::ffmpeg
     if exist "..\exe\ffmpeg.zip" powershell -command "(Expand-Archive -Force ..\exe\ffmpeg.zip ..\exe\ )" & del "..\exe\ffmpeg.zip"
-    if not exist "..\exe\ffmpeg.exe" set fdcode=ffmp& echo ffmpeg.exe not found. & echo Press any key to download ffmpeg.exe... & pause>nul & call FileDownloader.bat
-    
+    if not exist "..\exe\ffmpeg.exe" set DLinfo=T& set fdcode=ffmp& echo ffmpeg.exe not found. & call FileDownloader.bat
+
+    if /i "%DLinfo%"=="T" echo Download finished! & pause
+
 ::AutoUpdate
     if /i not "%AUEnb%"=="T" goto :AU_Passed
     start /min .\AutoUpdate.bat

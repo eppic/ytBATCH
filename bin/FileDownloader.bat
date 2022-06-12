@@ -1,5 +1,5 @@
 @echo off
-title Downloading youtube-dl.exe - ytBATCH %version%
+title Downloading... - ytBATCH %version%
 %mcls%
 
 if not exist ..\exe mkdir ..\exe
@@ -20,7 +20,6 @@ echo This will take a moment.
 powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://youtube-dl.org/downloads/latest/youtube-dl.exe', '..\exe\youtube-dl.exe')"
 echo.
 echo youtube-dl.exe downloaded.
-pause
 
 call Launcher.bat
 
@@ -31,7 +30,6 @@ powershell -command "(New-Object System.Net.WebClient).DownloadFile('https://git
 ..\exe\yt-dlp -U
 echo.
 echo yt-dlp.exe downloaded.
-pause
 
 call Launcher.bat
 
@@ -45,6 +43,5 @@ echo Clean Up...
 if exist ..\exe\ffmpeg.exe del ..\exe\ffmpeg.zip
 echo.
 echo ffmpeg.exe downloaded.
-pause
 
 call Launcher.bat
