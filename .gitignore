@@ -4,6 +4,7 @@ cfg
 dl
 exe
 ytBATCH-main
+
 *.zip
 *.mkv
 *.mp4
@@ -12,5 +13,6 @@ ytBATCH-main
 *.wav
 *.conf
 *.txt
+
 QueueList.bat
 update.info
