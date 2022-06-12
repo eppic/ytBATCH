@@ -7,6 +7,7 @@ title Enter Action - ytBATCH %version%
     set PlaylistSet=--no-playlist
     set SubSet=--no-write-subs
     set FormatSet=F
+    set COpt=
     if exist ..\QueueList.bat (set QueueSet=T) else (set QueueSet=F)
     :UrlHPassed
     %mcls%
@@ -14,8 +15,11 @@ title Enter Action - ytBATCH %version%
 ::Url Handler
     set DlOpt=
     set UrlCode=
-    echo URL:"%Url%"
+    echo Link:"%Url%"
     echo.
+
+    if not "%COpt%"==""  echo   CUSTOM OPTIONS: %COpt% & echo.
+
     if /i not "%DefaultAudio%"=="none" echo   (A) Audio (%DefaultAudio%) 
     if /i "%DefaultAudio%"=="none" echo   (A) Audio
     if /i not "%DefaultVideo%"=="none" echo   (V) Video (%DefaultVideo%) 
@@ -34,11 +38,12 @@ title Enter Action - ytBATCH %version%
     if "%SubSet%"=="--no-write-subs" echo   (S) Subtitles (FALSE)
     if "%CookieSet%"=="--cookies "..\cfg\cookies.txt"" echo   (C) Cookies (TRUE)
     if not "%CookieSet%"=="--cookies "..\cfg\cookies.txt"" echo   (C) Cookies (FALSE)
+    echo   (O) Add Custom Options... 
     echo.
     echo (B) Go Back...
     echo.
 
-    choice /c BAVLFCPQS /n
+    choice /c BAVLFCPQSO /n
     set UrlCode=%errorlevel%
     
     ::Set Download Options
@@ -53,6 +58,7 @@ title Enter Action - ytBATCH %version%
     if /i "%UrlCode%"=="7" goto PlSetHandler
     if /i "%UrlCode%"=="8" goto QueueSetHandler
     if /i "%UrlCode%"=="9" goto SubSetHandler
+    if /i "%UrlCode%"=="10" goto CustomOptHandler
 
     goto UrlHPassed
 
@@ -93,4 +99,19 @@ title Enter Action - ytBATCH %version%
     :QueueSetHandler
     if /i "%QueueSet%"=="T" set QueueSet=F&goto UrlHPassed
     set QueueSet=T
+    goto UrlHPassed
+
+::Custom Options Handler
+    :CustomOptHandler
+    %mcls%
+    echo Add Custom Options:
+    echo.
+    echo Do NOT use:    
+    echo   -x / -f / --audio-format / --merge-output-format
+    echo   --no-playlist / --yes-playlist / --no-write-subs / --write-subs
+    echo   --cookies / --no-cookies
+    echo.
+    echo   The Options above are editable with the Menu
+    echo.
+        set /p COpt=%ytdlv% (Link) 
     goto UrlHPassed
