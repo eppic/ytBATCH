@@ -26,6 +26,7 @@ cls
     mkdir "%AppData%\ytBATCH\cfg"
     copy nul "%AppData%\ytBATCH\cfg\UserConfig.bat"
     copy nul "%AppData%\ytBATCH\cfg\youtube-dl.conf"
+    copy nul "%AppData%\ytBATCH\cfg\installation.info"
 
     :RmOGD
     set icode=
