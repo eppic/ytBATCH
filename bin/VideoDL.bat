@@ -42,7 +42,7 @@ title Download Video - ytBATCH %version%
     if /i "%HstEnb%"=="T" echo %Url%>> ..\History.txt
 
 ::Add to Queue
-    if /i "%QueueSet%"=="T" echo ..\exe\%ytdlv% %mopf%%VideoDLFormat% %%DlOpt%% %CookieSet% %PlaylistSet% %SubSet% %Url% >> ..\QueueList.bat & call MainMenu.bat
+    if /i "%QueueSet%"=="T" echo ..\exe\%ytdlv% %mopf%%VideoDLFormat% %%DlOpt%% %CookieSet% %PlaylistSet% %SubSet% %COpt% %Url% >> ..\QueueList.bat & call MainMenu.bat
 
 ::Show Destination Sc
     set DescScShow=T
@@ -51,7 +51,7 @@ title Download Video - ytBATCH %version%
     %mcls%
     echo Video
 
-    ..\exe\%ytdlv% %mopf%%VideoDLFormat% %DlOpt% %CookieSet% %PlaylistSet% %SubSet% %Url%
+    ..\exe\%ytdlv% %mopf%%VideoDLFormat% %DlOpt% %CookieSet% %PlaylistSet% %SubSet% %COpt% %Url%
     if /i "%DestOpen%"=="T" explorer %Destination%
 
     echo.
