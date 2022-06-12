@@ -1,5 +1,5 @@
 @echo off
-title Enter URL - ytBATCH %version%
+title Enter Link - ytBATCH %version%
 %mcls%
 
 ::Main Menu
@@ -16,7 +16,7 @@ title Enter URL - ytBATCH %version%
     
     echo.
 
-    set /p Url=URL/COMMAND:
+    set /p Url=LINK/COMMAND:
 
     if /i "%Url%"=="P" call Preferences.bat
     if /i "%Url%"=="U" call Updater.bat
