@@ -16,6 +16,8 @@ title Preferences - ytBATCH %version%
 
     if "%HstEnb%"=="T" echo   (H) Keep Download History... (TRUE)
     if /i not "%HstEnb%"=="T" echo   (H) Keep Download History... (FALSE)
+    
+    echo   (S) Generate ytBATCH shortcuts...
 
     echo.
     echo Download:
@@ -43,7 +45,7 @@ title Preferences - ytBATCH %version%
     echo (B) Go Back...
     echo.
 
-    choice /c LPFKOQHTYARXCVJBG /n
+    choice /c LPFKOQHTYARXCVJBGS /n
     set PrefCode=%errorlevel%
     
     if /i "%PrefCode%"=="1" set fdcode= & call FileDownloader.bat
@@ -63,7 +65,8 @@ title Preferences - ytBATCH %version%
     if /i "%PrefCode%"=="15" start notepad ..\History.txt
     if /i "%PrefCode%"=="16" call MainMenu.bat
 	if /i "%PrefCode%"=="17" start "" "https://github.com/eppic/ytBATCH"
-
+	if /i "%PrefCode%"=="18" goto ShortcutGen
+    
     call Preferences.bat
 
 ::Change Output Path
@@ -100,6 +103,17 @@ title Preferences - ytBATCH %version%
     :HistorySet
     if /i "%HstEnb%"=="T" (set HstEnb=F) else (set HstEnb=T)
     goto ConfigSet
+
+    :ShortcutGen
+    if exist ..\cfg\installation.info (goto ShortcutGen1) else (goto ShortcutGen2)
+       :ShortcutGen1
+       powershell.exe "powershell -ExecutionPolicy Bypass -File makeshortcut.ps1"
+       call Preferences.bat
+       :ShortcutGen2
+       %mcls%
+       echo ytBATCH needs to be installed in order to generate shortcuts
+       pause
+       call Preferences.bat
 
     :EmbThbSet
     if /i "%EmbThb%"=="T" (set EmbThb=F) else (set EmbThb=T)
