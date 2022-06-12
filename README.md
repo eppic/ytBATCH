@@ -14,23 +14,25 @@ An easy to use Batch Script for downloading Audio and Video using [yt-dlp](https
 2. Run ytBATCH.bat in the provided folder  
 3. A prompt appears asking to install ytBATCH.  
    - `Yes`: Install ytBATCH to AppData and generate shortcuts  
-   - `No`: Keep ytBATCH in its download folder.  
-4. Press any key to download yt-dlp.exe and ffmpeg.exe  
+   - `No`: Keep ytBATCH as a portable program  
+4. Wait for yt-dlp.exe and ffmpeg.exe to download  
 5. Done  
 
 ## USAGE
 
 1. Open ytBATCH.bat or the shortcut on the Desktop / Start Menu  
 2. Paste Link  
-3. Select an Option  
-   - `Audio`: Downloads Audio, Select Audio Format  
-   - `Video`: Downloads Video (When available), Select Video Format  
-   - `List All`: Lists all available formats found
-   - `Change Format`: Show a Menu to Change the Audio/Video Format
-   - `Add to Queue`: Adds the link to the queue instead of downloading it directly
-   - `Playlist`: When the link obtains a playlist, download whole playlist
-   - `Cookies`: When available, uses cookies.txt  
-4. Download starts (If Change Format is `TRUE`, choose format first)
+3. Select an option  
+   - `Audio`: Download Audio
+   - `Video`: Download Video (when available)
+   - `List All`: List all available formats
+   - `Change Format`: Show a menu to change the Audio/Video format
+   - `Add to Queue`: Add the link to the queue instead of downloading it directly
+   - `Playlist`: Download the whole playlist 
+   - `Subtitles`: Download Video subtitles
+   - `Cookies`: Use Cookies.txt (when available) 
+   - `Add Custom Options`: Add custom yt-dlp parameters
+4. Start Download (If Change Format is `TRUE`, choose format first)
 5. Output is Downloads/ytBATCH (can be changed)
 
 ## QUEUE USAGE
@@ -41,21 +43,3 @@ An easy to use Batch Script for downloading Audio and Video using [yt-dlp](https
 4. Press Q to start Queue.
 5. Add more Links to the Queue while downloading, when wanted
 6. When all downloads are finished, Queue closes
-
-## PREFERENCES
-
- - `Change Output Path`: Specify Download Output Path  
- - `Set Default Audio and Video Formats`: Set `Audio/Video.*` (mp3, wav, / mp4, mkv,)  
- - `Use Cookies by default`: Use `cookies.txt` by default when downloading  
- - `Open Containing Folder after Download`: Open Download Directory in explorer  
- - `Clean Queue when restarting`: Delete all Links in Queue when restarting  
- - `Keep Download History`: Saves Download History under ytBATCH/History.txt  
- - `Download Video Thumbnail for Audio`: Apply Video Thumbnails as Cover Art for Audio Files  
- - `Choose yt-dl version`: Switch between yt-dlp (default) and youtube-dl  
-  
- - `Open ytBATCH Config`: ytBATCH Config, for manual editing  
- - `Open yt-dlp/youtube-dl Config`: Enter own youtube-dl Options used for every download; (sperated by Enter)  
- - `Open Download History`: Open History.txt, if `Keep Download History` is `TRUE`  
- - `Open Root Directory`: Open ytBATCH diretory  
- - `Open Download Directory`: Open assigned Download directory  
- - `Open GitHub Repository`: Open this Site  
