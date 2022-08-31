@@ -22,6 +22,7 @@ title Enter Link - ytBATCH %version%
     if /i "%Url%"=="U" call Updater.bat
     if /i "%Url%"=="Q" start Queue.bat & call MainMenu.bat
     if /i "%Url%"=="E" del ..\QueueList.bat & call MainMenu.bat
+    if /i "%Url%"=="V" start notepad "..\QueueList.bat" & call MainMenu.bat
     if /i "%Url%"=="H" title Help - ytBATCH %version% & cls & ..\exe\%ytdlv% --help & pause & call MainMenu.bat
     if /i "%Url%"=="D" explorer %Destination% & call MainMenu.bat
     if /i "%Url%"=="NEW" goto Refresh
