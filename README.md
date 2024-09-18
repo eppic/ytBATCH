@@ -2,6 +2,10 @@
 # ytBATCH
 An easy to use Batch Script for downloading Audio and Video using [yt-dlp](https://github.com/yt-dlp/yt-dlp).  
 
+## For Linux
+[ytBASH](https://github.com/eppic/ytBASH) is an alternative to ytBATCH but for Linux, also made by me.
+This also means I won't be working on ytBATCH any longer.
+
 ## SCREENSHOTS
 
    - [Main Menu](https://raw.githubusercontent.com/eppic/ytBATCH-externals/main/image_295.png)
