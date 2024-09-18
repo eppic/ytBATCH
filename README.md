@@ -4,7 +4,8 @@ An easy to use Batch Script for downloading Audio and Video using [yt-dlp](https
 
 ## For Linux
 [ytBASH](https://github.com/eppic/ytBASH) is an alternative to ytBATCH but for Linux, also made by me.
-This also means I won't be working on ytBATCH any longer.
+This also means I won't be working on ytBATCH any longer. 
+__THIS REPO IS NOT ACTIVELY MAINTAINED__
 
 ## SCREENSHOTS
 
@@ -14,7 +15,7 @@ This also means I won't be working on ytBATCH any longer.
 
 ## INSTALL
 
-1. Download the [latest code](https://github.com/eppic/ytBATCH/archive/refs/heads/main.zip) or a [release](https://github.com/eppic/ytBATCH/releases)  
+1. Download the [latest code](https://github.com/eppic/ytBATCH/archive/refs/heads/main.zip) 
 2. Run ytBATCH.bat in the provided folder  
 3. A prompt appears asking to install ytBATCH.  
    - `Yes`: Install ytBATCH to AppData and generate shortcuts  
