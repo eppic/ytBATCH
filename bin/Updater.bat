@@ -13,12 +13,14 @@ title Check for Updates - ytBATCH %version%
     echo   (T) Update ytBATCH
     echo   (D) Update %ytdlv%...
     echo.
+    echo   (J) Update Deno (Needed for some youtube downloads)
+    echo.
     echo   (Y) View latest ytBATCH release...
     echo.
     echo (B) Go Back...
     echo.
     
-    choice /c BYMDT /n
+    choice /c BYMDTJ /n
     set UpdateCode=%errorlevel%
     
     if /i "%UpdateCode%"=="2" start "" "https://github.com/eppic/ytBATCH/releases/latest"
@@ -26,7 +28,8 @@ title Check for Updates - ytBATCH %version%
     if /i "%UpdateCode%"=="4" goto ytdl-dl
     if /i "%UpdateCode%"=="5" goto ytbatch-release-dl
     if /i "%UpdateCode%"=="1" call MainMenu.bat
-    
+    if /i "%UpdateCode%"=="6" goto deno-update
+
     call Updater.bat
 
 ::youtube-dl Updater
@@ -148,4 +151,9 @@ title Check for Updates - ytBATCH %version%
     echo Updated ytBATCH to the latest version!
     set ytbUpPass=
     pause
+    call Launcher.bat
+
+::Deno Updater
+    :deno-update
+    deno upgrade
     call Launcher.bat

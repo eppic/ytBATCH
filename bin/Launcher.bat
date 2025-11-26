@@ -39,6 +39,27 @@ title ytBATCH %version%
 
     if /i "%DLinfo%"=="T" echo Download finished! & pause
 
+    ::deno
+    where deno >nul 2>&1
+    if %errorlevel%==0 (
+        goto :ChFIdenoPassed
+    )
+
+    powershell -NoProfile -ExecutionPolicy Bypass -Command "irm https://deno.land/install.ps1 | iex"
+
+    if %errorlevel%==0 (
+        goto :ChFIdenoPassed
+    ) else (
+        echo Error installing deno. (Needed for certain youtube downloads)
+        echo You can try installing it yourself by pasting this into a powershell window:
+        echo irm https://deno.land/install.ps1 | iex
+        echo.
+        pause
+    )
+
+    :ChFIdenoPassed
+
+
 ::AutoUpdate
     if /i not "%AUEnb%"=="T" goto :AU_Passed
     start /min .\AutoUpdate.bat
