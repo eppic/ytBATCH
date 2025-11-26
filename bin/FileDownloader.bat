@@ -55,11 +55,12 @@ powershell -NoProfile -ExecutionPolicy Bypass -Command "irm https://deno.land/in
     if %errorlevel%==0 (
         echo deno installed. 
     ) else (
-        echo Error installing deno. (Needed for certain youtube downloads)
+        echo Error installing deno. It is needed for certain youtube downloads
         echo You can try installing it yourself by pasting this command into a powershell window:
         echo irm https://deno.land/install.ps1 | iex
         echo.
         pause
+        
     )
 
 call Launcher.bat
