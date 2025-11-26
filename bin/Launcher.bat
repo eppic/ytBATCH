@@ -37,28 +37,19 @@ title ytBATCH %version%
     if exist "..\exe\ffmpeg.zip" powershell -command "(Expand-Archive -Force ..\exe\ffmpeg.zip ..\exe\ )" & del "..\exe\ffmpeg.zip"
     if not exist "..\exe\ffmpeg.exe" set DLinfo=T& set fdcode=ffmp& echo ffmpeg.exe not found. & call FileDownloader.bat
 
-    if /i "%DLinfo%"=="T" echo Download finished! & pause
-
     ::deno
     where deno >nul 2>&1
     if %errorlevel%==0 (
         goto :ChFIdenoPassed
-    )
-
-    powershell -NoProfile -ExecutionPolicy Bypass -Command "irm https://deno.land/install.ps1 | iex"
-
-    if %errorlevel%==0 (
-        goto :ChFIdenoPassed
     ) else (
-        echo Error installing deno. (Needed for certain youtube downloads)
-        echo You can try installing it yourself by pasting this into a powershell window:
-        echo irm https://deno.land/install.ps1 | iex
-        echo.
-        pause
+        set DLinfo=T
+        set fdcode=deno
+        echo deno not found.
+        call FileDownloader.bat
     )
-
     :ChFIdenoPassed
 
+    if /i "%DLinfo%"=="T" echo Download finished! & pause
 
 ::AutoUpdate
     if /i not "%AUEnb%"=="T" goto :AU_Passed

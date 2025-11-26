@@ -7,8 +7,10 @@ if not exist ..\exe mkdir ..\exe
 if "%fdcode%"=="ytdl" goto fdl_ytdl
 if "%fdcode%"=="ytdlp" goto fdl_ytdlp
 if "%fdcode%"=="ffmp" goto fdl_ffmp
+if "%fdcode%"=="deno" goto fdl_deno
 if "%fdcode%"=="b" call Preferences.bat
-echo prefix? ytdlp/ytdl/ffmp
+
+echo prefix? ytdlp/ytdl/ffmp/deno
 echo   (B) Go Back...
 echo old fdcode: %fdcode% .
 set /p fdcode=
@@ -43,5 +45,21 @@ echo Clean Up...
 if exist ..\exe\ffmpeg.exe del ..\exe\ffmpeg.zip
 echo.
 echo ffmpeg.exe downloaded.
+
+call Launcher.bat
+
+:fdl_deno
+echo Wait for deno to install...
+echo This will take a moment.
+powershell -NoProfile -ExecutionPolicy Bypass -Command "irm https://deno.land/install.ps1 | iex"
+    if %errorlevel%==0 (
+        echo deno installed. 
+    ) else (
+        echo Error installing deno. (Needed for certain youtube downloads)
+        echo You can try installing it yourself by pasting this command into a powershell window:
+        echo irm https://deno.land/install.ps1 | iex
+        echo.
+        pause
+    )
 
 call Launcher.bat

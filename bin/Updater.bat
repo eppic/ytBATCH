@@ -156,4 +156,5 @@ title Check for Updates - ytBATCH %version%
 ::Deno Updater
     :deno-update
     deno upgrade
+    pause
     call Launcher.bat
